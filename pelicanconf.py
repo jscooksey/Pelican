@@ -1,5 +1,5 @@
 AUTHOR = "Justin Cooksey"
-SITENAME = "justincooksey.com"
+SITENAME = "Justin Cooksey Pelican Test"
 SITEURL = ""
 
 PATH = "content"
