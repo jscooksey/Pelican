@@ -1,6 +1,8 @@
 AUTHOR = "Justin Cooksey"
 SITENAME = "Justin Cooksey Pelican Test"
-SITEURL = "https://jscooksey.github.io/Pelican/"
+SITEURL = "https://jscooksey.github.io/Pelican"
+
+THEME = "notmyidea"
 
 PATH = "content"
 ARTICLE_PATHS = ["blog"]
