@@ -1,8 +1,9 @@
 AUTHOR = "Justin Cooksey"
 SITENAME = "Justin Cooksey Pelican Test"
+SITESUBTITLE = "Thoughts and Code by Justin Cooksey"
 SITEURL = "https://jscooksey.github.io/Pelican"
 
-THEME = "notmyidea"
+THEME = "notmyidea"  # "future-imperfect"
 
 PATH = "content"
 ARTICLE_PATHS = ["blog"]
@@ -25,16 +26,22 @@ LINKS = (
     ("Pelican", "https://getpelican.com/"),
     ("Python.org", "https://www.python.org/"),
     ("Jinja2", "https://palletsprojects.com/p/jinja/"),
-    ("You can modify those links in your config file", "#"),
 )
 
 # Social widget
 SOCIAL = (
-    ("You can add links in your config file", "#"),
+    ("Twitter", "https://twitter.com/jscooksey"),
     ("Another social link", "#"),
 )
 
-DEFAULT_PAGINATION = 10
+CONTACTS = (
+    ("Twitter", "fa-twitter", "https://twitter.com/jscooksey"),
+    ("DEV", "fa-dev", "https://facebook.com/theanalogfox"),
+    ("Mastodon", "fa-mastodon", "https://www.instagram.com/theanalogfox/"),
+    ("GitHub", "fa-github", "info@theanalogfox.com"),
+)
+
+DEFAULT_PAGINATION = 3
 
 # Uncomment following line if you want document-relative URLs when developing
 # RELATIVE_URLS = True
