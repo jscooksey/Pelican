@@ -1,5 +1,5 @@
 Title: Gatsby Beginings
-Date: 2019-11-19 22:12
+Date: 2019-11-19 21:12
 Category: Article
 Tags: hacktoberfest, opensource
 Slug: gatsby-beginings
