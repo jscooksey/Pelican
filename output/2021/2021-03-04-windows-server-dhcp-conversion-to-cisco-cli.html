@@ -1,42 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+          <title>Justin Cooksey Pelican Test - Windows Server DHCP conversion to Cisco CLI</title>
         <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta name="generator" content="Pelican" />
-        <title>Windows Server DHCP conversion to Cisco CLI</title>
-        <link rel="stylesheet" href="https://jscooksey.github.io/Pelican/theme/css/main.css" />
-        <meta name="description" content="A Windows Powershell script to ease the transition from a Windows DHCP server to a Cisco router DHCP. Convert from a backup to the Cisco command line." />
+
+
+
+
+    <meta name="tags" content="DHCP" />
+    <meta name="tags" content="Windows" />
+    <meta name="tags" content="PowerShell" />
+    <meta name="tags" content="Cisco" />
+
 </head>
 
 <body id="index" class="home">
         <header id="banner" class="body">
-                <h1><a href="https://jscooksey.github.io/Pelican/">Justin Cooksey Pelican Test <strong>Thoughts and Code by Justin Cooksey</strong></a></h1>
-                <nav><ul>
-                    <li><a href="https://jscooksey.github.io/Pelican/pages/home-page.html">Home Page</a></li>
-                    <li class="active"><a href="https://jscooksey.github.io/Pelican/category/article.html">Article</a></li>
-                </ul></nav>
+                <h1><a href="../">Justin Cooksey Pelican Test <strong>Thoughts and Code by Justin Cooksey</strong></a></h1>
         </header><!-- /#banner -->
+        <nav id="menu"><ul>
+            <li><a href="../pages/home-page.html">Home Page</a></li>
+            <li class="active"><a href="../category/article.html">Article</a></li>
+        </ul></nav><!-- /#menu -->
 <section id="content" class="body">
-  <article>
-    <header>
-      <h1 class="entry-title">
-        <a href="https://jscooksey.github.io/Pelican/2021/2021-03-04-windows-server-dhcp-conversion-to-cisco-cli.html" rel="bookmark"
-           title="Permalink to Windows Server DHCP conversion to Cisco CLI">Windows Server DHCP conversion to Cisco CLI</a></h1>
-    </header>
-
-    <div class="entry-content">
-<footer class="post-info">
-        <abbr class="published" title="2021-03-04T08:00:00+11:00">
-                Published: Thu 04 March 2021
-        </abbr>
-
-        <address class="vcard author">
-                By                         <a class="url fn" href="https://jscooksey.github.io/Pelican/author/justin-cooksey.html">Justin Cooksey</a>
-        </address>
-<p>In <a href="https://jscooksey.github.io/Pelican/category/article.html">Article</a>.</p>
-<p>tags: <a href="https://jscooksey.github.io/Pelican/tag/dhcp.html">DHCP</a> <a href="https://jscooksey.github.io/Pelican/tag/windows.html">Windows</a> <a href="https://jscooksey.github.io/Pelican/tag/powershell.html">PowerShell</a> <a href="https://jscooksey.github.io/Pelican/tag/cisco.html">Cisco</a> </p>
-</footer><!-- /.post-info -->      <p>I recently ran in to an issue where I needed to convert a reasonably large DHCP database from a Windows Server in to a Cisco CLI to allow the Cisco to take over DHCP roles for a subnet. I found nothing that realy automated this task, even using the exported XML file. So knowing that this was the second time I needed the tool, and likely to need it again, even if it was for smaller tasks, I set about coding it in Powershell. It is the scripting system well supported in Windows land.</p>
+  <header>
+    <h2 class="entry-title">
+      <a href="../2021/2021-03-04-windows-server-dhcp-conversion-to-cisco-cli.html" rel="bookmark"
+         title="Permalink to Windows Server DHCP conversion to Cisco CLI">Windows Server DHCP conversion to Cisco CLI</a></h2>
+ 
+  </header>
+  <footer class="post-info">
+    <time class="published" datetime="2021-03-04T08:00:00+11:00">
+      Thu 04 March 2021
+    </time>
+    <address class="vcard author">
+      By           <a class="url fn" href="../author/justin-cooksey.html">Justin Cooksey</a>
+    </address>
+    <div class="category">
+        Category: <a href="../category/article.html">Article</a>
+    </div>
+    <div class="tags">
+        Tags:
+            <a href="../tag/dhcp.html">DHCP</a>
+            <a href="../tag/windows.html">Windows</a>
+            <a href="../tag/powershell.html">PowerShell</a>
+            <a href="../tag/cisco.html">Cisco</a>
+    </div>
+  </footer><!-- /.post-info -->
+  <div class="entry-content">
+    <p>I recently ran in to an issue where I needed to convert a reasonably large DHCP database from a Windows Server in to a Cisco CLI to allow the Cisco to take over DHCP roles for a subnet. I found nothing that realy automated this task, even using the exported XML file. So knowing that this was the second time I needed the tool, and likely to need it again, even if it was for smaller tasks, I set about coding it in Powershell. It is the scripting system well supported in Windows land.</p>
 <p>The current version of the script can be found on my GitHub repository:
 <a href="https://github.com/jscooksey/Convert-WindowsDHCPToCisco">Convert-WindowsDHCPToCisco</a></p>
 <p>Still ha smany DHCP options that it hasn't been setup to hanle at this point but it does follow the basic ones that most of us use.</p>
@@ -122,36 +135,13 @@
 <li><a href="https://tools.ietf.org/html/rfc2132">RFC2312</a></li>
 <li><a href="https://en.wikipedia.org/wiki/Dynamic_Host_Configuration_Protocol#Client_configuration_parameters">Wikipedia DHCP Options table</a></li>
 </ul>
-    </div><!-- /.entry-content -->
-
-  </article>
+  </div><!-- /.entry-content -->
 </section>
-        <section id="extras" class="body">
-                <div class="blogroll">
-                        <h2>links</h2>
-                        <ul>
-                            <li><a href="https://getpelican.com/">Pelican</a></li>
-                            <li><a href="https://www.python.org/">Python.org</a></li>
-                            <li><a href="https://palletsprojects.com/p/jinja/">Jinja2</a></li>
-                        </ul>
-                </div><!-- /.blogroll -->
-                <div class="social">
-                        <h2>social</h2>
-                        <ul>
-
-                            <li><a href="https://twitter.com/jscooksey">Twitter</a></li>
-                            <li><a href="#">Another social link</a></li>
-                        </ul>
-                </div><!-- /.social -->
-        </section><!-- /#extras -->
-
         <footer id="contentinfo" class="body">
                 <address id="about" class="vcard body">
-                Proudly powered by <a href="https://getpelican.com/">Pelican</a>, which takes great advantage of <a href="https://www.python.org/">Python</a>.
+                Proudly powered by <a href="https://getpelican.com/">Pelican</a>,
+                which takes great advantage of <a href="https://www.python.org/">Python</a>.
                 </address><!-- /#about -->
-
-                <p>The theme is by <a href="https://www.smashingmagazine.com/2009/08/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
         </footer><!-- /#contentinfo -->
-
 </body>
 </html>
