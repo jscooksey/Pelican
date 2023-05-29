@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+          <title>Justin Cooksey Pelican Test - Datto RMM API Sites Export</title>
+        <meta charset="utf-8" />
+        <meta name="generator" content="Pelican" />
+
+
+
+
+    <meta name="tags" content="Python" />
+    <meta name="tags" content="Code" />
+    <meta name="tags" content="RMM" />
+    <meta name="tags" content="DattoRMM" />
+
+</head>
+
+<body id="index" class="home">
+        <header id="banner" class="body">
+                <h1><a href="../">Justin Cooksey Pelican Test <strong>Thoughts and Code by Justin Cooksey</strong></a></h1>
+        </header><!-- /#banner -->
+        <nav id="menu"><ul>
+            <li><a href="../pages/home-page.html">Home Page</a></li>
+            <li class="active"><a href="../category/article.html">Article</a></li>
+        </ul></nav><!-- /#menu -->
+<section id="content" class="body">
+  <header>
+    <h2 class="entry-title">
+      <a href="../2023/2023-dattormm-api.html" rel="bookmark"
+         title="Permalink to Datto RMM API Sites Export">Datto RMM API Sites Export</a></h2>
+ 
+  </header>
+  <footer class="post-info">
+    <time class="published" datetime="2023-05-29T12:30:00+10:00">
+      Mon 29 May 2023
+    </time>
+    <address class="vcard author">
+      By           <a class="url fn" href="../author/justin-cooksey.html">Justin Cooksey</a>
+    </address>
+    <div class="category">
+        Category: <a href="../category/article.html">Article</a>
+    </div>
+    <div class="tags">
+        Tags:
+            <a href="../tag/python.html">Python</a>
+            <a href="../tag/code.html">Code</a>
+            <a href="../tag/rmm.html">RMM</a>
+            <a href="../tag/dattormm.html">DattoRMM</a>
+    </div>
+  </footer><!-- /.post-info -->
+  <div class="entry-content">
+    <p>Using the DattoRMM API to export all Sites to a CSV file
+<a href="https://github.com/jscooksey/DattoRMM-API">GitHub Repo</a></p>
+<p>Pulls all Sites from a <a href="https://www.datto.com/au/products/rmm/">DattoRMM</a> environment and export basic details in to CSV formatted file.
+Removes the system sites of Managed, OnDemand &amp; Deleted Devices.</p>
+<p>Gets the API URL, Key and Secret from .env or environment variables (example below)</p>
+<p>Functions to interact with the DattoRMM API are in the <a href="https://github.com/jscooksey/DattoRMM-API/blob/main/dattormmapi.py">dattormmapi.py</a> Python file.</p>
+<p>Main function to do the API requests and export to CSV is in the <a href="https://github.com/jscooksey/DattoRMM-API/blob/main/export_sites.py">export_sites.py</a> Python file.</p>
+<p>Not much error/exception managment in this at the moment.</p>
+  </div><!-- /.entry-content -->
+</section>
+        <footer id="contentinfo" class="body">
+                <address id="about" class="vcard body">
+                Proudly powered by <a href="https://getpelican.com/">Pelican</a>,
+                which takes great advantage of <a href="https://www.python.org/">Python</a>.
+                </address><!-- /#about -->
+        </footer><!-- /#contentinfo -->
+</body>
+</html>
