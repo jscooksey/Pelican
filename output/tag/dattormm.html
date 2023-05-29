@@ -1,9 +1,4 @@
 <!DOCTYPE html>
-<!--
-	Future Imperfect by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
 <html>
   <head>
     <title>Justin Cooksey Pelican Test</title>
@@ -19,7 +14,7 @@
     <div id="wrapper">
       <!-- Header -->
       <header id="header">
-        <h1><a href="index.html">Justin Cooksey Pelican Test</a></h1>
+        <h1><a href="/index.html">Justin Cooksey Pelican Test</a></h1>
         <nav class="links">
           <ul>
             <li><a href="#">Lorem</a></li>
@@ -31,12 +26,6 @@
         </nav>
         <nav class="main">
           <ul>
-            <li class="search">
-              <a class="fa-search" href="#search">Search</a>
-              <form id="search" method="get" action="#">
-                <input type="text" name="query" placeholder="Search" />
-              </form>
-            </li>
             <li class="menu">
               <a class="fa-bars" href="#menu">Menu</a>
             </li>
@@ -46,13 +35,6 @@
 
       <!-- Menu -->
       <section id="menu">
-        <!-- Search -->
-        <section>
-          <form class="search" method="get" action="#">
-            <input type="text" name="query" placeholder="Search" />
-          </form>
-        </section>
-
         <!-- Actions -->
         <section>
           <ul class="actions stacked">
@@ -62,30 +44,29 @@
       </section>
 
       <!-- Main -->
-      <div id="main">
-        <!-- Posts -->
-        <article class="post">
-          <header>
-            <div class="title">
-              <h2><a href="single.html">Datto RMM API Sites Export</a></h2>
-              <p><p>Using the DattoRMM API to export all Sites to a CSV file.</p></p>
-            </div>
-            <div class="meta">
-              <time
-                class="published"
-                datetime="2023-05-29"
-                >May 29, 2023</time
-              >
-              <a href="#" class="author"
-                ><span class="name">Justin Cooksey</span
-                ><img src="../theme/images/avatar.jpg" alt=""
-              /></a>
-            </div>
-          </header>
-          <a href="single.html" class="image featured"
-            ><img src="../theme/images/pic01.jpg" alt=""
-          /></a>
-          <p><img alt="DattoRMM" src="dattormm.png" title="Datto RMM"></p>
+      <div id="main"> <!-- Post -->
+<article class="post">
+  <header>
+    <div class="title">
+      <h2><a href="2023/2023-dattormm-api.html">Datto RMM API Sites Export</a></h2>
+      <p><p>Using the DattoRMM API to export all Sites to a CSV file.</p></p>
+    </div>
+    <div class="meta">
+      <time
+        class="published"
+        datetime="2023-05-29"
+        >May 29, 2023</time
+      >
+      <a href="#" class="author"
+        ><span class="name">Justin Cooksey</span
+        ><img src="../theme/images/avatar.jpg" alt=""
+      /></a>
+    </div>
+  </header>
+  <a href="2023/2023-dattormm-api.html" class="image featured"
+    ><img src="images/" alt=""
+  /></a>
+  <p><img alt="DattoRMM" src="../2023/dattormm.png"></p>
 <p>Using the DattoRMM API to export all Sites to a CSV file
 <a href="https://github.com/jscooksey/DattoRMM-API">GitHub Repo</a></p>
 <p>Pulls all Sites from a <a href="https://www.datto.com/au/products/rmm/">DattoRMM</a> environment and export basic details in to CSV formatted file.
@@ -94,30 +75,27 @@ Removes the system sites of Managed, OnDemand &amp; Deleted Devices.</p>
 <p>Functions to interact with the DattoRMM API are in the <a href="https://github.com/jscooksey/DattoRMM-API/blob/main/dattormmapi.py">dattormmapi.py</a> Python file.</p>
 <p>Main function to do the API requests and export to CSV is in the <a href="https://github.com/jscooksey/DattoRMM-API/blob/main/export_sites.py">export_sites.py</a> Python file.</p>
 <p>Not much error/exception managment in this at the moment.</p>
-          <footer>
-            <ul class="actions">
-              <li>
-                <a href="single.html" class="button large">Continue Reading</a>
-              </li>
-            </ul>
-            <ul class="stats">
-              <li><a href="#">Python</a></li>
-              <li><a href="#">Code</a></li>
-              <li><a href="#">RMM</a></li>
-              <li><a href="#">DattoRMM</a></li>
-            </ul>
-          </footer>
-        </article>
+  <footer>
+    <ul class="actions">
+      <li>
+        <a href="2023/2023-dattormm-api.html" class="button large">Continue Reading</a>
+      </li>
+    </ul>
+    <ul class="stats">
+      <li><a href="#">Python</a></li>
+      <li><a href="#">Code</a></li>
+      <li><a href="#">RMM</a></li>
+      <li><a href="#">DattoRMM</a></li>
+    </ul>
+  </footer>
+</article>
 
-        <!-- Posts -->
-        <ul class="actions pagination">
-          <li>
-            <a href="" class="disabled button large previous">Previous Page</a>
-          </li>
-           <li><a href="#" class="disabled button large next">Next Page</a></li>
-        </ul>
-      </div>
-
+<!-- Pagination -->
+<ul class="actions pagination">
+  <li><a href="" class="disabled button large previous">Previous Page</a></li>
+   <li><a href="#" class="disabled button large next">Next Page</a></li>
+</ul>
+</div>
       <!-- Sidebar -->
       <section id="sidebar">
         <!-- Intro -->
@@ -131,53 +109,47 @@ Removes the system sites of Managed, OnDemand &amp; Deleted Devices.</p>
           </header>
         </section>
 
-        <!-- Mini Posts -->
-        <section>
-          <div class="mini-posts">
-            <!-- Mini Post -->
-            <article class="mini-post">
-              <header>
-                <h3><a href="single.html">Datto RMM API Sites Export</a></h3>
-                <time
-                  class="published"
-                  datetime="2023-05-29"
-                  >May 29, 2023</time
-                >
-                <a href="#" class="author"
-                  ><img src="../theme/images/avatar.jpg" alt=""
-                /></a>
-              </header>
-              <a href="single.html" class="image"
-                ><img src="../theme/images/pic04.jpg" alt=""
-              /></a>
-            </article>
-          </div>
-        </section>
-
-        <!-- Footer -->
+<!-- Mini Posts -->
+<section>
+  <div class="mini-posts">
+    <!-- Mini Post -->
+    <article class="mini-post">
+      <header>
+        <h3><a href="2023/2023-dattormm-api.html">Datto RMM API Sites Export</a></h3>
+        <time
+          class="published"
+          datetime="2023-05-29"
+          >May 29, 2023</time
+        >
+        <a href="#" class="author"
+          ><img src="../theme/images/avatar.jpg" alt=""
+        /></a>
+      </header>
+      <a href="2023/2023-dattormm-api.html" class="image"
+        ><img src="images/" alt=""
+      /></a>
+    </article>
+  </div>
+</section>        <!-- Footer -->
         <section id="footer">
           <ul class="icons">
             <li>
-              <a href="https://twitter.com/jscooksey">
-                <i class="fa-brands fa-twitter"></i>
+              <a href="https://twitter.com/jscooksey" class="icon brands fa-twitter">
                 <span class="label">Twitter</span>
               </a>
             </li>
             <li>
-              <a href="https://facebook.com/theanalogfox">
-                <i class="fa-brands fa-dev"></i>
+              <a href="https://facebook.com/theanalogfox" class="icon brands fa-dev">
                 <span class="label">DEV</span>
               </a>
             </li>
             <li>
-              <a href="https://www.instagram.com/theanalogfox/">
-                <i class="fa-brands fa-mastodon"></i>
+              <a href="https://www.instagram.com/theanalogfox/" class="icon brands fa-mastodon">
                 <span class="label">Mastodon</span>
               </a>
             </li>
             <li>
-              <a href="info@theanalogfox.com">
-                <i class="fa-brands fa-github"></i>
+              <a href="info@theanalogfox.com" class="icon brands fa-github">
                 <span class="label">GitHub</span>
               </a>
             </li>
