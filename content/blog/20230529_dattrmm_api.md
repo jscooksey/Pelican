@@ -3,8 +3,11 @@ Date: 2023-05-29 12:30
 Category: Article
 Tags: Python, Code, RMM, DattoRMM
 Slug: 2023-dattormm-api
+Cover: dattormm.png
 Author: Justin Cooksey
 Summary: Using the DattoRMM API to export all Sites to a CSV file.
+
+![DattoRMM](dattormm.png "Datto RMM")
 
 Using the DattoRMM API to export all Sites to a CSV file
 [GitHub Repo](https://github.com/jscooksey/DattoRMM-API)
