@@ -17,6 +17,15 @@ DEFAULT_LANG = "en"
 
 RELATIVE_URLS = True
 
+STATIC_PATHS = [
+    "extra",
+]
+
+EXTRA_PATH_METADATA = {
+    "extra/robots.txt": {"path": "robots.txt"},
+    "extra/favicon.ico": {"path": "favicon.ico"},
+}
+
 # Feed generation is usually not desired when developing
 FEED_ALL_ATOM = None
 CATEGORY_FEED_ATOM = None
