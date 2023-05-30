@@ -4,7 +4,7 @@ SITESUBTITLE = "Thoughts and Code by Justin Cooksey"
 SITEURL = "https://jscooksey.github.io/Pelican"
 
 # THEME = "notmyidea"
-THEME = "future-imperfect"
+THEME = "jsctheme"
 
 PATH = "content"
 ARTICLE_PATHS = ["blog"]
