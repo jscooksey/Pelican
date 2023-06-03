@@ -43,14 +43,14 @@ LINKS = (
 # Social widget
 SOCIAL = (
     ("Twitter", "https://twitter.com/jscooksey"),
-    ("Another social link", "#"),
+    ("GitHub", "https://github.com/jscooksey"),
 )
 
 CONTACTS = (
     ("Twitter", "fa-twitter", "https://twitter.com/jscooksey"),
-    ("DEV", "fa-dev", "https://facebook.com/theanalogfox"),
-    ("Mastodon", "fa-mastodon", "https://www.instagram.com/theanalogfox/"),
-    ("GitHub", "fa-github", "info@theanalogfox.com"),
+    ("DEV", "fa-dev", "https://dev.to/jscooksey"),
+    ("Mastodon", "fa-mastodon", "https://fosstodon.org/@jscooksey"),
+    ("GitHub", "fa-github", "https://github.com/jscooksey"),
 )
 
 DEFAULT_PAGINATION = 3
