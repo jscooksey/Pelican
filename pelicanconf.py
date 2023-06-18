@@ -2,13 +2,14 @@ AUTHOR = "Justin Cooksey"
 SITENAME = "Justin Cooksey Codes"
 SITESUBTITLE = "Thoughts and Code by Justin Cooksey"
 SITEURL = "https://jscooksey.github.io/Pelican"
+CANONICALURL = SITEURL
 
 THEME = "jsctheme"
 
 PATH = "content"
 ARTICLE_PATHS = ["blog"]
-ARTICLE_SAVE_AS = "{date:%Y}/{slug}.html"
-ARTICLE_URL = "{date:%Y}/{slug}.html"
+ARTICLE_SAVE_AS = "blog/{date:%Y}/{slug}.html"
+ARTICLE_URL = "blog/{date:%Y}/{slug}.html"
 
 TIMEZONE = "Australia/Sydney"
 

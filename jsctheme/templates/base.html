@@ -2,6 +2,9 @@
 <html>
   <head>
     <title>{{SITENAME}}</title>
+    {% if article %}
+    <link rel="canonical" href="{{ CANONICALURL }}/{{ article.url }}" />
+    {% endif%}
     <meta charset="utf-8" />
     <meta
       name="viewport"

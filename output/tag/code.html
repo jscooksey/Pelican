@@ -48,7 +48,64 @@
 <article class="post">
   <header>
     <div class="title">
-      <h2><a href="../2023/2023-dattormm-api.html">Datto RMM API Sites Export</a></h2>
+      <h2><a href="../blog/2023/pelican-static-site-generator.html">Pelican Static Site Generator</a></h2>
+    </div>
+    <div class="meta">
+      <time
+        class="published"
+        datetime="2023-06-18"
+        >Jun 18, 2023</time
+      >
+      <a href="../author/justin-cooksey.html" class="author">
+        <span class="name">Justin Cooksey</span>
+      </a>
+    </div>
+  </header>
+  <a href="../blog/2023/pelican-static-site-generator.html" class="image featured"
+    ><img src="images/pelican.png" alt=""
+  /></a>
+  <p><img src="../blog/2023/pelican.png"  width="33%" height="33%"></p>
+<p><a href="https://docs.getpelican.com/en/latest/#">Pelican</a> is a static site generator written in Python</p>
+<h2>Redirect for old sites paths</h2>
+<p>In investigting moving to a new static site gernerator I also decided to chnage the sturcure since not many articles existed at thi time.
+So I needed a redirect if someone used the original link to the new link being used</p>
+<p>Enter the <a href="https://github.com/slinkp/pelican-redirect">pelican-redirect</a> plugin.  Adding an additional line in to the metadata <code>original_url: blog/hacktoberfest-2019.html</code> created an HTML file at the URL that would redirect to the new location.</p>
+<h2>Social Media Shares</h2>
+<p>I also wanted to have social media sharing links at the bottom of every aarticle.  This is when I brought in the <a href="https://github.com/pelican-plugins/">share-post</a> plugin.</p>
+<h2>Canonical</h2>
+<p>In order to add the canonical header entry on articles using the <code>SITEURL</code> variable does not create what you need if <code>RELATIVE_URL = True</code> is set.  To get around this and always use a full URL you can copy the <code>SITEURL</code> variable in to <code>CANONICALURL</code> and then use that variable in the <strong>base.html</strong> template.</p>
+<p><strong>pelicanconf.py</strong></p>
+<div class="highlight"><pre><span></span><code><span class="n">SITEURL</span> <span class="o">=</span> <span class="s2">&quot;https://jscooksey.github.io/Pelican&quot;</span>
+<span class="n">CANONICALURL</span> <span class="o">=</span> <span class="n">SITEURL</span>
+</code></pre></div>
+
+<p><strong>base.html</strong></p>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>{{SITENAME}}<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+  {% if article %}
+    <span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">&quot;canonical&quot;</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;{{ CANONICALURL }}/{{ article.url }}&quot;</span> <span class="p">/&gt;</span>
+  {% endif%}
+</code></pre></div>
+  <footer>
+    <ul class="actions">
+      <li>
+        <a href="../blog/2023/pelican-static-site-generator.html" class="button large"
+          >Continue Reading</a
+        >
+      </li>
+    </ul>
+    <ul class="stats">
+      <li><a href="../tag/python.html">Python</a></li>
+      <li><a href="../tag/code.html">Code</a></li>
+      <li><a href="../tag/frontend.html">Frontend</a></li>
+    </ul>
+  </footer>
+</article>
+<!-- Post -->
+<article class="post">
+  <header>
+    <div class="title">
+      <h2><a href="../blog/2023/dattormm-api.html">Datto RMM API Sites Export</a></h2>
     </div>
     <div class="meta">
       <time
@@ -61,10 +118,10 @@
       </a>
     </div>
   </header>
-  <a href="../2023/2023-dattormm-api.html" class="image featured"
+  <a href="../blog/2023/dattormm-api.html" class="image featured"
     ><img src="images/dattormm.png" alt=""
   /></a>
-  <p><img alt="DattoRMM" src="../2023/dattormm.png"></p>
+  <p><img alt="DattoRMM" src="../blog/2023/dattormm.png"></p>
 <p>What began as a task to export all Sites from a DatoRMM instance to a CSV file, grew in to the beginings of a class to deal with many of the DattoRMM API end points.
 Mainly working around the REST APIs that I needed to use to perfromn certain tasks, it will hopefully grow from that.
 <a href="https://github.com/jscooksey/DattoRMM-API">GitHub Repo</a></p>
@@ -77,7 +134,7 @@ Removes the system sites of Managed, OnDemand &amp; Deleted Devices.</p>
   <footer>
     <ul class="actions">
       <li>
-        <a href="../2023/2023-dattormm-api.html" class="button large"
+        <a href="../blog/2023/dattormm-api.html" class="button large"
           >Continue Reading</a
         >
       </li>
@@ -94,7 +151,7 @@ Removes the system sites of Managed, OnDemand &amp; Deleted Devices.</p>
 <article class="post">
   <header>
     <div class="title">
-      <h2><a href="../2023/2022-advent-of-code.html">Advent Of Code 2022</a></h2>
+      <h2><a href="../blog/2023/advent-of-code-2022.html">Advent Of Code 2022</a></h2>
     </div>
     <div class="meta">
       <time
@@ -107,7 +164,7 @@ Removes the system sites of Managed, OnDemand &amp; Deleted Devices.</p>
       </a>
     </div>
   </header>
-  <a href="../2023/2022-advent-of-code.html" class="image featured"
+  <a href="../blog/2023/advent-of-code-2022.html" class="image featured"
     ><img src="images/" alt=""
   /></a>
   <p>As usual I remembered the <a href="https://adventofcode.com/2022">Advent of Code</a> after it had started, but never the less I got stuck in to it around day 10 (10th December 20222). However I never got past the day 7 stage 1 puzzle but not because I couldn't, but rather I just fell in to that busy time of year, and didn't spend the time trying to keep up.</p>
@@ -119,7 +176,7 @@ My GitHub repository - <a href="https://github.com/jscooksey/AdventOfCode2022">A
   <footer>
     <ul class="actions">
       <li>
-        <a href="../2023/2022-advent-of-code.html" class="button large"
+        <a href="../blog/2023/advent-of-code-2022.html" class="button large"
           >Continue Reading</a
         >
       </li>
@@ -157,7 +214,26 @@ My GitHub repository - <a href="https://github.com/jscooksey/AdventOfCode2022">A
     <article class="mini-post">
       <header>
         <h3>
-          <a href="../2023/2023-dattormm-api.html">Datto RMM API Sites Export</a>
+          <a href="../blog/2023/pelican-static-site-generator.html">Pelican Static Site Generator</a>
+        </h3>
+        <time
+          class="published"
+          datetime="2023-06-18"
+          >Jun 18, 2023</time
+        >
+        <a href="#" class="author"
+          ><img src="../theme/images/avatar.jpg" alt=""
+        /></a>
+      </header>
+      <a href="../blog/2023/pelican-static-site-generator.html" class="image"
+        ><img src="images/pelican.png" alt=""
+      /></a>
+    </article>
+    <!-- Mini Post -->
+    <article class="mini-post">
+      <header>
+        <h3>
+          <a href="../blog/2023/dattormm-api.html">Datto RMM API Sites Export</a>
         </h3>
         <time
           class="published"
@@ -168,7 +244,7 @@ My GitHub repository - <a href="https://github.com/jscooksey/AdventOfCode2022">A
           ><img src="../theme/images/avatar.jpg" alt=""
         /></a>
       </header>
-      <a href="../2023/2023-dattormm-api.html" class="image"
+      <a href="../blog/2023/dattormm-api.html" class="image"
         ><img src="images/dattormm.png" alt=""
       /></a>
     </article>
@@ -176,7 +252,7 @@ My GitHub repository - <a href="https://github.com/jscooksey/AdventOfCode2022">A
     <article class="mini-post">
       <header>
         <h3>
-          <a href="../2023/2022-advent-of-code.html">Advent Of Code 2022</a>
+          <a href="../blog/2023/advent-of-code-2022.html">Advent Of Code 2022</a>
         </h3>
         <time
           class="published"
@@ -187,7 +263,7 @@ My GitHub repository - <a href="https://github.com/jscooksey/AdventOfCode2022">A
           ><img src="../theme/images/avatar.jpg" alt=""
         /></a>
       </header>
-      <a href="../2023/2022-advent-of-code.html" class="image"
+      <a href="../blog/2023/advent-of-code-2022.html" class="image"
         ><img src="images/" alt=""
       /></a>
     </article>

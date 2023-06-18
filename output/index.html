@@ -48,7 +48,64 @@
 <article class="post">
   <header>
     <div class="title">
-      <h2><a href="./2023/2023-dattormm-api.html">Datto RMM API Sites Export</a></h2>
+      <h2><a href="./blog/2023/pelican-static-site-generator.html">Pelican Static Site Generator</a></h2>
+    </div>
+    <div class="meta">
+      <time
+        class="published"
+        datetime="2023-06-18"
+        >Jun 18, 2023</time
+      >
+      <a href="./author/justin-cooksey.html" class="author">
+        <span class="name">Justin Cooksey</span>
+      </a>
+    </div>
+  </header>
+  <a href="./blog/2023/pelican-static-site-generator.html" class="image featured"
+    ><img src="images/pelican.png" alt=""
+  /></a>
+  <p><img src="./blog/2023/pelican.png"  width="33%" height="33%"></p>
+<p><a href="https://docs.getpelican.com/en/latest/#">Pelican</a> is a static site generator written in Python</p>
+<h2>Redirect for old sites paths</h2>
+<p>In investigting moving to a new static site gernerator I also decided to chnage the sturcure since not many articles existed at thi time.
+So I needed a redirect if someone used the original link to the new link being used</p>
+<p>Enter the <a href="https://github.com/slinkp/pelican-redirect">pelican-redirect</a> plugin.  Adding an additional line in to the metadata <code>original_url: blog/hacktoberfest-2019.html</code> created an HTML file at the URL that would redirect to the new location.</p>
+<h2>Social Media Shares</h2>
+<p>I also wanted to have social media sharing links at the bottom of every aarticle.  This is when I brought in the <a href="https://github.com/pelican-plugins/">share-post</a> plugin.</p>
+<h2>Canonical</h2>
+<p>In order to add the canonical header entry on articles using the <code>SITEURL</code> variable does not create what you need if <code>RELATIVE_URL = True</code> is set.  To get around this and always use a full URL you can copy the <code>SITEURL</code> variable in to <code>CANONICALURL</code> and then use that variable in the <strong>base.html</strong> template.</p>
+<p><strong>pelicanconf.py</strong></p>
+<div class="highlight"><pre><span></span><code><span class="n">SITEURL</span> <span class="o">=</span> <span class="s2">&quot;https://jscooksey.github.io/Pelican&quot;</span>
+<span class="n">CANONICALURL</span> <span class="o">=</span> <span class="n">SITEURL</span>
+</code></pre></div>
+
+<p><strong>base.html</strong></p>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>{{SITENAME}}<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+  {% if article %}
+    <span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">&quot;canonical&quot;</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;{{ CANONICALURL }}/{{ article.url }}&quot;</span> <span class="p">/&gt;</span>
+  {% endif%}
+</code></pre></div>
+  <footer>
+    <ul class="actions">
+      <li>
+        <a href="./blog/2023/pelican-static-site-generator.html" class="button large"
+          >Continue Reading</a
+        >
+      </li>
+    </ul>
+    <ul class="stats">
+      <li><a href="./tag/python.html">Python</a></li>
+      <li><a href="./tag/code.html">Code</a></li>
+      <li><a href="./tag/frontend.html">Frontend</a></li>
+    </ul>
+  </footer>
+</article>
+<!-- Post -->
+<article class="post">
+  <header>
+    <div class="title">
+      <h2><a href="./blog/2023/dattormm-api.html">Datto RMM API Sites Export</a></h2>
     </div>
     <div class="meta">
       <time
@@ -61,10 +118,10 @@
       </a>
     </div>
   </header>
-  <a href="./2023/2023-dattormm-api.html" class="image featured"
+  <a href="./blog/2023/dattormm-api.html" class="image featured"
     ><img src="images/dattormm.png" alt=""
   /></a>
-  <p><img alt="DattoRMM" src="./2023/dattormm.png"></p>
+  <p><img alt="DattoRMM" src="./blog/2023/dattormm.png"></p>
 <p>What began as a task to export all Sites from a DatoRMM instance to a CSV file, grew in to the beginings of a class to deal with many of the DattoRMM API end points.
 Mainly working around the REST APIs that I needed to use to perfromn certain tasks, it will hopefully grow from that.
 <a href="https://github.com/jscooksey/DattoRMM-API">GitHub Repo</a></p>
@@ -77,7 +134,7 @@ Removes the system sites of Managed, OnDemand &amp; Deleted Devices.</p>
   <footer>
     <ul class="actions">
       <li>
-        <a href="./2023/2023-dattormm-api.html" class="button large"
+        <a href="./blog/2023/dattormm-api.html" class="button large"
           >Continue Reading</a
         >
       </li>
@@ -94,7 +151,7 @@ Removes the system sites of Managed, OnDemand &amp; Deleted Devices.</p>
 <article class="post">
   <header>
     <div class="title">
-      <h2><a href="./2023/2022-advent-of-code.html">Advent Of Code 2022</a></h2>
+      <h2><a href="./blog/2023/advent-of-code-2022.html">Advent Of Code 2022</a></h2>
     </div>
     <div class="meta">
       <time
@@ -107,7 +164,7 @@ Removes the system sites of Managed, OnDemand &amp; Deleted Devices.</p>
       </a>
     </div>
   </header>
-  <a href="./2023/2022-advent-of-code.html" class="image featured"
+  <a href="./blog/2023/advent-of-code-2022.html" class="image featured"
     ><img src="images/" alt=""
   /></a>
   <p>As usual I remembered the <a href="https://adventofcode.com/2022">Advent of Code</a> after it had started, but never the less I got stuck in to it around day 10 (10th December 20222). However I never got past the day 7 stage 1 puzzle but not because I couldn't, but rather I just fell in to that busy time of year, and didn't spend the time trying to keep up.</p>
@@ -119,7 +176,7 @@ My GitHub repository - <a href="https://github.com/jscooksey/AdventOfCode2022">A
   <footer>
     <ul class="actions">
       <li>
-        <a href="./2023/2022-advent-of-code.html" class="button large"
+        <a href="./blog/2023/advent-of-code-2022.html" class="button large"
           >Continue Reading</a
         >
       </li>
@@ -127,128 +184,6 @@ My GitHub repository - <a href="https://github.com/jscooksey/AdventOfCode2022">A
     <ul class="stats">
       <li><a href="./tag/python.html">Python</a></li>
       <li><a href="./tag/code.html">Code</a></li>
-    </ul>
-  </footer>
-</article>
-<!-- Post -->
-<article class="post">
-  <header>
-    <div class="title">
-      <h2><a href="./2021/2021-03-04-windows-server-dhcp-conversion-to-cisco-cli.html">Windows Server DHCP conversion to Cisco CLI</a></h2>
-    </div>
-    <div class="meta">
-      <time
-        class="published"
-        datetime="2021-03-04"
-        >Mar 4, 2021</time
-      >
-      <a href="./author/justin-cooksey.html" class="author">
-        <span class="name">Justin Cooksey</span>
-      </a>
-    </div>
-  </header>
-  <a href="./2021/2021-03-04-windows-server-dhcp-conversion-to-cisco-cli.html" class="image featured"
-    ><img src="images/" alt=""
-  /></a>
-  <p>I recently ran in to an issue where I needed to convert a reasonably large DHCP database from a Windows Server in to a Cisco CLI to allow the Cisco to take over DHCP roles for a subnet. I found nothing that realy automated this task, even using the exported XML file. So knowing that this was the second time I needed the tool, and likely to need it again, even if it was for smaller tasks, I set about coding it in Powershell. It is the scripting system well supported in Windows land.</p>
-<p>The current version of the script can be found on my GitHub repository:
-<a href="https://github.com/jscooksey/Convert-WindowsDHCPToCisco">Convert-WindowsDHCPToCisco</a></p>
-<p>Still ha smany DHCP options that it hasn't been setup to hanle at this point but it does follow the basic ones that most of us use.</p>
-<h4>Currently handles DHCP Options</h4>
-<table>
-<thead>
-<tr>
-<th>Code</th>
-<th>Option Description</th>
-<th>Cisco Output</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>3</td>
-<td>Default Gateway</td>
-<td>default-router</td>
-</tr>
-<tr>
-<td>4</td>
-<td>Time Server</td>
-<td><em>ignoring</em></td>
-</tr>
-<tr>
-<td>6</td>
-<td>Domain Nameserver</td>
-<td>dns-server</td>
-</tr>
-<tr>
-<td>15</td>
-<td>Domain Name</td>
-<td>domain-name</td>
-</tr>
-<tr>
-<td>42</td>
-<td>NTP Servers</td>
-<td>option 42 ip</td>
-</tr>
-<tr>
-<td>51</td>
-<td>Lease time</td>
-<td><em>ignoring</em></td>
-</tr>
-<tr>
-<td>66</td>
-<td>TFTP Server</td>
-<td>next-server</td>
-</tr>
-<tr>
-<td>67</td>
-<td>Boot filename</td>
-<td>bootfile</td>
-</tr>
-<tr>
-<td>81</td>
-<td>MS DHCP Name Protection</td>
-<td><em>ignoring</em></td>
-</tr>
-<tr>
-<td>121</td>
-<td>Static routes</td>
-<td>option 121 hex</td>
-</tr>
-<tr>
-<td>161</td>
-<td>FTP Server</td>
-<td>option 161 ip</td>
-</tr>
-<tr>
-<td>162</td>
-<td>Path</td>
-<td>option 162 ascii</td>
-</tr>
-<tr>
-<td>252</td>
-<td>Proxy PAC URL</td>
-<td>option 252 asicc</td>
-</tr>
-</tbody>
-</table>
-<h4>DHCP References Used</h4>
-<ul>
-<li><a href="https://tools.ietf.org/html/rfc2132">RFC2312</a></li>
-<li><a href="https://en.wikipedia.org/wiki/Dynamic_Host_Configuration_Protocol#Client_configuration_parameters">Wikipedia DHCP Options table</a></li>
-</ul>
-  <footer>
-    <ul class="actions">
-      <li>
-        <a href="./2021/2021-03-04-windows-server-dhcp-conversion-to-cisco-cli.html" class="button large"
-          >Continue Reading</a
-        >
-      </li>
-    </ul>
-    <ul class="stats">
-      <li><a href="./tag/dhcp.html">DHCP</a></li>
-      <li><a href="./tag/windows.html">Windows</a></li>
-      <li><a href="./tag/powershell.html">PowerShell</a></li>
-      <li><a href="./tag/cisco.html">Cisco</a></li>
     </ul>
   </footer>
 </article>
@@ -283,7 +218,26 @@ My GitHub repository - <a href="https://github.com/jscooksey/AdventOfCode2022">A
     <article class="mini-post">
       <header>
         <h3>
-          <a href="./2023/2023-dattormm-api.html">Datto RMM API Sites Export</a>
+          <a href="./blog/2023/pelican-static-site-generator.html">Pelican Static Site Generator</a>
+        </h3>
+        <time
+          class="published"
+          datetime="2023-06-18"
+          >Jun 18, 2023</time
+        >
+        <a href="#" class="author"
+          ><img src="./theme/images/avatar.jpg" alt=""
+        /></a>
+      </header>
+      <a href="./blog/2023/pelican-static-site-generator.html" class="image"
+        ><img src="images/pelican.png" alt=""
+      /></a>
+    </article>
+    <!-- Mini Post -->
+    <article class="mini-post">
+      <header>
+        <h3>
+          <a href="./blog/2023/dattormm-api.html">Datto RMM API Sites Export</a>
         </h3>
         <time
           class="published"
@@ -294,7 +248,7 @@ My GitHub repository - <a href="https://github.com/jscooksey/AdventOfCode2022">A
           ><img src="./theme/images/avatar.jpg" alt=""
         /></a>
       </header>
-      <a href="./2023/2023-dattormm-api.html" class="image"
+      <a href="./blog/2023/dattormm-api.html" class="image"
         ><img src="images/dattormm.png" alt=""
       /></a>
     </article>
@@ -302,7 +256,7 @@ My GitHub repository - <a href="https://github.com/jscooksey/AdventOfCode2022">A
     <article class="mini-post">
       <header>
         <h3>
-          <a href="./2023/2022-advent-of-code.html">Advent Of Code 2022</a>
+          <a href="./blog/2023/advent-of-code-2022.html">Advent Of Code 2022</a>
         </h3>
         <time
           class="published"
@@ -313,7 +267,7 @@ My GitHub repository - <a href="https://github.com/jscooksey/AdventOfCode2022">A
           ><img src="./theme/images/avatar.jpg" alt=""
         /></a>
       </header>
-      <a href="./2023/2022-advent-of-code.html" class="image"
+      <a href="./blog/2023/advent-of-code-2022.html" class="image"
         ><img src="images/" alt=""
       /></a>
     </article>
@@ -321,7 +275,7 @@ My GitHub repository - <a href="https://github.com/jscooksey/AdventOfCode2022">A
     <article class="mini-post">
       <header>
         <h3>
-          <a href="./2021/2021-03-04-windows-server-dhcp-conversion-to-cisco-cli.html">Windows Server DHCP conversion to Cisco CLI</a>
+          <a href="./blog/2021/2021-03-04-windows-server-dhcp-conversion-to-cisco-cli.html">Windows Server DHCP conversion to Cisco CLI</a>
         </h3>
         <time
           class="published"
@@ -332,26 +286,7 @@ My GitHub repository - <a href="https://github.com/jscooksey/AdventOfCode2022">A
           ><img src="./theme/images/avatar.jpg" alt=""
         /></a>
       </header>
-      <a href="./2021/2021-03-04-windows-server-dhcp-conversion-to-cisco-cli.html" class="image"
-        ><img src="images/" alt=""
-      /></a>
-    </article>
-    <!-- Mini Post -->
-    <article class="mini-post">
-      <header>
-        <h3>
-          <a href="./2020/hacktoberfest-2020-begins.html">Hacktoberfest 2020 Begins</a>
-        </h3>
-        <time
-          class="published"
-          datetime="2020-10-01"
-          >Oct 1, 2020</time
-        >
-        <a href="#" class="author"
-          ><img src="./theme/images/avatar.jpg" alt=""
-        /></a>
-      </header>
-      <a href="./2020/hacktoberfest-2020-begins.html" class="image"
+      <a href="./blog/2021/2021-03-04-windows-server-dhcp-conversion-to-cisco-cli.html" class="image"
         ><img src="images/" alt=""
       /></a>
     </article>

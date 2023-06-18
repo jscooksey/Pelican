@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Justin Cooksey Codes</title>
+    <link rel="canonical" href="https://jscooksey.github.io/Pelican/blog/2023/dattormm-api.html" />
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, user-scalable=no"
+    />
+    <link rel="stylesheet" href="../../theme/css/main.css" />
+  </head>
+  <body class="is-preload">
+    <!-- Wrapper -->
+    <div id="wrapper">
+      <!-- Header -->
+      <header id="header">
+        <h1><a href="/index.html">Justin Cooksey Codes</a></h1>
+        <nav class="links">
+          <ul>
+            <li><a href="../../tag/code.html">Code</a></li>
+            <li><a href="../../tag/python.html">Python</a></li>
+            <li><a href="../../tag/rmm.html">RMM</a></li>
+            <li><a href="../../tag/opensource.html">Opensource</a></li>
+            <li><a href="../../tag/growth.html">Growth</a></li>
+          </ul>
+        </nav>
+        <nav class="main">
+          <ul>
+            <li class="menu">
+              <a class="fa-bars" href="#menu">Menu</a>
+            </li>
+          </ul>
+        </nav>
+      </header>
+
+      <!-- Menu -->
+      <section id="menu">
+        <!-- Actions -->
+        <section>
+          <ul class="actions stacked">
+            <li><a href="#" class="button large fit">Log In</a></li>
+          </ul>
+        </section>
+      </section>
+
+      <!-- Main -->
+      <div id="main"><!-- Post -->
+<article class="post">
+  <header>
+    <div class="title">
+      <h2><a href="../../blog/2023/dattormm-api.html">Datto RMM API Sites Export</a></h2>
+    </div>
+    <div class="meta">
+      <time
+        class="published"
+        datetime="2023-05-29"
+        >May 29, 2023</time
+      >
+      <a href="#" class="author"
+        ><span class="name">Justin Cooksey</span
+        ><img src="../../theme/images/avatar.jpg" alt=""
+      /></a>
+    </div>
+  </header>
+  <a href="../../blog/2023/dattormm-api.html" class="image featured"
+    ><img src="images/dattormm.png" alt=""
+  /></a>
+  <p><img alt="DattoRMM" src="../../blog/2023/dattormm.png"></p>
+<p>What began as a task to export all Sites from a DatoRMM instance to a CSV file, grew in to the beginings of a class to deal with many of the DattoRMM API end points.
+Mainly working around the REST APIs that I needed to use to perfromn certain tasks, it will hopefully grow from that.
+<a href="https://github.com/jscooksey/DattoRMM-API">GitHub Repo</a></p>
+<p>Pulls all Sites from a <a href="https://www.datto.com/au/products/rmm/">DattoRMM</a> environment and export basic details in to CSV formatted file.
+Removes the system sites of Managed, OnDemand &amp; Deleted Devices.</p>
+<p>Gets the API URL, Key and Secret from .env or environment variables (example below)</p>
+<p>Functions to interact with the DattoRMM API are in the <a href="https://github.com/jscooksey/DattoRMM-API/blob/main/dattormmapi.py">dattormmapi.py</a> Python file.</p>
+<p>Main function to do the API requests and export to CSV is in the <a href="https://github.com/jscooksey/DattoRMM-API/blob/main/export_sites.py">export_sites.py</a> Python file.</p>
+<p>Not much error/exception managment in this at the moment.</p>
+  <footer>
+    <ul class="stats">
+      <li><a href="../../tag/python.html">Python</a></li>
+      <li><a href="../../tag/code.html">Code</a></li>
+      <li><a href="../../tag/rmm.html">RMM</a></li>
+      <li><a href="../../tag/dattormm.html">DattoRMM</a></li>
+    </ul>
+  </footer>
+  <section>
+    <p id="post-share-links">
+      Share this on:
+      <a href="https://twitter.com/intent/tweet?text=Datto%20RMM%20API%20Sites%20Export&url=https%3A//jscooksey.github.io/Pelican/blog/2023/dattormm-api.html&hashtags=python,code,rmm,dattormm" title="Share on Twitter" class="icon brands fa-twitter" target="_blank">
+        <span class="label">Twitter</span>
+      </a>
+      <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A//jscooksey.github.io/Pelican/blog/2023/dattormm-api.html" title="Share on Facebook" class="icon brands fa-facebook" target="_blank">
+        <span class="label">Facebook</span>
+      </a>
+      <a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A//jscooksey.github.io/Pelican/blog/2023/dattormm-api.html&title=Datto%20RMM%20API%20Sites%20Export&summary=Using%20the%20DattoRMM%20API%20to%20export%20all%20Sites%20to%20a%20CSV%20file.&source=https%3A//jscooksey.github.io/Pelican/blog/2023/dattormm-api.html" title="Share on LinkedIn" class="icon brands fa-linkedin" target="_blank">
+        <span class="label">LinkedIn</span>
+      </a>
+      <a href="https://www.reddit.com/submit?url=https%3A//jscooksey.github.io/Pelican/blog/2023/dattormm-api.html&title=Datto%20RMM%20API%20Sites%20Export" title="Share via Reddit" class="icon brands fa-reddit" target="_blank">
+        <span class="label">Reddit</span>
+      </a>
+    </p>
+  </section>
+
+</article>
+</div>
+      <!-- Sidebar -->
+      <section id="sidebar">
+        <!-- Intro -->
+        <section id="intro">
+          <a href="#" class="logo"
+            ><img src="../../theme/images/logo.jpg" alt=""
+          /></a>
+          <header>
+            <h2>Justin Cooksey Codes</h2>
+            <p>Thoughts and Code by Justin Cooksey</p>
+          </header>
+        </section>
+
+<!-- Mini Posts -->
+<section>
+  <div class="mini-posts">
+    <!-- Mini Post -->
+    <article class="mini-post">
+      <header>
+        <h3>
+          <a href="../../blog/2023/pelican-static-site-generator.html">Pelican Static Site Generator</a>
+        </h3>
+        <time
+          class="published"
+          datetime="2023-06-18"
+          >Jun 18, 2023</time
+        >
+        <a href="#" class="author"
+          ><img src="../../theme/images/avatar.jpg" alt=""
+        /></a>
+      </header>
+      <a href="../../blog/2023/pelican-static-site-generator.html" class="image"
+        ><img src="images/pelican.png" alt=""
+      /></a>
+    </article>
+    <!-- Mini Post -->
+    <article class="mini-post">
+      <header>
+        <h3>
+          <a href="../../blog/2023/dattormm-api.html">Datto RMM API Sites Export</a>
+        </h3>
+        <time
+          class="published"
+          datetime="2023-05-29"
+          >May 29, 2023</time
+        >
+        <a href="#" class="author"
+          ><img src="../../theme/images/avatar.jpg" alt=""
+        /></a>
+      </header>
+      <a href="../../blog/2023/dattormm-api.html" class="image"
+        ><img src="images/dattormm.png" alt=""
+      /></a>
+    </article>
+    <!-- Mini Post -->
+    <article class="mini-post">
+      <header>
+        <h3>
+          <a href="../../blog/2023/advent-of-code-2022.html">Advent Of Code 2022</a>
+        </h3>
+        <time
+          class="published"
+          datetime="2023-02-11"
+          >Feb 11, 2023</time
+        >
+        <a href="#" class="author"
+          ><img src="../../theme/images/avatar.jpg" alt=""
+        /></a>
+      </header>
+      <a href="../../blog/2023/advent-of-code-2022.html" class="image"
+        ><img src="images/" alt=""
+      /></a>
+    </article>
+    <!-- Mini Post -->
+    <article class="mini-post">
+      <header>
+        <h3>
+          <a href="../../blog/2021/2021-03-04-windows-server-dhcp-conversion-to-cisco-cli.html">Windows Server DHCP conversion to Cisco CLI</a>
+        </h3>
+        <time
+          class="published"
+          datetime="2021-03-04"
+          >Mar 4, 2021</time
+        >
+        <a href="#" class="author"
+          ><img src="../../theme/images/avatar.jpg" alt=""
+        /></a>
+      </header>
+      <a href="../../blog/2021/2021-03-04-windows-server-dhcp-conversion-to-cisco-cli.html" class="image"
+        ><img src="images/" alt=""
+      /></a>
+    </article>
+  </div>
+</section>        <!-- Footer -->
+        <section id="footer">
+          <ul class="icons">
+            <li>
+              <a href="https://twitter.com/jscooksey" class="icon brands fa-twitter">
+                <span class="label">Twitter</span>
+              </a>
+            </li>
+            <li>
+              <a href="https://dev.to/jscooksey" class="icon brands fa-dev">
+                <span class="label">DEV</span>
+              </a>
+            </li>
+            <li>
+              <a href="https://fosstodon.org/@jscooksey" class="icon brands fa-mastodon">
+                <span class="label">Mastodon</span>
+              </a>
+            </li>
+            <li>
+              <a href="https://github.com/jscooksey" class="icon brands fa-github">
+                <span class="label">GitHub</span>
+              </a>
+            </li>
+          </ul>
+          <p class="copyright">
+            &copy; Untitled. Design: <a href="http://html5up.net">HTML5 UP</a>.
+            Images: <a href="http://unsplash.com">Unsplash</a>.
+          </p>
+        </section>
+      </section>
+    </div>
+
+    <!-- Scripts -->
+    <script src="../../theme/js/jquery.min.js"></script>
+    <script src="../../theme/js/browser.min.js"></script>
+    <script src="../../theme/js/breakpoints.min.js"></script>
+    <script src="../../theme/js/util.js"></script>
+    <script src="../../theme/js/main.js"></script>
+  </body>
+</html>
