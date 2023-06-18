@@ -28,5 +28,25 @@
       {% endfor %}
     </ul>
   </footer>
+  {% if article.share_post and article.status != 'draft' %}
+  <section>
+    <p id="post-share-links">
+      Share this on:
+      <a href="{{article.share_post['twitter']}}" title="Share on Twitter" class="icon brands fa-twitter" target="_blank">
+        <span class="label">Twitter</span>
+      </a>
+      <a href="{{article.share_post['facebook']}}" title="Share on Facebook" class="icon brands fa-facebook" target="_blank">
+        <span class="label">Facebook</span>
+      </a>
+      <a href="{{article.share_post['linkedin']}}" title="Share on LinkedIn" class="icon brands fa-linkedin" target="_blank">
+        <span class="label">LinkedIn</span>
+      </a>
+      <a href="{{article.share_post['reddit']}}" title="Share via Reddit" class="icon brands fa-reddit" target="_blank">
+        <span class="label">Reddit</span>
+      </a>
+    </p>
+  </section>
+  {% endif %}
+
 </article>
 {% endblock %}
