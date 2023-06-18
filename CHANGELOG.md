@@ -1,5 +1,5 @@
 
-# 2023-06-18
+# v0.1.1 -- 2023-06-18
 
 ## Added
 
@@ -14,7 +14,7 @@
   - CANONICALURL variable in **pelicanconf.py** duplicating SITEURL.  This was added to ensure full URL used in ref in case of **RELATIVE_URL** being true.
   - base.html change to include the **rel="canonical"** if this its an article using the CANONICALURL variable
 
-# 2023-06-13
+# v0.1.0 -- 2023-06-13
 
 ## Added
 
