@@ -1,4 +1,13 @@
 
+# 2023-06-19
+
+## Added
+
+- Sitemap create plugin with [pelican-sitemap](https://github.com/pelican-plugins/sitemap)
+
+- Added RSS feed beginings with adding FEED variable in **pelicanconf.py**
+  - Need to confirm creation to match previsou site
+
 # v0.1.1 -- 2023-06-18
 
 ## Added
