@@ -32,6 +32,11 @@ CATEGORY_FEED_ATOM = None
 TRANSLATION_FEED_ATOM = None
 AUTHOR_FEED_ATOM = None
 AUTHOR_FEED_RSS = None
+# Create RSS Feed
+FEED_ALL_RSS = "rss/all.rss.xml"
+CATEGORY_FEED_RSS = "rss/{slug}.rss.xml"
+TRANSLATION_FEED_ATOM = None
+
 
 # Blogroll
 LINKS = (
@@ -54,3 +59,5 @@ CONTACTS = (
 )
 
 DEFAULT_PAGINATION = 3
+
+SITEMAP = {"format": "xml", "priorities": {"articles": 0.5, "indexes": 0.5, "pages": 0.5}, "changefreqs": {"articles": "monthly", "indexes": "daily", "pages": "monthly"}, "exclude": ["tag/", "category/"]}

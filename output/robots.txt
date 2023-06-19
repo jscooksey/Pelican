@@ -1,1 +1,4 @@
 User-agent: *
+Allow: /
+Sitemap: https://jscooksey.github.io/sitemap.xml
+Host: https://jscooksey.github.io/

@@ -17,6 +17,7 @@ mdurl==0.1.2
 pelican==4.8.0
 pelican-redirect==1.0.2
 pelican-share-post==1.0.0
+pelican-sitemap==1.0.2
 Pygments==2.15.1
 python-dateutil==2.8.2
 pytz==2023.3
