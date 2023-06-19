@@ -40,3 +40,20 @@ CANONICALURL = SITEURL
     <link rel="canonical" href="{{ CANONICALURL }}/{{ article.url }}" />
   {% endif%}
 ```
+
+## Sitemap
+
+To produce a sitemap add the [pelican-sitemap](https://github.com/pelican-plugins/sitemap) plugin.
+
+## RSS/Atom Feed
+
+Adding in Atom (or RSS) feeds is as easy as changing a few options
+
+```python
+FEED_MAX_ITEMS = 20
+FEED_ALL_ATOM = "feeds/all.atom.xml"
+CATEGORY_FEED_ATOM = "feeds/{slug}.atom.xml"
+TRANSLATION_FEED_ATOM = None
+AUTHOR_FEED_ATOM = None
+AUTHOR_FEED_RSS = None
+```
