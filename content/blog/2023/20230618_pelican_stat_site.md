@@ -61,3 +61,14 @@ TRANSLATION_FEED_ATOM = None
 AUTHOR_FEED_ATOM = None
 AUTHOR_FEED_RSS = None
 ```
+
+## Code Highlighting
+
+Import a CSS file to your theme for code syntax highlighting that you want
+Pyment and find CSS exaples
+Place this in to the themes folder under **static/css/pygment.css**
+Then import that CSS file in the main CSS file
+
+```html
+@import url(pygment.css);
+```
