@@ -1,3 +1,4 @@
+---
 Title: Pelican Static Site Generator
 Date: 2023-06-18 20:33
 Category: Article
@@ -6,8 +7,11 @@ Slug: pelican-static-site-generator
 Author: Justin Cooksey
 Image: pelican.png
 Summary: Using Pelican for statc site generation to replicate site created in GatsbyJS
+---
 
-<img src="{attach}pelican.png"  width="33%" height="33%">
+<a href="https://getpelican.com/"><img src="{attach}pelican.png"  width="33%" height="33%"></a>
+
+[TOC]
 
 [Pelican](https://docs.getpelican.com/en/latest/#) is a static site generator written in Python
 
@@ -39,4 +43,21 @@ CANONICALURL = SITEURL
   {% if article %}
     <link rel="canonical" href="{{ CANONICALURL }}/{{ article.url }}" />
   {% endif%}
+```
+
+## Sitemap
+
+To produce a sitemap add the [pelican-sitemap](https://github.com/pelican-plugins/sitemap) plugin.
+
+## RSS/Atom Feed
+
+Adding in Atom (or RSS) feeds is as easy as changing a few options
+
+```python
+FEED_MAX_ITEMS = 20
+FEED_ALL_ATOM = "feeds/all.atom.xml"
+CATEGORY_FEED_ATOM = "feeds/{slug}.atom.xml"
+TRANSLATION_FEED_ATOM = None
+AUTHOR_FEED_ATOM = None
+AUTHOR_FEED_RSS = None
 ```

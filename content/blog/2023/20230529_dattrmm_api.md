@@ -1,3 +1,4 @@
+---
 Title: Datto RMM API Sites Export
 Date: 2023-05-29 12:30
 Category: Article
@@ -6,6 +7,7 @@ Slug: dattormm-api
 Author: Justin Cooksey
 Image: dattormm.png
 Summary: Using the DattoRMM API to export all Sites to a CSV file.
+---
 
 ![DattoRMM]({attach}dattormm.png)
 

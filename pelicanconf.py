@@ -4,7 +4,7 @@ SITESUBTITLE = "Thoughts and Code by Justin Cooksey"
 SITEURL = "https://jscooksey.github.io/Pelican"
 CANONICALURL = SITEURL
 
-THEME = "jsctheme"
+THEME = "themes/jsctheme"
 
 PATH = "content"
 ARTICLE_PATHS = ["blog"]
@@ -33,6 +33,18 @@ CATEGORY_FEED_ATOM = "feeds/{slug}.atom.xml"
 TRANSLATION_FEED_ATOM = None
 AUTHOR_FEED_ATOM = None
 AUTHOR_FEED_RSS = None
+
+MARKDOWN = {
+    "extension_configs": {
+        # Needed for code syntax highlighting
+        "markdown.extensions.codehilite": {"css_class": "highlight"},
+        "markdown.extensions.extra": {},
+        "markdown.extensions.meta": {},
+        # This is for enabling the TOC generation
+        "markdown.extensions.toc": {"title": "Table of Contents"},
+    },
+    "output_format": "html5",
+}
 
 # Blogroll
 LINKS = (

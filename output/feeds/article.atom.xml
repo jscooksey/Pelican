@@ -1,13 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Justin Cooksey Codes - Article</title><link href="https://jscooksey.github.io/Pelican/" rel="alternate"></link><link href="https://jscooksey.github.io/Pelican/feeds/article.atom.xml" rel="self"></link><id>https://jscooksey.github.io/Pelican/</id><updated>2023-06-18T20:33:00+10:00</updated><subtitle>Thoughts and Code by Justin Cooksey</subtitle><entry><title>Pelican Static Site Generator</title><link href="https://jscooksey.github.io/Pelican/blog/2023/pelican-static-site-generator.html" rel="alternate"></link><published>2023-06-18T20:33:00+10:00</published><updated>2023-06-18T20:33:00+10:00</updated><author><name>Justin Cooksey</name></author><id>tag:jscooksey.github.io,2023-06-18:/Pelican/blog/2023/pelican-static-site-generator.html</id><summary type="html">&lt;p&gt;Using Pelican for statc site generation to replicate site created in GatsbyJS&lt;/p&gt;</summary><content type="html">&lt;p&gt;&lt;img src="https://jscooksey.github.io/Pelican/blog/2023/pelican.png"  width="33%" height="33%"&gt;&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Justin Cooksey Codes - Article</title><link href="https://jscooksey.github.io/Pelican/" rel="alternate"></link><link href="https://jscooksey.github.io/Pelican/feeds/article.atom.xml" rel="self"></link><id>https://jscooksey.github.io/Pelican/</id><updated>2023-06-18T20:33:00+10:00</updated><subtitle>Thoughts and Code by Justin Cooksey</subtitle><entry><title>Pelican Static Site Generator</title><link href="https://jscooksey.github.io/Pelican/blog/2023/pelican-static-site-generator.html" rel="alternate"></link><published>2023-06-18T20:33:00+10:00</published><updated>2023-06-18T20:33:00+10:00</updated><author><name>Justin Cooksey</name></author><id>tag:jscooksey.github.io,2023-06-18:/Pelican/blog/2023/pelican-static-site-generator.html</id><summary type="html">&lt;p&gt;Using Pelican for statc site generation to replicate site created in GatsbyJS&lt;/p&gt;</summary><content type="html">&lt;p&gt;&lt;a href="https://getpelican.com/"&gt;&lt;img src="https://jscooksey.github.io/Pelican/blog/2023/pelican.png"  width="33%" height="33%"&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;div class="toc"&gt;&lt;span class="toctitle"&gt;Table of Contents&lt;/span&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href="#redirect-for-old-sites-paths"&gt;Redirect for old sites paths&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#social-media-shares"&gt;Social Media Shares&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#canonical"&gt;Canonical&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#sitemap"&gt;Sitemap&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#rssatom-feed"&gt;RSS/Atom Feed&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
 &lt;p&gt;&lt;a href="https://docs.getpelican.com/en/latest/#"&gt;Pelican&lt;/a&gt; is a static site generator written in Python&lt;/p&gt;
-&lt;h2&gt;Redirect for old sites paths&lt;/h2&gt;
+&lt;h2 id="redirect-for-old-sites-paths"&gt;Redirect for old sites paths&lt;/h2&gt;
 &lt;p&gt;In investigting moving to a new static site gernerator I also decided to chnage the sturcure since not many articles existed at thi time.
 So I needed a redirect if someone used the original link to the new link being used&lt;/p&gt;
 &lt;p&gt;Enter the &lt;a href="https://github.com/slinkp/pelican-redirect"&gt;pelican-redirect&lt;/a&gt; plugin.  Adding an additional line in to the metadata &lt;code&gt;original_url: blog/hacktoberfest-2019.html&lt;/code&gt; created an HTML file at the URL that would redirect to the new location.&lt;/p&gt;
-&lt;h2&gt;Social Media Shares&lt;/h2&gt;
+&lt;h2 id="social-media-shares"&gt;Social Media Shares&lt;/h2&gt;
 &lt;p&gt;I also wanted to have social media sharing links at the bottom of every aarticle.  This is when I brought in the &lt;a href="https://github.com/pelican-plugins/"&gt;share-post&lt;/a&gt; plugin.&lt;/p&gt;
-&lt;h2&gt;Canonical&lt;/h2&gt;
+&lt;h2 id="canonical"&gt;Canonical&lt;/h2&gt;
 &lt;p&gt;In order to add the canonical header entry on articles using the &lt;code&gt;SITEURL&lt;/code&gt; variable does not create what you need if &lt;code&gt;RELATIVE_URL = True&lt;/code&gt; is set.  To get around this and always use a full URL you can copy the &lt;code&gt;SITEURL&lt;/code&gt; variable in to &lt;code&gt;CANONICALURL&lt;/code&gt; and then use that variable in the &lt;strong&gt;base.html&lt;/strong&gt; template.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;pelicanconf.py&lt;/strong&gt;&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="n"&gt;SITEURL&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;https://jscooksey.github.io/Pelican&amp;quot;&lt;/span&gt;
@@ -20,6 +28,18 @@ So I needed a redirect if someone used the original link to the new link being u
   {% if article %}
     &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;link&lt;/span&gt; &lt;span class="na"&gt;rel&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;canonical&amp;quot;&lt;/span&gt; &lt;span class="na"&gt;href&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;{{ CANONICALURL }}/{{ article.url }}&amp;quot;&lt;/span&gt; &lt;span class="p"&gt;/&amp;gt;&lt;/span&gt;
   {% endif%}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h2 id="sitemap"&gt;Sitemap&lt;/h2&gt;
+&lt;p&gt;To produce a sitemap add the &lt;a href="https://github.com/pelican-plugins/sitemap"&gt;pelican-sitemap&lt;/a&gt; plugin.&lt;/p&gt;
+&lt;h2 id="rssatom-feed"&gt;RSS/Atom Feed&lt;/h2&gt;
+&lt;p&gt;Adding in Atom (or RSS) feeds is as easy as changing a few options&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="n"&gt;FEED_MAX_ITEMS&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;20&lt;/span&gt;
+&lt;span class="n"&gt;FEED_ALL_ATOM&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;feeds/all.atom.xml&amp;quot;&lt;/span&gt;
+&lt;span class="n"&gt;CATEGORY_FEED_ATOM&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;feeds/&lt;/span&gt;&lt;span class="si"&gt;{slug}&lt;/span&gt;&lt;span class="s2"&gt;.atom.xml&amp;quot;&lt;/span&gt;
+&lt;span class="n"&gt;TRANSLATION_FEED_ATOM&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="kc"&gt;None&lt;/span&gt;
+&lt;span class="n"&gt;AUTHOR_FEED_ATOM&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="kc"&gt;None&lt;/span&gt;
+&lt;span class="n"&gt;AUTHOR_FEED_RSS&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="kc"&gt;None&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content><category term="Article"></category><category term="Python"></category><category term="Code"></category><category term="Frontend"></category></entry><entry><title>Datto RMM API Sites Export</title><link href="https://jscooksey.github.io/Pelican/blog/2023/dattormm-api.html" rel="alternate"></link><published>2023-05-29T12:30:00+10:00</published><updated>2023-05-29T12:30:00+10:00</updated><author><name>Justin Cooksey</name></author><id>tag:jscooksey.github.io,2023-05-29:/Pelican/blog/2023/dattormm-api.html</id><summary type="html">&lt;p&gt;Using the DattoRMM API to export all Sites to a CSV file.&lt;/p&gt;</summary><content type="html">&lt;p&gt;&lt;img alt="DattoRMM" src="https://jscooksey.github.io/Pelican/blog/2023/dattormm.png"&gt;&lt;/p&gt;
 &lt;p&gt;What began as a task to export all Sites from a DatoRMM instance to a CSV file, grew in to the beginings of a class to deal with many of the DattoRMM API end points.
 Mainly working around the REST APIs that I needed to use to perfromn certain tasks, it will hopefully grow from that.
@@ -38,7 +58,7 @@ My GitHub repository - &lt;a href="https://github.com/jscooksey/AdventOfCode2022
 &lt;p&gt;The current version of the script can be found on my GitHub repository:
 &lt;a href="https://github.com/jscooksey/Convert-WindowsDHCPToCisco"&gt;Convert-WindowsDHCPToCisco&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;Still ha smany DHCP options that it hasn't been setup to hanle at this point but it does follow the basic ones that most of us use.&lt;/p&gt;
-&lt;h4&gt;Currently handles DHCP Options&lt;/h4&gt;
+&lt;h4 id="currently-handles-dhcp-options"&gt;Currently handles DHCP Options&lt;/h4&gt;
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
@@ -115,7 +135,7 @@ My GitHub repository - &lt;a href="https://github.com/jscooksey/AdventOfCode2022
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
-&lt;h4&gt;DHCP References Used&lt;/h4&gt;
+&lt;h4 id="dhcp-references-used"&gt;DHCP References Used&lt;/h4&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="https://tools.ietf.org/html/rfc2132"&gt;RFC2312&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://en.wikipedia.org/wiki/Dynamic_Host_Configuration_Protocol#Client_configuration_parameters"&gt;Wikipedia DHCP Options table&lt;/a&gt;&lt;/li&gt;
