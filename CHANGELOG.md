@@ -1,4 +1,11 @@
 
+# 2023-07-16
+
+## Added
+
+- Added table of contents option after reviewing site
+   https://cloudbytes.dev/snippets/add-a-table-of-contents-using-markdown-in-pelican
+
 # 2023-06-19
 
 ## Added

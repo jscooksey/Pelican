@@ -64,15 +64,23 @@
   <a href="../blog/2023/pelican-static-site-generator.html" class="image featured"
     ><img src="images/pelican.png" alt=""
   /></a>
-  <p><img src="../blog/2023/pelican.png"  width="33%" height="33%"></p>
+  <p><a href="https://getpelican.com/"><img src="../blog/2023/pelican.png"  width="33%" height="33%"></a></p>
+<div class="toc"><span class="toctitle">Table of Contents</span><ul>
+<li><a href="#redirect-for-old-sites-paths">Redirect for old sites paths</a></li>
+<li><a href="#social-media-shares">Social Media Shares</a></li>
+<li><a href="#canonical">Canonical</a></li>
+<li><a href="#sitemap">Sitemap</a></li>
+<li><a href="#rssatom-feed">RSS/Atom Feed</a></li>
+</ul>
+</div>
 <p><a href="https://docs.getpelican.com/en/latest/#">Pelican</a> is a static site generator written in Python</p>
-<h2>Redirect for old sites paths</h2>
+<h2 id="redirect-for-old-sites-paths">Redirect for old sites paths</h2>
 <p>In investigting moving to a new static site gernerator I also decided to chnage the sturcure since not many articles existed at thi time.
 So I needed a redirect if someone used the original link to the new link being used</p>
 <p>Enter the <a href="https://github.com/slinkp/pelican-redirect">pelican-redirect</a> plugin.  Adding an additional line in to the metadata <code>original_url: blog/hacktoberfest-2019.html</code> created an HTML file at the URL that would redirect to the new location.</p>
-<h2>Social Media Shares</h2>
+<h2 id="social-media-shares">Social Media Shares</h2>
 <p>I also wanted to have social media sharing links at the bottom of every aarticle.  This is when I brought in the <a href="https://github.com/pelican-plugins/">share-post</a> plugin.</p>
-<h2>Canonical</h2>
+<h2 id="canonical">Canonical</h2>
 <p>In order to add the canonical header entry on articles using the <code>SITEURL</code> variable does not create what you need if <code>RELATIVE_URL = True</code> is set.  To get around this and always use a full URL you can copy the <code>SITEURL</code> variable in to <code>CANONICALURL</code> and then use that variable in the <strong>base.html</strong> template.</p>
 <p><strong>pelicanconf.py</strong></p>
 <div class="highlight"><pre><span></span><code><span class="n">SITEURL</span> <span class="o">=</span> <span class="s2">&quot;https://jscooksey.github.io/Pelican&quot;</span>
@@ -85,6 +93,18 @@ So I needed a redirect if someone used the original link to the new link being u
   {% if article %}
     <span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">&quot;canonical&quot;</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;{{ CANONICALURL }}/{{ article.url }}&quot;</span> <span class="p">/&gt;</span>
   {% endif%}
+</code></pre></div>
+
+<h2 id="sitemap">Sitemap</h2>
+<p>To produce a sitemap add the <a href="https://github.com/pelican-plugins/sitemap">pelican-sitemap</a> plugin.</p>
+<h2 id="rssatom-feed">RSS/Atom Feed</h2>
+<p>Adding in Atom (or RSS) feeds is as easy as changing a few options</p>
+<div class="highlight"><pre><span></span><code><span class="n">FEED_MAX_ITEMS</span> <span class="o">=</span> <span class="mi">20</span>
+<span class="n">FEED_ALL_ATOM</span> <span class="o">=</span> <span class="s2">&quot;feeds/all.atom.xml&quot;</span>
+<span class="n">CATEGORY_FEED_ATOM</span> <span class="o">=</span> <span class="s2">&quot;feeds/</span><span class="si">{slug}</span><span class="s2">.atom.xml&quot;</span>
+<span class="n">TRANSLATION_FEED_ATOM</span> <span class="o">=</span> <span class="kc">None</span>
+<span class="n">AUTHOR_FEED_ATOM</span> <span class="o">=</span> <span class="kc">None</span>
+<span class="n">AUTHOR_FEED_RSS</span> <span class="o">=</span> <span class="kc">None</span>
 </code></pre></div>
   <footer>
     <ul class="actions">

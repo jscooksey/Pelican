@@ -1,3 +1,4 @@
+---
 Title: Pelican Static Site Generator
 Date: 2023-06-18 20:33
 Category: Article
@@ -6,8 +7,11 @@ Slug: pelican-static-site-generator
 Author: Justin Cooksey
 Image: pelican.png
 Summary: Using Pelican for statc site generation to replicate site created in GatsbyJS
+---
 
-<img src="{attach}pelican.png"  width="33%" height="33%">
+<a href="https://getpelican.com/"><img src="{attach}pelican.png"  width="33%" height="33%"></a>
+
+[TOC]
 
 [Pelican](https://docs.getpelican.com/en/latest/#) is a static site generator written in Python
 

@@ -1,3 +1,4 @@
+---
 Title: Advent Of Code 2022
 Date: 2023-02-11 13:00
 Category: Article
@@ -5,6 +6,7 @@ Tags: Python, Code
 Slug: advent-of-code-2022
 Author: Justin Cooksey
 Summary: My incomplete attempt at Advent Of Code 2022. A good fun exercise for your coding. That I'll get back to solving, despite it being well after December 2022
+---
 
 As usual I remembered the [Advent of Code](https://adventofcode.com/2022) after it had started, but never the less I got stuck in to it around day 10 (10th December 20222). However I never got past the day 7 stage 1 puzzle but not because I couldn't, but rather I just fell in to that busy time of year, and didn't spend the time trying to keep up.
 
