@@ -1,8 +1,10 @@
 ---
 Title: Windows Server DHCP conversion to Cisco CLI
 Date: 2021-03-04 08:00
-Category: Article
+Status: published
+Category: Network DevOps
 Tags: DHCP, Windows, PowerShell, Cisco
+Keywords: DHCP, Windows, PowerShell, Cisco
 Slug: 2021-03-04-windows-server-dhcp-conversion-to-cisco-cli
 Author: Justin Cooksey
 Image: dhcp.jpg

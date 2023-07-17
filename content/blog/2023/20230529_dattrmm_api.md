@@ -1,8 +1,10 @@
 ---
 Title: Datto RMM API Sites Export
 Date: 2023-05-29 12:30
-Category: Article
+Status: published
+Category: Network DevOps
 Tags: Python, Code, RMM, DattoRMM
+Keywords: Python, Code, RMM, DattoRMM
 Slug: dattormm-api
 Author: Justin Cooksey
 Image: dattormm.png

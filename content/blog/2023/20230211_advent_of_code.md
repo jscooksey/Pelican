@@ -1,8 +1,10 @@
 ---
 Title: Advent Of Code 2022
 Date: 2023-02-11 13:00
-Category: Article
+Status: published
+Category: Code
 Tags: Python, Code
+Keywords: Python, Code
 Slug: advent-of-code-2022
 Author: Justin Cooksey
 Image: advent-code-2022.jpg

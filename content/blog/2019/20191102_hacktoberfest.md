@@ -1,8 +1,10 @@
 ---
 Title: Hacktoberfest - What a great idea!
 Date: 2019-11-02 21:12
-Category: Article
-Tags: Hacktoberfest, Opensource
+Status: published
+Category: Code
+Tags: Hacktoberfest, Open Source
+Keywords: Hacktoberfest, Open Source
 Slug: hacktoberfest-2019
 original_url: blog/hacktoberfest-2019.html
 Author: Justin Cooksey

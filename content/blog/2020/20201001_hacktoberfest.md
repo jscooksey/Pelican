@@ -1,8 +1,10 @@
 ---
 Title: Hacktoberfest 2020 Begins
 Date: 2020-10-01 00:01
-Category: Article
-Tags: hacktoberfest, opensource
+Status: published
+Category: Code
+Tags: Hacktoberfest, Open Source
+Keywords: Hacktoberfest, Open Source
 Slug: hacktoberfest-2020-begins
 Author: Justin Cooksey
 Image: hflogo.jpg

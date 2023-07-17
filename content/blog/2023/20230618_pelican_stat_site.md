@@ -1,8 +1,10 @@
 ---
 Title: Pelican Static Site Generator
 Date: 2023-06-18 20:33
-Category: Article
-Tags: Python, Code, Frontend
+Status: published
+Category: Code
+Tags: Python, Code, Frontend, Web
+Keywords: Python, Code, Frontend, Web
 Slug: pelican-static-site-generator
 Author: Justin Cooksey
 Image: pelican.png
