@@ -71,6 +71,7 @@
 <li><a href="#canonical">Canonical</a></li>
 <li><a href="#sitemap">Sitemap</a></li>
 <li><a href="#rssatom-feed">RSS/Atom Feed</a></li>
+<li><a href="#code-highlighting">Code Highlighting</a></li>
 </ul>
 </div>
 <p><a href="https://docs.getpelican.com/en/latest/#">Pelican</a> is a static site generator written in Python</p>
@@ -105,6 +106,14 @@ So I needed a redirect if someone used the original link to the new link being u
 <span class="n">TRANSLATION_FEED_ATOM</span> <span class="o">=</span> <span class="kc">None</span>
 <span class="n">AUTHOR_FEED_ATOM</span> <span class="o">=</span> <span class="kc">None</span>
 <span class="n">AUTHOR_FEED_RSS</span> <span class="o">=</span> <span class="kc">None</span>
+</code></pre></div>
+
+<h2 id="code-highlighting">Code Highlighting</h2>
+<p>Import a CSS file to your theme for code syntax highlighting that you want
+Pyment and find CSS exaples
+Place this in to the themes folder under <strong>static/css/pygment.css</strong>
+Then import that CSS file in the main CSS file</p>
+<div class="highlight"><pre><span></span><code>@import url(pygment.css);
 </code></pre></div>
   <footer>
     <ul class="actions">
