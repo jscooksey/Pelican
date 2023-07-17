@@ -1,5 +1,7 @@
+---
 Title: Home Page
+Slug: home
+---
 
-Following is a review of my favorite mechanical keyboard.
-Just trying a few things out..vv
+Just a blank home page
 ![Photo]({static}images/photo.jpeg)
