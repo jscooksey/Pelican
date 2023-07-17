@@ -50,6 +50,53 @@
 <article class="post">
   <header>
     <div class="title">
+      <h2><a href="../blog/2023/dattormm-api.html">Datto RMM API Sites Export</a></h2>
+    </div>
+    <div class="meta">
+      <time
+        class="published"
+        datetime="2023-05-29"
+        >May 29, 2023</time
+      >
+      <a href="../author/justin-cooksey.html" class="author">
+        <span class="name">Justin Cooksey</span>
+        <img src="../theme/images/avatar.jpg" alt=""/>
+      </a>
+    </div>
+  </header>
+  <a href="../blog/2023/dattormm-api.html" class="image featured"
+    ><img src="images/dattormm.png" alt=""
+  /></a>
+  <p><img src="../blog/2023/dattormm.png"  width="33%" height="33%"></p>
+<p>What began as a task to export all Sites from a DatoRMM instance to a CSV file, grew in to the beginings of a class to deal with many of the DattoRMM API end points.
+Mainly working around the REST APIs that I needed to use to perfromn certain tasks, it will hopefully grow from that.
+<a href="https://github.com/jscooksey/DattoRMM-API">GitHub Repo</a></p>
+<p>Pulls all Sites from a <a href="https://www.datto.com/au/products/rmm/">DattoRMM</a> environment and export basic details in to CSV formatted file.
+Removes the system sites of Managed, OnDemand &amp; Deleted Devices.</p>
+<p>Gets the API URL, Key and Secret from .env or environment variables (example below)</p>
+<p>Functions to interact with the DattoRMM API are in the <a href="https://github.com/jscooksey/DattoRMM-API/blob/main/dattormmapi.py">dattormmapi.py</a> Python file.</p>
+<p>Main function to do the API requests and export to CSV is in the <a href="https://github.com/jscooksey/DattoRMM-API/blob/main/export_sites.py">export_sites.py</a> Python file.</p>
+<p>Not much error/exception managment in this at the moment.</p>
+  <footer>
+    <ul class="actions">
+      <li>
+        <a href="../blog/2023/dattormm-api.html" class="button large"
+          >Continue Reading</a
+        >
+      </li>
+    </ul>
+    <ul class="stats">
+      <li><a href="../tag/python.html">Python</a></li>
+      <li><a href="../tag/code.html">Code</a></li>
+      <li><a href="../tag/rmm.html">RMM</a></li>
+      <li><a href="../tag/dattormm.html">DattoRMM</a></li>
+    </ul>
+  </footer>
+</article>
+<!-- Post -->
+<article class="post">
+  <header>
+    <div class="title">
       <h2><a href="../blog/2021/2021-03-04-windows-server-dhcp-conversion-to-cisco-cli.html">Windows Server DHCP conversion to Cisco CLI</a></h2>
     </div>
     <div class="meta">
@@ -65,9 +112,10 @@
     </div>
   </header>
   <a href="../blog/2021/2021-03-04-windows-server-dhcp-conversion-to-cisco-cli.html" class="image featured"
-    ><img src="images/" alt=""
+    ><img src="images/dhcp.jpg" alt=""
   /></a>
-  <p>I recently ran in to an issue where I needed to convert a reasonably large DHCP database from a Windows Server in to a Cisco CLI to allow the Cisco to take over DHCP roles for a subnet. I found nothing that realy automated this task, even using the exported XML file. So knowing that this was the second time I needed the tool, and likely to need it again, even if it was for smaller tasks, I set about coding it in Powershell. It is the scripting system well supported in Windows land.</p>
+  <p><img src="../blog/2021/dhcp.jpg"  width="33%" height="33%"></p>
+<p>I recently ran in to an issue where I needed to convert a reasonably large DHCP database from a Windows Server in to a Cisco CLI to allow the Cisco to take over DHCP roles for a subnet. I found nothing that realy automated this task, even using the exported XML file. So knowing that this was the second time I needed the tool, and likely to need it again, even if it was for smaller tasks, I set about coding it in Powershell. It is the scripting system well supported in Windows land.</p>
 <p>The current version of the script can be found on my GitHub repository:
 <a href="https://github.com/jscooksey/Convert-WindowsDHCPToCisco">Convert-WindowsDHCPToCisco</a></p>
 <p>Still ha smany DHCP options that it hasn't been setup to hanle at this point but it does follow the basic ones that most of us use.</p>
@@ -196,6 +244,25 @@
     <article class="mini-post">
       <header>
         <h3>
+          <a href="../blog/2023/dattormm-api.html">Datto RMM API Sites Export</a>
+        </h3>
+        <time
+          class="published"
+          datetime="2023-05-29"
+          >May 29, 2023</time
+        >
+        <a href="#" class="author"
+          ><img src="../theme/images/avatar.jpg" alt=""
+        /></a>
+      </header>
+      <a href="../blog/2023/dattormm-api.html" class="image"
+        ><img src="images/dattormm.png" alt=""
+      /></a>
+    </article>
+    <!-- Mini Post -->
+    <article class="mini-post">
+      <header>
+        <h3>
           <a href="../blog/2021/2021-03-04-windows-server-dhcp-conversion-to-cisco-cli.html">Windows Server DHCP conversion to Cisco CLI</a>
         </h3>
         <time
@@ -208,7 +275,7 @@
         /></a>
       </header>
       <a href="../blog/2021/2021-03-04-windows-server-dhcp-conversion-to-cisco-cli.html" class="image"
-        ><img src="images/" alt=""
+        ><img src="images/dhcp.jpg" alt=""
       /></a>
     </article>
   </div>

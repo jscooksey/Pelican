@@ -50,13 +50,13 @@
 <article class="post">
   <header>
     <div class="title">
-      <h2><a href="../blog/2019/gatsby-beginings.html">Gatsby Beginings</a></h2>
+      <h2><a href="../blog/2023/pelican-static-site-generator.html">Pelican Static Site Generator</a></h2>
     </div>
     <div class="meta">
       <time
         class="published"
-        datetime="2019-11-19"
-        >Nov 19, 2019</time
+        datetime="2023-06-18"
+        >Jun 18, 2023</time
       >
       <a href="../author/justin-cooksey.html" class="author">
         <span class="name">Justin Cooksey</span>
@@ -64,44 +64,72 @@
       </a>
     </div>
   </header>
-  <a href="../blog/2019/gatsby-beginings.html" class="image featured"
-    ><img src="images/" alt=""
+  <a href="../blog/2023/pelican-static-site-generator.html" class="image featured"
+    ><img src="images/pelican.png" alt=""
   /></a>
-  <p>This is the beginings of this site utilising <a href="https://www.gatsbyjs.org/">GatsbyJS</a>.</p>
-<p>While I am learning parts of <a href="https://www.gatsbyjs.org/">GatsbyJS</a> as well as expanding knowledge on <a href="https://reactjs.org/">ReactJS</a>, I am not following through somone tutorial and simply pasting things in from that. I want to work on this to understand how these frameworks operate. As such it has been, and will be, a little jumpy as I don't follow a set path through setting up this site as I would if I followed through someones tutorial.</p>
-<p>At present I have a fairly basic blog/thoughts/articles system operational, as well as a landing page. All of the pages have very little styling at this point, which certainly needs to be worked on. I also need to get some content up, expecially in the about page. I've also got options to discover on things such as styling where I'm exploring:</p>
-<ul>
-<li><a href="https://www.styled-components.com/">styled-components</a> <em>Using this currently</em></li>
-<li><a href="https://emotion.sh/docs/introduction">Emotion</a></li>
-<li>CSS &amp; SASS</li>
-<li>I'm sure others as well</li>
+  <p><a href="https://getpelican.com/"><img src="../blog/2023/pelican.png"  width="33%" height="33%"></a></p>
+<div class="toc"><span class="toctitle">Table of Contents</span><ul>
+<li><a href="#redirect-for-old-sites-paths">Redirect for old sites paths</a></li>
+<li><a href="#social-media-shares">Social Media Shares</a></li>
+<li><a href="#canonical">Canonical</a></li>
+<li><a href="#sitemap">Sitemap</a></li>
+<li><a href="#rssatom-feed">RSS/Atom Feed</a></li>
+<li><a href="#code-highlighting">Code Highlighting</a></li>
 </ul>
-<p>I've currently used the following plugins:</p>
-<ul>
-<li><code>gatsby-plugin-react-helmet</code> for correct SEO elements on the pages</li>
-<li><code>gatsby-plugin-react-helmet-canonical-urls</code> to make pages cannonical for this site. The source site.</li>
-<li><code>gatsby-plugin-styled-components</code> for styling</li>
-<li><code>gatsby-plugin-mdx</code> to manage the Markdown files to be used as post content</li>
-<li><code>gatsby-remark-vscode</code> to have any Markdown code blocks styled to look like vscode screenshots</li>
-<li><code>gatsby-plugin-feed</code> to create RSS feed data to allow sharing via feeds</li>
-<li><code>gatsby-plugin-sitemap</code> to screate sitemap files</li>
-<li><code>gatsby-plugin-robots-txt</code> to create robots.txt files</li>
-<li><code>gatsby-plugin-offline</code> &amp; <code>gatsby-plugin-manifest</code> to make the site a Progressive Web App</li>
-<li><code>gatsby-plugin-netlify-cms</code> suppoprt for Netlify CMS system to allow online creation of blog entries</li>
-</ul>
-<p>Still a long way to go.</p>
+</div>
+<p><a href="https://docs.getpelican.com/en/latest/#">Pelican</a> is a static site generator written in Python</p>
+<h2 id="redirect-for-old-sites-paths">Redirect for old sites paths</h2>
+<p>In investigting moving to a new static site gernerator I also decided to chnage the sturcure since not many articles existed at thi time.
+So I needed a redirect if someone used the original link to the new link being used</p>
+<p>Enter the <a href="https://github.com/slinkp/pelican-redirect">pelican-redirect</a> plugin.  Adding an additional line in to the metadata <code>original_url: blog/hacktoberfest-2019.html</code> created an HTML file at the URL that would redirect to the new location.</p>
+<h2 id="social-media-shares">Social Media Shares</h2>
+<p>I also wanted to have social media sharing links at the bottom of every aarticle.  This is when I brought in the <a href="https://github.com/pelican-plugins/">share-post</a> plugin.</p>
+<h2 id="canonical">Canonical</h2>
+<p>In order to add the canonical header entry on articles using the <code>SITEURL</code> variable does not create what you need if <code>RELATIVE_URL = True</code> is set.  To get around this and always use a full URL you can copy the <code>SITEURL</code> variable in to <code>CANONICALURL</code> and then use that variable in the <strong>base.html</strong> template.</p>
+<p><strong>pelicanconf.py</strong></p>
+<div class="highlight"><pre><span></span><code><span class="n">SITEURL</span> <span class="o">=</span> <span class="s2">&quot;https://jscooksey.github.io/Pelican&quot;</span>
+<span class="n">CANONICALURL</span> <span class="o">=</span> <span class="n">SITEURL</span>
+</code></pre></div>
+
+<p><strong>base.html</strong></p>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>{{SITENAME}}<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+  {% if article %}
+    <span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">&quot;canonical&quot;</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;{{ CANONICALURL }}/{{ article.url }}&quot;</span> <span class="p">/&gt;</span>
+  {% endif%}
+</code></pre></div>
+
+<h2 id="sitemap">Sitemap</h2>
+<p>To produce a sitemap add the <a href="https://github.com/pelican-plugins/sitemap">pelican-sitemap</a> plugin.</p>
+<h2 id="rssatom-feed">RSS/Atom Feed</h2>
+<p>Adding in Atom (or RSS) feeds is as easy as changing a few options</p>
+<div class="highlight"><pre><span></span><code><span class="n">FEED_MAX_ITEMS</span> <span class="o">=</span> <span class="mi">20</span>
+<span class="n">FEED_ALL_ATOM</span> <span class="o">=</span> <span class="s2">&quot;feeds/all.atom.xml&quot;</span>
+<span class="n">CATEGORY_FEED_ATOM</span> <span class="o">=</span> <span class="s2">&quot;feeds/</span><span class="si">{slug}</span><span class="s2">.atom.xml&quot;</span>
+<span class="n">TRANSLATION_FEED_ATOM</span> <span class="o">=</span> <span class="kc">None</span>
+<span class="n">AUTHOR_FEED_ATOM</span> <span class="o">=</span> <span class="kc">None</span>
+<span class="n">AUTHOR_FEED_RSS</span> <span class="o">=</span> <span class="kc">None</span>
+</code></pre></div>
+
+<h2 id="code-highlighting">Code Highlighting</h2>
+<p>Import a CSS file to your theme for code syntax highlighting that you want
+Pyment and find CSS exaples
+Place this in to the themes folder under <strong>static/css/pygment.css</strong>
+Then import that CSS file in the main CSS file</p>
+<div class="highlight"><pre><span></span><code>@import url(pygment.css);
+</code></pre></div>
   <footer>
     <ul class="actions">
       <li>
-        <a href="../blog/2019/gatsby-beginings.html" class="button large"
+        <a href="../blog/2023/pelican-static-site-generator.html" class="button large"
           >Continue Reading</a
         >
       </li>
     </ul>
     <ul class="stats">
-      <li><a href="../tag/open-source.html">Open Source</a></li>
-      <li><a href="../tag/javascript.html">JavaScript</a></li>
-      <li><a href="../tag/gatsby.html">Gatsby</a></li>
+      <li><a href="../tag/python.html">Python</a></li>
+      <li><a href="../tag/code.html">Code</a></li>
+      <li><a href="../tag/frontend.html">Frontend</a></li>
       <li><a href="../tag/web.html">Web</a></li>
     </ul>
   </footer>
@@ -133,19 +161,19 @@
     <article class="mini-post">
       <header>
         <h3>
-          <a href="../blog/2019/gatsby-beginings.html">Gatsby Beginings</a>
+          <a href="../blog/2023/pelican-static-site-generator.html">Pelican Static Site Generator</a>
         </h3>
         <time
           class="published"
-          datetime="2019-11-19"
-          >Nov 19, 2019</time
+          datetime="2023-06-18"
+          >Jun 18, 2023</time
         >
         <a href="#" class="author"
           ><img src="../theme/images/avatar.jpg" alt=""
         /></a>
       </header>
-      <a href="../blog/2019/gatsby-beginings.html" class="image"
-        ><img src="images/" alt=""
+      <a href="../blog/2023/pelican-static-site-generator.html" class="image"
+        ><img src="images/pelican.png" alt=""
       /></a>
     </article>
   </div>
