@@ -1,10 +1,15 @@
+---
 Title: Hacktoberfest 2020 Begins
 Date: 2020-10-01 00:01
 Category: Article
 Tags: hacktoberfest, opensource
 Slug: hacktoberfest-2020-begins
 Author: Justin Cooksey
+Image: hflogo.jpg
 Summary: Getting back into Hacktoberfest. A second run at getting involved in Open Source by entering Hacktoberfest. It's really only about getting you involved.
+---
+
+<img src="{attach}hflogo.jpg"  width="33%" height="33%">
 
 It's back around to October again and [Hacktoberfest](https://hacktoberfest.digitalocean.com/) is of course up and running. I enjoyed [my first involvement with Hacktoberfest](https://justincooksey.com/blog/hacktoberfest-2019/) in 2019 but I didn't complete enough pull request for the month. Will I make it this year?
 

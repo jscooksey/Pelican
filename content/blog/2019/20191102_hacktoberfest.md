@@ -1,3 +1,4 @@
+---
 Title: Hacktoberfest - What a great idea!
 Date: 2019-11-02 21:12
 Category: Article
@@ -5,7 +6,11 @@ Tags: Hacktoberfest, Opensource
 Slug: hacktoberfest-2019
 original_url: blog/hacktoberfest-2019.html
 Author: Justin Cooksey
+Image: pull_requests.jpg
 Summary: My start on deploying a website using the GatsbyJS Frontend Framework. Using GatsbyJS version 2 to implement a React-based website.
+---
+
+<img src="{attach}pull_requests.jpg"  width="33%" height="33%">
 
 While I enjoyed my first involvement with [Hacktoberfest](https://hacktoberfest.digitalocean.com/) this year, I didn't end up completing enough pull request for the month. Partly this was due to a busy workload for the 9-5 job, but also I found that I wanted to find projects I could stay involved with.
 
