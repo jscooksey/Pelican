@@ -1,11 +1,18 @@
+---
 Title: Gatsby Beginings
 Date: 2019-11-19 21:12
-Category: Article
-Tags: opensource
+Status: published
+Category: Code
+Tags: Open Source
+Keywords: Open Source
 Slug: gatsby-beginings
 original_url: blog/gatsby-beginings.html
 Author: Justin Cooksey
-Summary: Hacktoverfest is a brilliant idea to get people involved in Open Source, with a friendly competition that's really only about being involved.
+Image: gatsby-logo.jpg
+Summary: Hacktoberfest is a brilliant idea to get people involved in Open Source, with a friendly competition that's really only about being involved.
+---
+
+<img src="{attach}gatsby-logo.jpg"  width="33%" height="33%">
 
 This is the beginings of this site utilising [GatsbyJS](https://www.gatsbyjs.org/).
 
