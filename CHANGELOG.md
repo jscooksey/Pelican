@@ -1,4 +1,10 @@
 
+# 2023-07-23
+
+## Changed
+
+- *latest_posts.html* Jinja2 template file so it now calculaets the path to the image file while iterating over articles
+
 # 2023-07-16
 
 ## Added
