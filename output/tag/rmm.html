@@ -68,15 +68,14 @@
     ><img src="images/dattormm.png" alt=""
   /></a>
   <p><img src="../blog/2023/dattormm.png"  width="33%" height="33%"></p>
-<p>What began as a task to export all Sites from a DatoRMM instance to a CSV file, grew in to the beginings of a class to deal with many of the DattoRMM API end points.
-Mainly working around the REST APIs that I needed to use to perfromn certain tasks, it will hopefully grow from that.
-<a href="https://github.com/jscooksey/DattoRMM-API">GitHub Repo</a></p>
-<p>Pulls all Sites from a <a href="https://www.datto.com/au/products/rmm/">DattoRMM</a> environment and export basic details in to CSV formatted file.
-Removes the system sites of Managed, OnDemand &amp; Deleted Devices.</p>
+<p>What began as a task just to <a href="https://github.com/jscooksey/DattoRMM-Site-Export">export all Sites from a DatoRMM instance to a CSV file</a>, has started me down the path of building a module to deal with many of the DattoRMM API end points. </p>
+<p>Mainly working around the REST APIs that I needed to use to perform certain tasks, I've begun refactoring the export code to become more of an API interface module which may grow to be more useful.  Other tasks may take my time away from this, but I will see were it may go.</p>
+<p>The original code to export of sites is here <a href="https://github.com/jscooksey/DattoRMM-Site-Export">DattoRMM-Site-Export</a>.  Currently this code pulls all Sites from a <a href="https://www.datto.com/au/products/rmm/">DattoRMM</a> environment and exports the basic details in to CSV format file.  It removes the system sites called Managed, OnDemand &amp; Deleted Devices, so that you only get an export of the customer base.</p>
+<p>Also in the repo is code to set Site variables in DattoRMM sites read in from a csv, as this was part of the next steps I needed to take.</p>
 <p>Gets the API URL, Key and Secret from .env or environment variables (example below)</p>
-<p>Functions to interact with the DattoRMM API are in the <a href="https://github.com/jscooksey/DattoRMM-API/blob/main/dattormmapi.py">dattormmapi.py</a> Python file.</p>
-<p>Main function to do the API requests and export to CSV is in the <a href="https://github.com/jscooksey/DattoRMM-API/blob/main/export_sites.py">export_sites.py</a> Python file.</p>
-<p>Not much error/exception managment in this at the moment.</p>
+<p>Functions to interact with the DattoRMM API are in the <a href="https://github.com/jscooksey/DattoRMM-Site-Export/blob/main/dattormmapi.py">dattormmapi.py</a> Python file.</p>
+<p>Main function to do the API requests and export to CSV is in the <a href="https://github.com/jscooksey/DattoRMM-Site-Export/blob/main/export_sites.py">export_sites.py</a> Python file.</p>
+<p>Refactoring to make this a more versatile module to handle interactions with the DattoRMM API will go in to a new GitHub repo, which I'll make public once its formed up some more. </p>
   <footer>
     <ul class="actions">
       <li>
@@ -90,6 +89,7 @@ Removes the system sites of Managed, OnDemand &amp; Deleted Devices.</p>
       <li><a href="../tag/code.html">Code</a></li>
       <li><a href="../tag/rmm.html">RMM</a></li>
       <li><a href="../tag/dattormm.html">DattoRMM</a></li>
+      <li><a href="../tag/api.html">API</a></li>
     </ul>
   </footer>
 </article>
