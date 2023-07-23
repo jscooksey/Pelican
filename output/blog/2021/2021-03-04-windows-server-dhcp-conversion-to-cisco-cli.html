@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Justin Cooksey Codes</title>
+    <link rel="canonical" href="https://jscooksey.github.io/Pelican/blog/2021/2021-03-04-windows-server-dhcp-conversion-to-cisco-cli.html" />
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, user-scalable=no"
+    />
+    <link rel="stylesheet" href="../../theme/css/main.css" />
+  </head>
+  <body class="is-preload">
+    <!-- Wrapper -->
+    <div id="wrapper">
+      <!-- Header -->
+      <header id="header">
+        <h1><a href="/index.html">Justin Cooksey Codes</a></h1>
+        <nav class="links">
+          <ul>
+            <li><a href="../../tag/code.html">Code</a></li>
+            <li><a href="../../tag/python.html">Python</a></li>
+            <li><a href="../../tag/rmm.html">RMM</a></li>
+            <li><a href="../../tag/opensource.html">Opensource</a></li>
+          </ul>
+        </nav>
+        <nav class="main">
+          <ul>
+            <li class="menu">
+              <a class="fa-bars" href="#menu">Menu</a>
+            </li>
+          </ul>
+        </nav>
+      </header>
+
+      <!-- Menu -->
+      <section id="menu">
+        <!-- Actions -->
+        <section>
+          <ul class="actions stacked">
+            <li><a href="../../tag/code.html">Code</a></li>
+            <li><a href="../../tag/python.html">Python</a></li>
+            <li><a href="../../tag/rmm.html">RMM</a></li>
+            <li><a href="../../tag/opensource.html">Opensource</a></li>
+          </ul>
+        </section>
+      </section>
+
+      <!-- Main -->
+      <div id="main"><!-- Post -->
+<article class="post">
+  <header>
+    <div class="title">
+      <h2><a href="../../blog/2021/2021-03-04-windows-server-dhcp-conversion-to-cisco-cli.html">Windows Server DHCP conversion to Cisco CLI</a></h2>
+    </div>
+    <div class="meta">
+      <time
+        class="published"
+        datetime="2021-03-04"
+        >Mar 4, 2021</time
+      >
+      <a href="#" class="author"
+        ><span class="name">Justin Cooksey</span
+        ><img src="../../theme/images/avatar.jpg" alt=""
+      /></a>
+    </div>
+  </header>
+  <a href="../../blog/2021/2021-03-04-windows-server-dhcp-conversion-to-cisco-cli.html" class="image featured"
+    ><img src="images/dhcp.jpg" alt=""
+  /></a>
+  <p><img src="../../blog/2021/dhcp.jpg"  width="33%" height="33%"></p>
+<p>I recently ran in to an issue where I needed to convert a reasonably large DHCP database from a Windows Server in to a Cisco CLI to allow the Cisco to take over DHCP roles for a subnet. I found nothing that realy automated this task, even using the exported XML file. So knowing that this was the second time I needed the tool, and likely to need it again, even if it was for smaller tasks, I set about coding it in Powershell. It is the scripting system well supported in Windows land.</p>
+<p>The current version of the script can be found on my GitHub repository:
+<a href="https://github.com/jscooksey/Convert-WindowsDHCPToCisco">Convert-WindowsDHCPToCisco</a></p>
+<p>Still ha smany DHCP options that it hasn't been setup to hanle at this point but it does follow the basic ones that most of us use.</p>
+<h4 id="currently-handles-dhcp-options">Currently handles DHCP Options</h4>
+<table>
+<thead>
+<tr>
+<th>Code</th>
+<th>Option Description</th>
+<th>Cisco Output</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>3</td>
+<td>Default Gateway</td>
+<td>default-router</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Time Server</td>
+<td><em>ignoring</em></td>
+</tr>
+<tr>
+<td>6</td>
+<td>Domain Nameserver</td>
+<td>dns-server</td>
+</tr>
+<tr>
+<td>15</td>
+<td>Domain Name</td>
+<td>domain-name</td>
+</tr>
+<tr>
+<td>42</td>
+<td>NTP Servers</td>
+<td>option 42 ip</td>
+</tr>
+<tr>
+<td>51</td>
+<td>Lease time</td>
+<td><em>ignoring</em></td>
+</tr>
+<tr>
+<td>66</td>
+<td>TFTP Server</td>
+<td>next-server</td>
+</tr>
+<tr>
+<td>67</td>
+<td>Boot filename</td>
+<td>bootfile</td>
+</tr>
+<tr>
+<td>81</td>
+<td>MS DHCP Name Protection</td>
+<td><em>ignoring</em></td>
+</tr>
+<tr>
+<td>121</td>
+<td>Static routes</td>
+<td>option 121 hex</td>
+</tr>
+<tr>
+<td>161</td>
+<td>FTP Server</td>
+<td>option 161 ip</td>
+</tr>
+<tr>
+<td>162</td>
+<td>Path</td>
+<td>option 162 ascii</td>
+</tr>
+<tr>
+<td>252</td>
+<td>Proxy PAC URL</td>
+<td>option 252 asicc</td>
+</tr>
+</tbody>
+</table>
+<h4 id="dhcp-references-used">DHCP References Used</h4>
+<ul>
+<li><a href="https://tools.ietf.org/html/rfc2132">RFC2312</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Dynamic_Host_Configuration_Protocol#Client_configuration_parameters">Wikipedia DHCP Options table</a></li>
+</ul>
+  <footer>
+    <ul class="stats">
+      <li><a href="../../tag/dhcp.html">DHCP</a></li>
+      <li><a href="../../tag/windows.html">Windows</a></li>
+      <li><a href="../../tag/powershell.html">PowerShell</a></li>
+      <li><a href="../../tag/cisco.html">Cisco</a></li>
+    </ul>
+  </footer>
+  <section>
+    <p id="post-share-links">
+      Share this on:
+      <a href="https://twitter.com/intent/tweet?text=Windows%20Server%20DHCP%20conversion%20to%20Cisco%20CLI&url=https%3A//jscooksey.github.io/Pelican/blog/2021/2021-03-04-windows-server-dhcp-conversion-to-cisco-cli.html&hashtags=dhcp,windows,powershell,cisco" title="Share on Twitter" class="icon brands fa-twitter" target="_blank">
+        <span class="label">Twitter</span>
+      </a>
+      <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A//jscooksey.github.io/Pelican/blog/2021/2021-03-04-windows-server-dhcp-conversion-to-cisco-cli.html" title="Share on Facebook" class="icon brands fa-facebook" target="_blank">
+        <span class="label">Facebook</span>
+      </a>
+      <a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A//jscooksey.github.io/Pelican/blog/2021/2021-03-04-windows-server-dhcp-conversion-to-cisco-cli.html&title=Windows%20Server%20DHCP%20conversion%20to%20Cisco%20CLI&summary=A%20Windows%20Powershell%20script%20to%20ease%20the%20transition%20from%20a%20Windows%20DHCP%20server%20to%20a%20Cisco%20router%20DHCP.%20Convert%20from%20a%20backup%20to%20the%20Cisco%20command%20line.&source=https%3A//jscooksey.github.io/Pelican/blog/2021/2021-03-04-windows-server-dhcp-conversion-to-cisco-cli.html" title="Share on LinkedIn" class="icon brands fa-linkedin" target="_blank">
+        <span class="label">LinkedIn</span>
+      </a>
+      <a href="https://www.reddit.com/submit?url=https%3A//jscooksey.github.io/Pelican/blog/2021/2021-03-04-windows-server-dhcp-conversion-to-cisco-cli.html&title=Windows%20Server%20DHCP%20conversion%20to%20Cisco%20CLI" title="Share via Reddit" class="icon brands fa-reddit" target="_blank">
+        <span class="label">Reddit</span>
+      </a>
+    </p>
+  </section>
+
+</article>
+</div>
+      <!-- Sidebar -->
+      <section id="sidebar">
+        <!-- Intro -->
+        <section id="intro">
+          <a href="#" class="logo"
+            ><img src="../../theme/images/logo.png" alt=""
+          /></a>
+          <header>
+            <h2>Justin Cooksey Codes</h2>
+            <p>Thoughts and Code by Justin Cooksey</p>
+          </header>
+        </section>
+
+<!-- Mini Posts -->
+<section>
+  <div class="mini-posts">
+    <!-- Mini Post -->
+    <article class="mini-post">
+      <header>
+        <h3>
+          <a href="../../blog/2023/pelican-static-site-generator.html">Pelican Static Site Generator</a>
+        </h3>
+        <time
+          class="published"
+          datetime="2023-06-18"
+          >Jun 18, 2023</time
+        >
+        <a href="#" class="author"
+          ><img src="../../theme/images/avatar.jpg" alt=""
+        /></a>
+      </header>
+      <a href="../../blog/2023/pelican-static-site-generator.html" class="image"
+        ><img src="images/pelican.png" alt=""
+      /></a>
+    </article>
+    <!-- Mini Post -->
+    <article class="mini-post">
+      <header>
+        <h3>
+          <a href="../../blog/2023/dattormm-api.html">Datto RMM API Sites Export</a>
+        </h3>
+        <time
+          class="published"
+          datetime="2023-05-29"
+          >May 29, 2023</time
+        >
+        <a href="#" class="author"
+          ><img src="../../theme/images/avatar.jpg" alt=""
+        /></a>
+      </header>
+      <a href="../../blog/2023/dattormm-api.html" class="image"
+        ><img src="images/dattormm.png" alt=""
+      /></a>
+    </article>
+    <!-- Mini Post -->
+    <article class="mini-post">
+      <header>
+        <h3>
+          <a href="../../blog/2023/advent-of-code-2022.html">Advent Of Code 2022</a>
+        </h3>
+        <time
+          class="published"
+          datetime="2023-02-11"
+          >Feb 11, 2023</time
+        >
+        <a href="#" class="author"
+          ><img src="../../theme/images/avatar.jpg" alt=""
+        /></a>
+      </header>
+      <a href="../../blog/2023/advent-of-code-2022.html" class="image"
+        ><img src="images/advent-code-2022.jpg" alt=""
+      /></a>
+    </article>
+    <!-- Mini Post -->
+    <article class="mini-post">
+      <header>
+        <h3>
+          <a href="../../blog/2021/2021-03-04-windows-server-dhcp-conversion-to-cisco-cli.html">Windows Server DHCP conversion to Cisco CLI</a>
+        </h3>
+        <time
+          class="published"
+          datetime="2021-03-04"
+          >Mar 4, 2021</time
+        >
+        <a href="#" class="author"
+          ><img src="../../theme/images/avatar.jpg" alt=""
+        /></a>
+      </header>
+      <a href="../../blog/2021/2021-03-04-windows-server-dhcp-conversion-to-cisco-cli.html" class="image"
+        ><img src="images/dhcp.jpg" alt=""
+      /></a>
+    </article>
+  </div>
+</section>        <!-- Footer -->
+        <section id="footer">
+          <ul class="icons">
+            <li>
+              <a href="https://twitter.com/jscooksey" class="icon brands fa-twitter">
+                <span class="label">Twitter</span>
+              </a>
+            </li>
+            <li>
+              <a href="https://dev.to/jscooksey" class="icon brands fa-dev">
+                <span class="label">DEV</span>
+              </a>
+            </li>
+            <li>
+              <a href="https://fosstodon.org/@jscooksey" class="icon brands fa-mastodon">
+                <span class="label">Mastodon</span>
+              </a>
+            </li>
+            <li>
+              <a href="https://github.com/jscooksey" class="icon brands fa-github">
+                <span class="label">GitHub</span>
+              </a>
+            </li>
+          </ul>
+          <p class="copyright">
+            &copy; Untitled. Design: <a href="http://html5up.net">HTML5 UP</a>.
+            Images: <a href="http://unsplash.com">Unsplash</a>.
+          </p>
+        </section>
+      </section>
+    </div>
+
+    <!-- Scripts -->
+    <script src="../../theme/js/jquery.min.js"></script>
+    <script src="../../theme/js/browser.min.js"></script>
+    <script src="../../theme/js/breakpoints.min.js"></script>
+    <script src="../../theme/js/util.js"></script>
+    <script src="../../theme/js/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Justin Cooksey Codes - Code</title><link href="https://jscooksey.github.io/Pelican/" rel="alternate"></link><link href="https://jscooksey.github.io/Pelican/feeds/code.atom.xml" rel="self"></link><id>https://jscooksey.github.io/Pelican/</id><updated>2023-06-18T20:33:00+10:00</updated><subtitle>Thoughts and Code by Justin Cooksey</subtitle><entry><title>Pelican Static Site Generator</title><link href="https://jscooksey.github.io/Pelican/blog/2023/pelican-static-site-generator.html" rel="alternate"></link><published>2023-06-18T20:33:00+10:00</published><updated>2023-06-18T20:33:00+10:00</updated><author><name>Justin Cooksey</name></author><id>tag:jscooksey.github.io,2023-06-18:/Pelican/blog/2023/pelican-static-site-generator.html</id><summary type="html">&lt;p&gt;Using Pelican for statc site generation to replicate site created in GatsbyJS&lt;/p&gt;</summary><content type="html">&lt;p&gt;&lt;a href="https://getpelican.com/"&gt;&lt;img src="https://jscooksey.github.io/Pelican/blog/2023/pelican.png"  width="33%" height="33%"&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;I've been investigating &lt;a href="https://getpelican.com/"&gt;Pelican a static site generator&lt;/a&gt; to replace my current &lt;a href="https://www.gatsbyjs.com/"&gt;GatsbyJS&lt;/a&gt; generated site.  Im far more at home and familiar with &lt;a href="https://www.python.org/"&gt;Python&lt;/a&gt; and &lt;a href="https://palletsprojects.com/p/jinja/"&gt;Jinja2&lt;/a&gt;, so that was part of my reasoning for taking a look in to it.&lt;/p&gt;
+&lt;p&gt;So working along the basis of replacing my current GatsbyJS created site and posts with one created by Pelican, the following cover my initial issues and solutions.  I've only added brief notes on what was done, without going in to detail as the plugin sites cover correct use in detail.&lt;/p&gt;
+&lt;div class="toc"&gt;&lt;span class="toctitle"&gt;Table of Contents&lt;/span&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href="#redirect-old-site-paths"&gt;Redirect old site paths&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#canonical"&gt;Canonical&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#sitemap"&gt;Sitemap&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#social-media-shares"&gt;Social Media Shares&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#rssatom-feed"&gt;RSS/Atom Feed&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#code-highlighting"&gt;Code Highlighting&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#conclusion"&gt;Conclusion&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;h2 id="redirect-old-site-paths"&gt;Redirect old site paths&lt;/h2&gt;
+&lt;p&gt;In investigting moving to a new static site gernerator I also decided to change the sturcure a little. Since not many articles existed at the time of this posting minimal redirects will have to be created.  &lt;/p&gt;
+&lt;p&gt;So how does Pelican handle this on a per article basis? &lt;/p&gt;
+&lt;p&gt;Enter the &lt;a href="https://github.com/slinkp/pelican-redirect"&gt;pelican-redirect&lt;/a&gt; plugin.  Installing it is as simple as installling from PyPi &lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;pip&lt;span class="w"&gt; &lt;/span&gt;install&lt;span class="w"&gt; &lt;/span&gt;pelican-redirect
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Then by adding an additional line in to the metadata of each post&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nt"&gt;original_url&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;blog/hacktoberfest-2019.html&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Pelican will create an HTML file at the URL location specified that will redirect to the new post  location that it will create.&lt;/p&gt;
+&lt;h2 id="canonical"&gt;Canonical&lt;/h2&gt;
+&lt;p&gt;In order to add the canonical header entry on articles using the &lt;strong&gt;SITEURL&lt;/strong&gt; variable does not create what you need if &lt;strong&gt;RELATIVE_URL = True&lt;/strong&gt; is set.  To get around this and always use a full URL you can copy the &lt;strong&gt;SITEURL&lt;/strong&gt; variable in to &lt;strong&gt;CANONICALURL&lt;/strong&gt; and then use that variable in the &lt;strong&gt;base.html&lt;/strong&gt; template.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;pelicanconf.py&lt;/strong&gt;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="n"&gt;SITEURL&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;https://jscooksey.github.io/Pelican&amp;quot;&lt;/span&gt;
+&lt;span class="n"&gt;CANONICALURL&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;SITEURL&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;base.html&lt;/strong&gt;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;head&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+  &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;title&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;{{SITENAME}}&lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;title&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+  {% if article %}
+    &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;link&lt;/span&gt; &lt;span class="na"&gt;rel&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;canonical&amp;quot;&lt;/span&gt; &lt;span class="na"&gt;href&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;{{ CANONICALURL }}/{{ article.url }}&amp;quot;&lt;/span&gt; &lt;span class="p"&gt;/&amp;gt;&lt;/span&gt;
+  {% endif%}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h2 id="sitemap"&gt;Sitemap&lt;/h2&gt;
+&lt;p&gt;To produce &lt;a href="https://developers.google.com/search/docs/crawling-indexing/sitemaps/overview"&gt;sitemap&lt;/a&gt; files for SEO add the &lt;a href="https://github.com/pelican-plugins/sitemap"&gt;pelican-sitemap&lt;/a&gt; plugin:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;pip&lt;span class="w"&gt; &lt;/span&gt;install&lt;span class="w"&gt; &lt;/span&gt;pelican-sitemap
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;and then adding a &lt;strong&gt;SITEMAP&lt;/strong&gt; variable to the &lt;strong&gt;pelicanconf.py&lt;/strong&gt; as described in the README of the Repo&lt;/p&gt;
+&lt;h2 id="social-media-shares"&gt;Social Media Shares&lt;/h2&gt;
+&lt;p&gt;I also had on my curent site social media sharing links at the bottom of every article, allowing the reader to share the article on there own social media streams. &lt;/p&gt;
+&lt;p&gt;The &lt;a href="https://github.com/pelican-plugins/"&gt;share-post&lt;/a&gt; plugin does this and again is simply installed using pip&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;pip&lt;span class="w"&gt; &lt;/span&gt;install&lt;span class="w"&gt; &lt;/span&gt;pelican-share-post
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Then in the article.html template add link to atricle.share_post attribute&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;a&lt;/span&gt; &lt;span class="na"&gt;href&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;{{article.share_post\[&amp;#39;twitter&amp;#39;\]}}&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;...&lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;a&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+&lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;a&lt;/span&gt; &lt;span class="na"&gt;href&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;{{article.share_post\[&amp;#39;facebook&amp;#39;\]}}&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;...&lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;a&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+&lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;a&lt;/span&gt; &lt;span class="na"&gt;href&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;{{article.share_post\[&amp;#39;linkedin&amp;#39;\]}}&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;...&lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;a&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h2 id="rssatom-feed"&gt;RSS/Atom Feed&lt;/h2&gt;
+&lt;p&gt;&lt;a href="https://docs.getpelican.com/en/latest/settings.html#feed-settings"&gt;Adding in Atom (or RSS) feeds&lt;/a&gt; is as easy as changing a few options, as this is built in to Pelcon.  Changing a few options in the &lt;strong&gt;pelicanconf.py&lt;/strong&gt; &lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="n"&gt;FEED_MAX_ITEMS&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;20&lt;/span&gt;
+&lt;span class="n"&gt;FEED_ALL_ATOM&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;feeds/all.atom.xml&amp;quot;&lt;/span&gt;
+&lt;span class="n"&gt;CATEGORY_FEED_ATOM&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;feeds/&lt;/span&gt;&lt;span class="si"&gt;{slug}&lt;/span&gt;&lt;span class="s2"&gt;.atom.xml&amp;quot;&lt;/span&gt;
+&lt;span class="n"&gt;TRANSLATION_FEED_ATOM&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="kc"&gt;None&lt;/span&gt;
+&lt;span class="n"&gt;AUTHOR_FEED_ATOM&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="kc"&gt;None&lt;/span&gt;
+&lt;span class="n"&gt;AUTHOR_FEED_RSS&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="kc"&gt;None&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h2 id="code-highlighting"&gt;Code Highlighting&lt;/h2&gt;
+&lt;p&gt;Markdown code highlighting is processed ultimately through Pygment which can be personailsed but has some builtin styles.  Examples are on the Pygment site &lt;a href="https://pygments.org/styles/#"&gt;here&lt;/a&gt; and css files for these can be copied from the repo &lt;a href="https://github.com/richleland/pygments-css"&gt;richleland/pygments-css&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;You can copy the CSS file of your choice to your themes static folder (eg &lt;strong&gt;static/css/pygment.css&lt;/strong&gt;) and then import that in the &lt;strong&gt;base.html&lt;/strong&gt;  &lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;@import url(pygment.css);
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Markdown code blocks can then be used and &lt;a href="https://www.markdownguide.org/extended-syntax/#syntax-highlighting"&gt;refer to the type of code&lt;/a&gt; inside them.&lt;/p&gt;
+&lt;h2 id="conclusion"&gt;Conclusion&lt;/h2&gt;
+&lt;p&gt;This is as far as I've gotten so far in working in Pelican and this Pelican created site is initially hosted on &lt;a href="https://pages.github.com/"&gt;GitHub Pages&lt;/a&gt; at the URL &lt;a href="https://jscooksey.github.io/Pelican/"&gt;https://jscooksey.github.io/Pelican/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;I'll as I figure things out further, with the intention this will replace the primary site hosted at my domain.&lt;/p&gt;</content><category term="Code"></category><category term="Python"></category><category term="Code"></category><category term="Frontend"></category><category term="Web"></category><category term="Pelican"></category></entry><entry><title>Advent Of Code 2022</title><link href="https://jscooksey.github.io/Pelican/blog/2023/advent-of-code-2022.html" rel="alternate"></link><published>2023-02-11T13:00:00+11:00</published><updated>2023-02-11T13:00:00+11:00</updated><author><name>Justin Cooksey</name></author><id>tag:jscooksey.github.io,2023-02-11:/Pelican/blog/2023/advent-of-code-2022.html</id><summary type="html">&lt;p&gt;My incomplete attempt at Advent Of Code 2022. A good fun exercise for your coding. That I'll get back to solving, despite it being well after December 2022&lt;/p&gt;</summary><content type="html">&lt;p&gt;&lt;img src="https://jscooksey.github.io/Pelican/blog/2023/advent-code-2022.jpg"  width="33%" height="33%"&gt;&lt;/p&gt;
+&lt;p&gt;As usual I remembered the &lt;a href="https://adventofcode.com/2022"&gt;Advent of Code&lt;/a&gt; after it had started, but never the less I got stuck in to it around day 10 (10th December 20222). However I never got past the day 7 stage 1 puzzle but not because I couldn't, but rather I just fell in to that busy time of year, and didn't spend the time trying to keep up.&lt;/p&gt;
+&lt;p&gt;Well there is nothing to stop you from continuing on so I'll see if I can get back in to it in (ummm...) February 2023! (Im sitting here shaking my head)&lt;/p&gt;
+&lt;p&gt;If you havent ever heard about it, you should &lt;a href="https://adventofcode.com/2022"&gt;take a look&lt;/a&gt;. It's a series of puzzles, relased as an &lt;a href="https://en.wikipedia.org/wiki/Advent_calendar"&gt;Advent calender&lt;/a&gt;, that you solve by wwriting up the code to find the answers. 2 puzzles are released every day from December 1st through Decmber 25th that you solve to help the elves undertake Christmas tasks. You can use any language you like, and its not the code you write that you progress with, just the correct answers you must get from that code.&lt;/p&gt;
+&lt;p&gt;So I'll continue on, no doubt it wont all get solve in 2 months, but tis still a fun task to keep you learning.&lt;/p&gt;
+&lt;p&gt;Web Site - &lt;a href="https://adventofcode.com/"&gt;Advent Of Code&lt;/a&gt;
+My GitHub repository - &lt;a href="https://github.com/jscooksey/AdventOfCode2022"&gt;AdventOfCode2022&lt;/a&gt;&lt;/p&gt;
+&lt;h4 id="adendum-2023-07-17"&gt;Adendum - 2023-07-17&lt;/h4&gt;
+&lt;p&gt;Well I didnt get back to it, life tooks it path and I never jumped back in to it.  Maybe this year I can make more of an effort.&lt;/p&gt;</content><category term="Code"></category><category term="Python"></category><category term="Code"></category></entry><entry><title>Hacktoberfest 2020 Begins</title><link href="https://jscooksey.github.io/Pelican/blog/2020/hacktoberfest-2020-begins.html" rel="alternate"></link><published>2020-10-01T00:01:00+10:00</published><updated>2020-10-01T00:01:00+10:00</updated><author><name>Justin Cooksey</name></author><id>tag:jscooksey.github.io,2020-10-01:/Pelican/blog/2020/hacktoberfest-2020-begins.html</id><summary type="html">&lt;p&gt;Getting back into Hacktoberfest. A second run at getting involved in Open Source by entering Hacktoberfest. It's really only about getting you involved.&lt;/p&gt;</summary><content type="html">&lt;p&gt;&lt;a href="https://hacktoberfest.com/"&gt;&lt;img src="https://jscooksey.github.io/Pelican/blog/2020/hflogo.jpg"  width="33%" height="33%"&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;It's back around to October again and &lt;a href="https://hacktoberfest.digitalocean.com/"&gt;Hacktoberfest&lt;/a&gt; is of course up and running. I enjoyed &lt;a href="https://justincooksey.com/blog/hacktoberfest-2019/"&gt;my first involvement with Hacktoberfest&lt;/a&gt; in 2019 but I didn't complete enough pull request for the month. Will I make it this year?&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://hacktoberfest.digitalocean.com/"&gt;Hacktoberfest&lt;/a&gt; is a great idea. It got me contributing, and keen to try again next year, but I hope to keep its intent rolling through the year.&lt;/p&gt;
+&lt;p&gt;As before in 2019, my thanks go to &lt;a href="https://www.digitalocean.com/"&gt;DigitalOcean&lt;/a&gt; and &lt;a href="https://dev.to/"&gt;DEV&lt;/a&gt; for this great initiative.&lt;/p&gt;</content><category term="Code"></category><category term="Hacktoberfest"></category><category term="Open Source"></category></entry><entry><title>Gatsby Beginings</title><link href="https://jscooksey.github.io/Pelican/blog/2019/gatsby-beginings.html" rel="alternate"></link><published>2019-11-19T21:12:00+11:00</published><updated>2019-11-19T21:12:00+11:00</updated><author><name>Justin Cooksey</name></author><id>tag:jscooksey.github.io,2019-11-19:/Pelican/blog/2019/gatsby-beginings.html</id><summary type="html">&lt;p&gt;Hacktoberfest is a brilliant idea to get people involved in Open Source, with a friendly competition that's really only about being involved.&lt;/p&gt;</summary><content type="html">&lt;p&gt;&lt;img src="https://jscooksey.github.io/Pelican/blog/2019/gatsby-logo.jpg"  width="33%" height="33%"&gt;&lt;/p&gt;
+&lt;p&gt;This is the beginings of this site utilising &lt;a href="https://www.gatsbyjs.org/"&gt;GatsbyJS&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;While I am learning parts of &lt;a href="https://www.gatsbyjs.org/"&gt;GatsbyJS&lt;/a&gt; as well as expanding knowledge on &lt;a href="https://reactjs.org/"&gt;ReactJS&lt;/a&gt;, I am not following through somone tutorial and simply pasting things in from that. I want to work on this to understand how these frameworks operate. As such it has been, and will be, a little jumpy as I don't follow a set path through setting up this site as I would if I followed through someones tutorial.&lt;/p&gt;
+&lt;p&gt;At present I have a fairly basic blog/thoughts/articles system operational, as well as a landing page. All of the pages have very little styling at this point, which certainly needs to be worked on. I also need to get some content up, expecially in the about page. I've also got options to discover on things such as styling where I'm exploring:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://www.styled-components.com/"&gt;styled-components&lt;/a&gt; &lt;em&gt;Using this currently&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://emotion.sh/docs/introduction"&gt;Emotion&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;CSS &amp;amp; SASS&lt;/li&gt;
+&lt;li&gt;I'm sure others as well&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;I've currently used the following plugins:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;gatsby-plugin-react-helmet&lt;/code&gt; for correct SEO elements on the pages&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;gatsby-plugin-react-helmet-canonical-urls&lt;/code&gt; to make pages cannonical for this site. The source site.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;gatsby-plugin-styled-components&lt;/code&gt; for styling&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;gatsby-plugin-mdx&lt;/code&gt; to manage the Markdown files to be used as post content&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;gatsby-remark-vscode&lt;/code&gt; to have any Markdown code blocks styled to look like vscode screenshots&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;gatsby-plugin-feed&lt;/code&gt; to create RSS feed data to allow sharing via feeds&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;gatsby-plugin-sitemap&lt;/code&gt; to screate sitemap files&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;gatsby-plugin-robots-txt&lt;/code&gt; to create robots.txt files&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;gatsby-plugin-offline&lt;/code&gt; &amp;amp; &lt;code&gt;gatsby-plugin-manifest&lt;/code&gt; to make the site a Progressive Web App&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;gatsby-plugin-netlify-cms&lt;/code&gt; suppoprt for Netlify CMS system to allow online creation of blog entries&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Still a long way to go.&lt;/p&gt;</content><category term="Code"></category><category term="Open Source"></category></entry><entry><title>Hacktoberfest - What a great idea!</title><link href="https://jscooksey.github.io/Pelican/blog/2019/hacktoberfest-2019.html" rel="alternate"></link><published>2019-11-02T21:12:00+11:00</published><updated>2019-11-02T21:12:00+11:00</updated><author><name>Justin Cooksey</name></author><id>tag:jscooksey.github.io,2019-11-02:/Pelican/blog/2019/hacktoberfest-2019.html</id><summary type="html">&lt;p&gt;My start on deploying a website using the GatsbyJS Frontend Framework. Using GatsbyJS version 2 to implement a React-based website.&lt;/p&gt;</summary><content type="html">&lt;p&gt;&lt;img src="https://jscooksey.github.io/Pelican/blog/2019/pull_requests.jpg"  width="33%" height="33%"&gt;&lt;/p&gt;
+&lt;p&gt;While I enjoyed my first involvement with &lt;a href="https://hacktoberfest.digitalocean.com/"&gt;Hacktoberfest&lt;/a&gt; this year, I didn't end up completing enough pull request for the month. Partly this was due to a busy workload for the 9-5 job, but also I found that I wanted to find projects I could stay involved with.&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://hacktoberfest.digitalocean.com/"&gt;Hacktoberfest&lt;/a&gt; did its job and got me more involved, more interested in contributing to open source projects on GiHub. I'd already done a first step back in Dec 18 on &lt;a href="https://github.com/ollelauribostrom/rebus"&gt;ollelauribostrom/rebus&lt;/a&gt; which is a great repository for your first attempt at a pull request. So I was ready to find some more projects I could help with.&lt;/p&gt;
+&lt;p&gt;To begin with I tried to just find anything that would get me across the line, but the fist project was really just an open repository to submit any code to help get 4 pull requests. Not really what's intended, and a few of these were (rightly) getting excluded from the competition.&lt;/p&gt;
+&lt;p&gt;The second one was valid, and gave me a better feeling of accomplishment when submitting the pull request, but that also made me more focussed on finding something that I could not only help with, but that I could have some continued interest in.&lt;/p&gt;
+&lt;p&gt;I know that in a lot of projects any help is appreciated, and that full support of the whole project is not really required, as long as you can help solve the issue, add the feature..... But I think I spent most of my time searching for that elusive project. One that was not only looking for help but was something that would be longer term than just one pull request.&lt;/p&gt;
+&lt;p&gt;I'm thinking the only way to find these projects is time, getting involved in open source by helping any project you can, and somewhere along the way one will appear that really takes your focus. Or perhaps, over time, a project you contribute to will become something more to you.&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://hacktoberfest.digitalocean.com/"&gt;Hacktoberfest&lt;/a&gt; is a great idea. It got me contributing, and keen to try again next year, but I hope to keep its intent rolling through the year.&lt;/p&gt;
+&lt;p&gt;My thanks to &lt;a href="https://www.digitalocean.com/"&gt;DigitalOcean&lt;/a&gt; and &lt;a href="https://dev.to/"&gt;DEV&lt;/a&gt; for the incentive.&lt;/p&gt;</content><category term="Code"></category><category term="Hacktoberfest"></category><category term="Open Source"></category></entry></feed>
