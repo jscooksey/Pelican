@@ -3,6 +3,8 @@
   <div class="mini-posts">
     {% for article in articles[:4] %}
     <!-- Mini Post -->
+    {% set cutoff = (article.url | length) - (article.slug | length + 6) %}
+    {% set imgpath = article.url | truncate(cutoff,True,'', 0) %}
     <article class="mini-post">
       <header>
         <h3>
@@ -18,7 +20,7 @@
         /></a>
       </header>
       <a href="{{ SITEURL }}/{{ article.url }}" class="image"
-        ><img src="images/{{ article.image }}" alt=""
+        ><img src="{{ SITEURL }}/{{ imgpath }}/{{ article.image }}" alt=""
       /></a>
     </article>
     {% endfor %}
