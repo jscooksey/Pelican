@@ -1,6 +1,9 @@
 ---
 Title: About Justin Cooksey
+Status: published
+Keywords: About, Justin Cooksey
 Slug: about
+Summary: About this web site and its authoer Justin Cooksey
 ---
 
 I’m a Coder and IT Network Engineer, Father, and Photographer.
