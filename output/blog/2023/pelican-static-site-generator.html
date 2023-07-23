@@ -67,24 +67,32 @@
     ><img src="images/pelican.png" alt=""
   /></a>
   <p><a href="https://getpelican.com/"><img src="../../blog/2023/pelican.png"  width="33%" height="33%"></a></p>
+<p>I've been investigating <a href="https://getpelican.com/">Pelican a static site generator</a> to replace my current <a href="https://www.gatsbyjs.com/">GatsbyJS</a> generated site.  Im far more at home and familiar with <a href="https://www.python.org/">Python</a> and <a href="https://palletsprojects.com/p/jinja/">Jinja2</a>, so that was part of my reasoning for taking a look in to it.</p>
+<p>So working along the basis of replacing my current GatsbyJS created site and posts with one created by Pelican, the following cover my initial issues and solutions.  I've only added brief notes on what was done, without going in to detail as the plugin sites cover correct use in detail.</p>
 <div class="toc"><span class="toctitle">Table of Contents</span><ul>
-<li><a href="#redirect-for-old-sites-paths">Redirect for old sites paths</a></li>
-<li><a href="#social-media-shares">Social Media Shares</a></li>
+<li><a href="#redirect-old-site-paths">Redirect old site paths</a></li>
 <li><a href="#canonical">Canonical</a></li>
 <li><a href="#sitemap">Sitemap</a></li>
+<li><a href="#social-media-shares">Social Media Shares</a></li>
 <li><a href="#rssatom-feed">RSS/Atom Feed</a></li>
 <li><a href="#code-highlighting">Code Highlighting</a></li>
+<li><a href="#conclusion">Conclusion</a></li>
 </ul>
 </div>
-<p><a href="https://docs.getpelican.com/en/latest/#">Pelican</a> is a static site generator written in Python</p>
-<h2 id="redirect-for-old-sites-paths">Redirect for old sites paths</h2>
-<p>In investigting moving to a new static site gernerator I also decided to chnage the sturcure since not many articles existed at thi time.
-So I needed a redirect if someone used the original link to the new link being used</p>
-<p>Enter the <a href="https://github.com/slinkp/pelican-redirect">pelican-redirect</a> plugin.  Adding an additional line in to the metadata <code>original_url: blog/hacktoberfest-2019.html</code> created an HTML file at the URL that would redirect to the new location.</p>
-<h2 id="social-media-shares">Social Media Shares</h2>
-<p>I also wanted to have social media sharing links at the bottom of every aarticle.  This is when I brought in the <a href="https://github.com/pelican-plugins/">share-post</a> plugin.</p>
+<h2 id="redirect-old-site-paths">Redirect old site paths</h2>
+<p>In investigting moving to a new static site gernerator I also decided to change the sturcure a little. Since not many articles existed at the time of this posting minimal redirects will have to be created.  </p>
+<p>So how does Pelican handle this on a per article basis? </p>
+<p>Enter the <a href="https://github.com/slinkp/pelican-redirect">pelican-redirect</a> plugin.  Installing it is as simple as installling from PyPi </p>
+<div class="highlight"><pre><span></span><code>pip<span class="w"> </span>install<span class="w"> </span>pelican-redirect
+</code></pre></div>
+
+<p>Then by adding an additional line in to the metadata of each post</p>
+<div class="highlight"><pre><span></span><code><span class="nt">original_url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">blog/hacktoberfest-2019.html</span>
+</code></pre></div>
+
+<p>Pelican will create an HTML file at the URL location specified that will redirect to the new post  location that it will create.</p>
 <h2 id="canonical">Canonical</h2>
-<p>In order to add the canonical header entry on articles using the <code>SITEURL</code> variable does not create what you need if <code>RELATIVE_URL = True</code> is set.  To get around this and always use a full URL you can copy the <code>SITEURL</code> variable in to <code>CANONICALURL</code> and then use that variable in the <strong>base.html</strong> template.</p>
+<p>In order to add the canonical header entry on articles using the <strong>SITEURL</strong> variable does not create what you need if <strong>RELATIVE_URL = True</strong> is set.  To get around this and always use a full URL you can copy the <strong>SITEURL</strong> variable in to <strong>CANONICALURL</strong> and then use that variable in the <strong>base.html</strong> template.</p>
 <p><strong>pelicanconf.py</strong></p>
 <div class="highlight"><pre><span></span><code><span class="n">SITEURL</span> <span class="o">=</span> <span class="s2">&quot;https://jscooksey.github.io/Pelican&quot;</span>
 <span class="n">CANONICALURL</span> <span class="o">=</span> <span class="n">SITEURL</span>
@@ -99,9 +107,25 @@ So I needed a redirect if someone used the original link to the new link being u
 </code></pre></div>
 
 <h2 id="sitemap">Sitemap</h2>
-<p>To produce a sitemap add the <a href="https://github.com/pelican-plugins/sitemap">pelican-sitemap</a> plugin.</p>
+<p>To produce <a href="https://developers.google.com/search/docs/crawling-indexing/sitemaps/overview">sitemap</a> files for SEO add the <a href="https://github.com/pelican-plugins/sitemap">pelican-sitemap</a> plugin:</p>
+<div class="highlight"><pre><span></span><code>pip<span class="w"> </span>install<span class="w"> </span>pelican-sitemap
+</code></pre></div>
+
+<p>and then adding a <strong>SITEMAP</strong> variable to the <strong>pelicanconf.py</strong> as described in the README of the Repo</p>
+<h2 id="social-media-shares">Social Media Shares</h2>
+<p>I also had on my curent site social media sharing links at the bottom of every article, allowing the reader to share the article on there own social media streams. </p>
+<p>The <a href="https://github.com/pelican-plugins/">share-post</a> plugin does this and again is simply installed using pip</p>
+<div class="highlight"><pre><span></span><code>pip<span class="w"> </span>install<span class="w"> </span>pelican-share-post
+</code></pre></div>
+
+<p>Then in the article.html template add link to atricle.share_post attribute</p>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;{{article.share_post\[&#39;twitter&#39;\]}}&quot;</span><span class="p">&gt;</span>...<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;{{article.share_post\[&#39;facebook&#39;\]}}&quot;</span><span class="p">&gt;</span>...<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;{{article.share_post\[&#39;linkedin&#39;\]}}&quot;</span><span class="p">&gt;</span>...<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+</code></pre></div>
+
 <h2 id="rssatom-feed">RSS/Atom Feed</h2>
-<p>Adding in Atom (or RSS) feeds is as easy as changing a few options</p>
+<p><a href="https://docs.getpelican.com/en/latest/settings.html#feed-settings">Adding in Atom (or RSS) feeds</a> is as easy as changing a few options, as this is built in to Pelcon.  Changing a few options in the <strong>pelicanconf.py</strong> </p>
 <div class="highlight"><pre><span></span><code><span class="n">FEED_MAX_ITEMS</span> <span class="o">=</span> <span class="mi">20</span>
 <span class="n">FEED_ALL_ATOM</span> <span class="o">=</span> <span class="s2">&quot;feeds/all.atom.xml&quot;</span>
 <span class="n">CATEGORY_FEED_ATOM</span> <span class="o">=</span> <span class="s2">&quot;feeds/</span><span class="si">{slug}</span><span class="s2">.atom.xml&quot;</span>
@@ -111,23 +135,28 @@ So I needed a redirect if someone used the original link to the new link being u
 </code></pre></div>
 
 <h2 id="code-highlighting">Code Highlighting</h2>
-<p>Import a CSS file to your theme for code syntax highlighting that you want
-Pyment and find CSS exaples
-Place this in to the themes folder under <strong>static/css/pygment.css</strong>
-Then import that CSS file in the main CSS file</p>
+<p>Markdown code highlighting is processed ultimately through Pygment which can be personailsed but has some builtin styles.  Examples are on the Pygment site <a href="https://pygments.org/styles/#">here</a> and css files for these can be copied from the repo <a href="https://github.com/richleland/pygments-css">richleland/pygments-css</a>.</p>
+<p>You can copy the CSS file of your choice to your themes static folder (eg <strong>static/css/pygment.css</strong>) and then import that in the <strong>base.html</strong>  </p>
 <div class="highlight"><pre><span></span><code>@import url(pygment.css);
 </code></pre></div>
+
+<p>Markdown code blocks can then be used and <a href="https://www.markdownguide.org/extended-syntax/#syntax-highlighting">refer to the type of code</a> inside them.</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>This is as far as I've gotten so far in working in Pelican and this Pelican created site is initially hosted on <a href="https://pages.github.com/">GitHub Pages</a> at the URL <a href="https://jscooksey.github.io/Pelican/">https://jscooksey.github.io/Pelican/</a></p>
+<p>I'll as I figure things out further, with the intention this will replace the primary site hosted at my domain.</p>
   <footer>
     <ul class="stats">
       <li><a href="../../tag/python.html">Python</a></li>
       <li><a href="../../tag/code.html">Code</a></li>
       <li><a href="../../tag/frontend.html">Frontend</a></li>
+      <li><a href="../../tag/web.html">Web</a></li>
+      <li><a href="../../tag/pelican.html">Pelican</a></li>
     </ul>
   </footer>
   <section>
     <p id="post-share-links">
       Share this on:
-      <a href="https://twitter.com/intent/tweet?text=Pelican%20Static%20Site%20Generator&url=https%3A//jscooksey.github.io/Pelican/blog/2023/pelican-static-site-generator.html&hashtags=python,code,frontend" title="Share on Twitter" class="icon brands fa-twitter" target="_blank">
+      <a href="https://twitter.com/intent/tweet?text=Pelican%20Static%20Site%20Generator&url=https%3A//jscooksey.github.io/Pelican/blog/2023/pelican-static-site-generator.html&hashtags=python,code,frontend,web,pelican" title="Share on Twitter" class="icon brands fa-twitter" target="_blank">
         <span class="label">Twitter</span>
       </a>
       <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A//jscooksey.github.io/Pelican/blog/2023/pelican-static-site-generator.html" title="Share on Facebook" class="icon brands fa-facebook" target="_blank">

@@ -48,6 +48,52 @@
 <article class="post">
   <header>
     <div class="title">
+      <h2><a href="../blog/2023/dattormm-api.html">Datto RMM API Sites Export</a></h2>
+    </div>
+    <div class="meta">
+      <time
+        class="published"
+        datetime="2023-05-29"
+        >May 29, 2023</time
+      >
+      <a href="../author/justin-cooksey.html" class="author">
+        <span class="name">Justin Cooksey</span>
+      </a>
+    </div>
+  </header>
+  <a href="../blog/2023/dattormm-api.html" class="image featured"
+    ><img src="images/dattormm.png" alt=""
+  /></a>
+  <p><img src="../blog/2023/dattormm.png"  width="33%" height="33%"></p>
+<p>What began as a task just to <a href="https://github.com/jscooksey/DattoRMM-Site-Export">export all Sites from a DatoRMM instance to a CSV file</a>, has started me down the path of building a module to deal with many of the DattoRMM API end points. </p>
+<p>Mainly working around the REST APIs that I needed to use to perform certain tasks, I've begun refactoring the export code to become more of an API interface module which may grow to be more useful.  Other tasks may take my time away from this, but I will see were it may go.</p>
+<p>The original code to export of sites is here <a href="https://github.com/jscooksey/DattoRMM-Site-Export">DattoRMM-Site-Export</a>.  Currently this code pulls all Sites from a <a href="https://www.datto.com/au/products/rmm/">DattoRMM</a> environment and exports the basic details in to CSV format file.  It removes the system sites called Managed, OnDemand &amp; Deleted Devices, so that you only get an export of the customer base.</p>
+<p>Also in the repo is code to set Site variables in DattoRMM sites read in from a csv, as this was part of the next steps I needed to take.</p>
+<p>Gets the API URL, Key and Secret from .env or environment variables (example below)</p>
+<p>Functions to interact with the DattoRMM API are in the <a href="https://github.com/jscooksey/DattoRMM-Site-Export/blob/main/dattormmapi.py">dattormmapi.py</a> Python file.</p>
+<p>Main function to do the API requests and export to CSV is in the <a href="https://github.com/jscooksey/DattoRMM-Site-Export/blob/main/export_sites.py">export_sites.py</a> Python file.</p>
+<p>Refactoring to make this a more versatile module to handle interactions with the DattoRMM API will go in to a new GitHub repo, which I'll make public once its formed up some more. </p>
+  <footer>
+    <ul class="actions">
+      <li>
+        <a href="../blog/2023/dattormm-api.html" class="button large"
+          >Continue Reading</a
+        >
+      </li>
+    </ul>
+    <ul class="stats">
+      <li><a href="../tag/python.html">Python</a></li>
+      <li><a href="../tag/code.html">Code</a></li>
+      <li><a href="../tag/rmm.html">RMM</a></li>
+      <li><a href="../tag/dattormm.html">DattoRMM</a></li>
+      <li><a href="../tag/api.html">API</a></li>
+    </ul>
+  </footer>
+</article>
+<!-- Post -->
+<article class="post">
+  <header>
+    <div class="title">
       <h2><a href="../blog/2021/2021-03-04-windows-server-dhcp-conversion-to-cisco-cli.html">Windows Server DHCP conversion to Cisco CLI</a></h2>
     </div>
     <div class="meta">
@@ -167,114 +213,11 @@
     </ul>
   </footer>
 </article>
-<!-- Post -->
-<article class="post">
-  <header>
-    <div class="title">
-      <h2><a href="../blog/2020/hacktoberfest-2020-begins.html">Hacktoberfest 2020 Begins</a></h2>
-    </div>
-    <div class="meta">
-      <time
-        class="published"
-        datetime="2020-10-01"
-        >Oct 1, 2020</time
-      >
-      <a href="../author/justin-cooksey.html" class="author">
-        <span class="name">Justin Cooksey</span>
-      </a>
-    </div>
-  </header>
-  <a href="../blog/2020/hacktoberfest-2020-begins.html" class="image featured"
-    ><img src="images/hflogo.jpg" alt=""
-  /></a>
-  <p><img src="../blog/2020/hflogo.jpg"  width="33%" height="33%"></p>
-<p>It's back around to October again and <a href="https://hacktoberfest.digitalocean.com/">Hacktoberfest</a> is of course up and running. I enjoyed <a href="https://justincooksey.com/blog/hacktoberfest-2019/">my first involvement with Hacktoberfest</a> in 2019 but I didn't complete enough pull request for the month. Will I make it this year?</p>
-<p><a href="https://hacktoberfest.digitalocean.com/">Hacktoberfest</a> is a great idea. It got me contributing, and keen to try again next year, but I hope to keep its intent rolling through the year.</p>
-<p>As before in 2019, my thanks go to <a href="https://www.digitalocean.com/">DigitalOcean</a> and <a href="https://dev.to/">DEV</a> for this great initiative.</p>
-  <footer>
-    <ul class="actions">
-      <li>
-        <a href="../blog/2020/hacktoberfest-2020-begins.html" class="button large"
-          >Continue Reading</a
-        >
-      </li>
-    </ul>
-    <ul class="stats">
-      <li><a href="../tag/hacktoberfest.html">hacktoberfest</a></li>
-      <li><a href="../tag/opensource.html">opensource</a></li>
-    </ul>
-  </footer>
-</article>
-<!-- Post -->
-<article class="post">
-  <header>
-    <div class="title">
-      <h2><a href="../blog/2019/gatsby-beginings.html">Gatsby Beginings</a></h2>
-    </div>
-    <div class="meta">
-      <time
-        class="published"
-        datetime="2019-11-19"
-        >Nov 19, 2019</time
-      >
-      <a href="../author/justin-cooksey.html" class="author">
-        <span class="name">Justin Cooksey</span>
-      </a>
-    </div>
-  </header>
-  <a href="../blog/2019/gatsby-beginings.html" class="image featured"
-    ><img src="images/gatsby-logo.jpg" alt=""
-  /></a>
-  <p><img src="../blog/2019/gatsby-logo.jpg"  width="33%" height="33%"></p>
-<p>This is the beginings of this site utilising <a href="https://www.gatsbyjs.org/">GatsbyJS</a>.</p>
-<p>While I am learning parts of <a href="https://www.gatsbyjs.org/">GatsbyJS</a> as well as expanding knowledge on <a href="https://reactjs.org/">ReactJS</a>, I am not following through somone tutorial and simply pasting things in from that. I want to work on this to understand how these frameworks operate. As such it has been, and will be, a little jumpy as I don't follow a set path through setting up this site as I would if I followed through someones tutorial.</p>
-<p>At present I have a fairly basic blog/thoughts/articles system operational, as well as a landing page. All of the pages have very little styling at this point, which certainly needs to be worked on. I also need to get some content up, expecially in the about page. I've also got options to discover on things such as styling where I'm exploring:</p>
-<ul>
-<li><a href="https://www.styled-components.com/">styled-components</a> <em>Using this currently</em></li>
-<li><a href="https://emotion.sh/docs/introduction">Emotion</a></li>
-<li>CSS &amp; SASS</li>
-<li>I'm sure others as well</li>
-</ul>
-<p>I've currently used the following plugins:</p>
-<ul>
-<li><code>gatsby-plugin-react-helmet</code> for correct SEO elements on the pages</li>
-<li><code>gatsby-plugin-react-helmet-canonical-urls</code> to make pages cannonical for this site. The source site.</li>
-<li><code>gatsby-plugin-styled-components</code> for styling</li>
-<li><code>gatsby-plugin-mdx</code> to manage the Markdown files to be used as post content</li>
-<li><code>gatsby-remark-vscode</code> to have any Markdown code blocks styled to look like vscode screenshots</li>
-<li><code>gatsby-plugin-feed</code> to create RSS feed data to allow sharing via feeds</li>
-<li><code>gatsby-plugin-sitemap</code> to screate sitemap files</li>
-<li><code>gatsby-plugin-robots-txt</code> to create robots.txt files</li>
-<li><code>gatsby-plugin-offline</code> &amp; <code>gatsby-plugin-manifest</code> to make the site a Progressive Web App</li>
-<li><code>gatsby-plugin-netlify-cms</code> suppoprt for Netlify CMS system to allow online creation of blog entries</li>
-</ul>
-<p>Still a long way to go.</p>
-  <footer>
-    <ul class="actions">
-      <li>
-        <a href="../blog/2019/gatsby-beginings.html" class="button large"
-          >Continue Reading</a
-        >
-      </li>
-    </ul>
-    <ul class="stats">
-      <li><a href="../tag/opensource.html">opensource</a></li>
-    </ul>
-  </footer>
-</article>
 
 <!-- Pagination -->
 <ul class="actions pagination">
-  <li>
-    <a href="/category/article.html" class="button large previous"
-      >Previous Page</a
-    >
-  </li>
-   <li>
-    <a href="/category/article3.html" class="button large next"
-      >Next Page</a
-    >
-  </li>
+  <li><a href="" class="disabled button large previous">Previous Page</a></li>
+   <li><a href="#" class="disabled button large next">Next Page</a></li>
 </ul>
 </div>
       <!-- Sidebar -->
@@ -297,25 +240,6 @@
     <article class="mini-post">
       <header>
         <h3>
-          <a href="../blog/2023/pelican-static-site-generator.html">Pelican Static Site Generator</a>
-        </h3>
-        <time
-          class="published"
-          datetime="2023-06-18"
-          >Jun 18, 2023</time
-        >
-        <a href="#" class="author"
-          ><img src="../theme/images/avatar.jpg" alt=""
-        /></a>
-      </header>
-      <a href="../blog/2023/pelican-static-site-generator.html" class="image"
-        ><img src="images/pelican.png" alt=""
-      /></a>
-    </article>
-    <!-- Mini Post -->
-    <article class="mini-post">
-      <header>
-        <h3>
           <a href="../blog/2023/dattormm-api.html">Datto RMM API Sites Export</a>
         </h3>
         <time
@@ -329,25 +253,6 @@
       </header>
       <a href="../blog/2023/dattormm-api.html" class="image"
         ><img src="images/dattormm.png" alt=""
-      /></a>
-    </article>
-    <!-- Mini Post -->
-    <article class="mini-post">
-      <header>
-        <h3>
-          <a href="../blog/2023/advent-of-code-2022.html">Advent Of Code 2022</a>
-        </h3>
-        <time
-          class="published"
-          datetime="2023-02-11"
-          >Feb 11, 2023</time
-        >
-        <a href="#" class="author"
-          ><img src="../theme/images/avatar.jpg" alt=""
-        /></a>
-      </header>
-      <a href="../blog/2023/advent-of-code-2022.html" class="image"
-        ><img src="images/advent-code-2022.jpg" alt=""
       /></a>
     </article>
     <!-- Mini Post -->
