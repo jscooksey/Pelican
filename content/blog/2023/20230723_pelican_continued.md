@@ -1,14 +1,14 @@
 ---
-Title: Pelican Created Site pt2
+Title: Publishing Pelican Created Site
 Date: 2023-07-23 21:33
 Status: draft
 Category: Code
 Tags: Python, Code, Frontend, Web, Pelican, Netlify
-Keywords: Python, Code, Frontend, Web, Pelican, Netlify
+Keywords: Python, Code, Frontend, Web, Pelican, Netlify, publish
 Slug: pelican-created-site-2
 Author: Justin Cooksey
 Image: pelican.png
-Summary: A continuation of moving a simple static built site to the Pelican Static Site geenrator 
+Summary: A continuation of moving a simple static built site to the Pelican Static Site geenrator to get it pulished on Netlify
 ---
 
 This is the second part of my migrating a static web site over to [Pelican Static Site Generator](https://docs.getpelican.com/en/latest/index.html), after my inital posting Pelican Static Site Generator
@@ -20,7 +20,9 @@ To trasnfer over my Google Analytics web site code to the Pelican created site w
 ## Hosting and Replcaing on Netlify
 
 
-How does it handle 404 errors
-Upload from github
+Associte repository
+Setting up Netlify
+Pyuthon 3.8 only
+netlify.toml to handle 404
 
 

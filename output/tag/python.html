@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Justin Cooksey Codes</title>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, user-scalable=no"
+    />
+    <link rel="stylesheet" href="../theme/css/main.css" />
+  </head>
+  <body class="is-preload">
+    <!-- Wrapper -->
+    <div id="wrapper">
+      <!-- Header -->
+      <header id="header">
+        <h1><a href="/index.html">Justin Cooksey Codes</a></h1>
+        <nav class="links">
+          <ul>
+            <li><a href="../pages/about.html">About</a></li>
+            <li><a href="..">Articles</a></li>
+          </ul>
+        </nav>
+        <nav class="main">
+          <ul>
+            <li class="menu">
+              <a class="fa-bars" href="#menu">Menu</a>
+            </li>
+          </ul>
+        </nav>
+      </header>
+
+      <!-- Menu -->
+      <section id="menu">
+        <!-- Actions -->
+        <section>
+          <ul class="actions stacked">
+            <li><a href="../pages/about.html">About</a></li>
+            <li><a href="..">Articles</a></li>
+            <li><a href="../categories.html">Categories</a></li>
+            <li><a href="../tags.html">Tags</a></li>
+          </ul>
+        </section>
+      </section>
+
+      <!-- Main -->
+      <div id="main"> <!-- Post -->
+<article class="post">
+  <header>
+    <div class="title">
+      <h2><a href="../blog/2023/pelican-static-site-generator.html">Pelican Static Site Generator</a></h2>
+    </div>
+    <div class="meta">
+      <time
+        class="published"
+        datetime="2023-06-18"
+        >Jun 18, 2023</time
+      >
+      <a href="../author/justin-cooksey.html" class="author">
+        <span class="name">Justin Cooksey</span>
+        <img src="../theme/images/avatar.jpg" alt=""/>
+      </a>
+    </div>
+  </header>
+  <a href="../blog/2023/pelican-static-site-generator.html" class="image featured"
+    ><img src="images/pelican.png" alt=""
+  /></a>
+  <p><a href="https://getpelican.com/"><img src="../blog/2023/pelican.png"  width="33%" height="33%"></a></p>
+<p>I've been investigating <a href="https://getpelican.com/">Pelican a static site generator</a> to replace my current <a href="https://www.gatsbyjs.com/">GatsbyJS</a> generated site.  Im far more at home and familiar with <a href="https://www.python.org/">Python</a> and <a href="https://palletsprojects.com/p/jinja/">Jinja2</a>, so that was part of my reasoning for taking a look in to it.</p>
+<p>So working along the basis of replacing my current GatsbyJS created site and posts with one created by Pelican, the following cover my initial issues and solutions.  I've only added brief notes on what was done, without going in to detail as the plugin sites cover correct use in detail.</p>
+<div class="toc"><span class="toctitle">Table of Contents</span><ul>
+<li><a href="#redirect-old-site-paths">Redirect old site paths</a></li>
+<li><a href="#canonical">Canonical</a></li>
+<li><a href="#sitemap">Sitemap</a></li>
+<li><a href="#social-media-shares">Social Media Shares</a></li>
+<li><a href="#rssatom-feed">RSS/Atom Feed</a></li>
+<li><a href="#code-highlighting">Code Highlighting</a></li>
+<li><a href="#conclusion">Conclusion</a></li>
+</ul>
+</div>
+<h2 id="redirect-old-site-paths">Redirect old site paths</h2>
+<p>In investigting moving to a new static site gernerator I also decided to change the sturcure a little. Since not many articles existed at the time of this posting minimal redirects will have to be created.  </p>
+<p>So how does Pelican handle this on a per article basis? </p>
+<p>Enter the <a href="https://github.com/slinkp/pelican-redirect">pelican-redirect</a> plugin.  Installing it is as simple as installling from PyPi </p>
+<div class="highlight"><pre><span></span><code>pip<span class="w"> </span>install<span class="w"> </span>pelican-redirect
+</code></pre></div>
+
+<p>Then by adding an additional line in to the metadata of each post</p>
+<div class="highlight"><pre><span></span><code><span class="nt">original_url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">blog/hacktoberfest-2019.html</span>
+</code></pre></div>
+
+<p>Pelican will create an HTML file at the URL location specified that will redirect to the new post  location that it will create.</p>
+<h2 id="canonical">Canonical</h2>
+<p>In order to add the canonical header entry on articles using the <strong>SITEURL</strong> variable does not create what you need if <strong>RELATIVE_URL = True</strong> is set.  To get around this and always use a full URL you can copy the <strong>SITEURL</strong> variable in to <strong>CANONICALURL</strong> and then use that variable in the <strong>base.html</strong> template.</p>
+<p><strong>pelicanconf.py</strong></p>
+<div class="highlight"><pre><span></span><code><span class="n">SITEURL</span> <span class="o">=</span> <span class="s2">&quot;https://jscooksey.github.io/Pelican&quot;</span>
+<span class="n">CANONICALURL</span> <span class="o">=</span> <span class="n">SITEURL</span>
+</code></pre></div>
+
+<p><strong>base.html</strong></p>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>{{SITENAME}}<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+  {% if article %}
+    <span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">&quot;canonical&quot;</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;{{ CANONICALURL }}/{{ article.url }}&quot;</span> <span class="p">/&gt;</span>
+  {% endif%}
+</code></pre></div>
+
+<h2 id="sitemap">Sitemap</h2>
+<p>To produce <a href="https://developers.google.com/search/docs/crawling-indexing/sitemaps/overview">sitemap</a> files for SEO add the <a href="https://github.com/pelican-plugins/sitemap">pelican-sitemap</a> plugin:</p>
+<div class="highlight"><pre><span></span><code>pip<span class="w"> </span>install<span class="w"> </span>pelican-sitemap
+</code></pre></div>
+
+<p>and then adding a <strong>SITEMAP</strong> variable to the <strong>pelicanconf.py</strong> as described in the README of the Repo</p>
+<h2 id="social-media-shares">Social Media Shares</h2>
+<p>I also had on my curent site social media sharing links at the bottom of every article, allowing the reader to share the article on there own social media streams. </p>
+<p>The <a href="https://github.com/pelican-plugins/">share-post</a> plugin does this and again is simply installed using pip</p>
+<div class="highlight"><pre><span></span><code>pip<span class="w"> </span>install<span class="w"> </span>pelican-share-post
+</code></pre></div>
+
+<p>Then in the article.html template add link to atricle.share_post attribute</p>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;{{article.share_post\[&#39;twitter&#39;\]}}&quot;</span><span class="p">&gt;</span>...<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;{{article.share_post\[&#39;facebook&#39;\]}}&quot;</span><span class="p">&gt;</span>...<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;{{article.share_post\[&#39;linkedin&#39;\]}}&quot;</span><span class="p">&gt;</span>...<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+</code></pre></div>
+
+<h2 id="rssatom-feed">RSS/Atom Feed</h2>
+<p><a href="https://docs.getpelican.com/en/latest/settings.html#feed-settings">Adding in Atom (or RSS) feeds</a> is as easy as changing a few options, as this is built in to Pelcon.  Changing a few options in the <strong>pelicanconf.py</strong> </p>
+<div class="highlight"><pre><span></span><code><span class="n">FEED_MAX_ITEMS</span> <span class="o">=</span> <span class="mi">20</span>
+<span class="n">FEED_ALL_ATOM</span> <span class="o">=</span> <span class="s2">&quot;feeds/all.atom.xml&quot;</span>
+<span class="n">CATEGORY_FEED_ATOM</span> <span class="o">=</span> <span class="s2">&quot;feeds/</span><span class="si">{slug}</span><span class="s2">.atom.xml&quot;</span>
+<span class="n">TRANSLATION_FEED_ATOM</span> <span class="o">=</span> <span class="kc">None</span>
+<span class="n">AUTHOR_FEED_ATOM</span> <span class="o">=</span> <span class="kc">None</span>
+<span class="n">AUTHOR_FEED_RSS</span> <span class="o">=</span> <span class="kc">None</span>
+</code></pre></div>
+
+<h2 id="code-highlighting">Code Highlighting</h2>
+<p>Markdown code highlighting is processed ultimately through Pygment which can be personailsed but has some builtin styles.  Examples are on the Pygment site <a href="https://pygments.org/styles/#">here</a> and css files for these can be copied from the repo <a href="https://github.com/richleland/pygments-css">richleland/pygments-css</a>.</p>
+<p>You can copy the CSS file of your choice to your themes static folder (eg <strong>static/css/pygment.css</strong>) and then import that in the <strong>base.html</strong>  </p>
+<div class="highlight"><pre><span></span><code>@import url(pygment.css);
+</code></pre></div>
+
+<p>Markdown code blocks can then be used and <a href="https://www.markdownguide.org/extended-syntax/#syntax-highlighting">refer to the type of code</a> inside them.</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>This is as far as I've gotten so far in working in Pelican and this Pelican created site is initially hosted on <a href="https://pages.github.com/">GitHub Pages</a> at the URL <a href="https://jscooksey.github.io/Pelican/">https://jscooksey.github.io/Pelican/</a></p>
+<p>I'll as I figure things out further, with the intention this will replace the primary site hosted at my domain.</p>
+  <footer>
+    <ul class="actions">
+      <li>
+        <a href="../blog/2023/pelican-static-site-generator.html" class="button large"
+          >Continue Reading</a
+        >
+      </li>
+    </ul>
+    <ul class="stats">
+      <li><a href="../tag/python.html">Python</a></li>
+      <li><a href="../tag/code.html">Code</a></li>
+      <li><a href="../tag/frontend.html">Frontend</a></li>
+      <li><a href="../tag/web.html">Web</a></li>
+      <li><a href="../tag/pelican.html">Pelican</a></li>
+    </ul>
+  </footer>
+</article>
+<!-- Post -->
+<article class="post">
+  <header>
+    <div class="title">
+      <h2><a href="../blog/2023/dattormm-api.html">Datto RMM API Sites Export</a></h2>
+    </div>
+    <div class="meta">
+      <time
+        class="published"
+        datetime="2023-05-29"
+        >May 29, 2023</time
+      >
+      <a href="../author/justin-cooksey.html" class="author">
+        <span class="name">Justin Cooksey</span>
+        <img src="../theme/images/avatar.jpg" alt=""/>
+      </a>
+    </div>
+  </header>
+  <a href="../blog/2023/dattormm-api.html" class="image featured"
+    ><img src="images/dattormm.png" alt=""
+  /></a>
+  <p><img src="../blog/2023/dattormm.png"  width="33%" height="33%"></p>
+<p>What began as a task just to <a href="https://github.com/jscooksey/DattoRMM-Site-Export">export all Sites from a DatoRMM instance to a CSV file</a>, has started me down the path of building a module to deal with many of the DattoRMM API end points. </p>
+<p>Mainly working around the REST APIs that I needed to use to perform certain tasks, I've begun refactoring the export code to become more of an API interface module which may grow to be more useful.  Other tasks may take my time away from this, but I will see were it may go.</p>
+<p>The original code to export of sites is here <a href="https://github.com/jscooksey/DattoRMM-Site-Export">DattoRMM-Site-Export</a>.  Currently this code pulls all Sites from a <a href="https://www.datto.com/au/products/rmm/">DattoRMM</a> environment and exports the basic details in to CSV format file.  It removes the system sites called Managed, OnDemand &amp; Deleted Devices, so that you only get an export of the customer base.</p>
+<p>Also in the repo is code to set Site variables in DattoRMM sites read in from a csv, as this was part of the next steps I needed to take.</p>
+<p>Gets the API URL, Key and Secret from .env or environment variables (example below)</p>
+<p>Functions to interact with the DattoRMM API are in the <a href="https://github.com/jscooksey/DattoRMM-Site-Export/blob/main/dattormmapi.py">dattormmapi.py</a> Python file.</p>
+<p>Main function to do the API requests and export to CSV is in the <a href="https://github.com/jscooksey/DattoRMM-Site-Export/blob/main/export_sites.py">export_sites.py</a> Python file.</p>
+<p>Refactoring to make this a more versatile module to handle interactions with the DattoRMM API will go in to a new GitHub repo, which I'll make public once its formed up some more. </p>
+  <footer>
+    <ul class="actions">
+      <li>
+        <a href="../blog/2023/dattormm-api.html" class="button large"
+          >Continue Reading</a
+        >
+      </li>
+    </ul>
+    <ul class="stats">
+      <li><a href="../tag/python.html">Python</a></li>
+      <li><a href="../tag/code.html">Code</a></li>
+      <li><a href="../tag/rmm.html">RMM</a></li>
+      <li><a href="../tag/dattormm.html">DattoRMM</a></li>
+      <li><a href="../tag/api.html">API</a></li>
+    </ul>
+  </footer>
+</article>
+<!-- Post -->
+<article class="post">
+  <header>
+    <div class="title">
+      <h2><a href="../blog/2023/advent-of-code-2022.html">Advent Of Code 2022</a></h2>
+    </div>
+    <div class="meta">
+      <time
+        class="published"
+        datetime="2023-02-11"
+        >Feb 11, 2023</time
+      >
+      <a href="../author/justin-cooksey.html" class="author">
+        <span class="name">Justin Cooksey</span>
+        <img src="../theme/images/avatar.jpg" alt=""/>
+      </a>
+    </div>
+  </header>
+  <a href="../blog/2023/advent-of-code-2022.html" class="image featured"
+    ><img src="images/advent-code-2022.jpg" alt=""
+  /></a>
+  <p><img src="../blog/2023/advent-code-2022.jpg"  width="33%" height="33%"></p>
+<p>As usual I remembered the <a href="https://adventofcode.com/2022">Advent of Code</a> after it had started, but never the less I got stuck in to it around day 10 (10th December 20222). However I never got past the day 7 stage 1 puzzle but not because I couldn't, but rather I just fell in to that busy time of year, and didn't spend the time trying to keep up.</p>
+<p>Well there is nothing to stop you from continuing on so I'll see if I can get back in to it in (ummm...) February 2023! (Im sitting here shaking my head)</p>
+<p>If you havent ever heard about it, you should <a href="https://adventofcode.com/2022">take a look</a>. It's a series of puzzles, relased as an <a href="https://en.wikipedia.org/wiki/Advent_calendar">Advent calender</a>, that you solve by wwriting up the code to find the answers. 2 puzzles are released every day from December 1st through Decmber 25th that you solve to help the elves undertake Christmas tasks. You can use any language you like, and its not the code you write that you progress with, just the correct answers you must get from that code.</p>
+<p>So I'll continue on, no doubt it wont all get solve in 2 months, but tis still a fun task to keep you learning.</p>
+<p>Web Site - <a href="https://adventofcode.com/">Advent Of Code</a>
+My GitHub repository - <a href="https://github.com/jscooksey/AdventOfCode2022">AdventOfCode2022</a></p>
+<h4 id="adendum-2023-07-17">Adendum - 2023-07-17</h4>
+<p>Well I didnt get back to it, life tooks it path and I never jumped back in to it.  Maybe this year I can make more of an effort.</p>
+  <footer>
+    <ul class="actions">
+      <li>
+        <a href="../blog/2023/advent-of-code-2022.html" class="button large"
+          >Continue Reading</a
+        >
+      </li>
+    </ul>
+    <ul class="stats">
+      <li><a href="../tag/python.html">Python</a></li>
+      <li><a href="../tag/code.html">Code</a></li>
+    </ul>
+  </footer>
+</article>
+
+<!-- Pagination -->
+<ul class="actions pagination">
+  <li><a href="" class="disabled button large previous">Previous Page</a></li>
+   <li><a href="#" class="disabled button large next">Next Page</a></li>
+</ul>
+</div>
+      <!-- Sidebar -->
+      <section id="sidebar">
+        <!-- Intro -->
+        <section id="intro">
+          <a href="#" class="logo"
+            ><img src="../theme/images/logo.png" alt=""
+          /></a>
+          <header>
+            <h2>Justin Cooksey Codes</h2>
+            <p>Thoughts and Code by Justin Cooksey</p>
+          </header>
+        </section>
+
+<!-- Mini Posts -->
+<section>
+  <div class="mini-posts">
+    <!-- Mini Post -->
+    <article class="mini-post">
+      <header>
+        <h3>
+          <a href="../blog/2023/pelican-static-site-generator.html">Pelican Static Site Generator</a>
+        </h3>
+        <time
+          class="published"
+          datetime="2023-06-18"
+          >Jun 18, 2023</time
+        >
+        <a href="#" class="author"
+          ><img src="../theme/images/avatar.jpg" alt=""
+        /></a>
+      </header>
+      <a href="../blog/2023/pelican-static-site-generator.html" class="image"
+        ><img src="../blog/2023/pelican.png" alt=""
+      /></a>
+    </article>
+    <!-- Mini Post -->
+    <article class="mini-post">
+      <header>
+        <h3>
+          <a href="../blog/2023/dattormm-api.html">Datto RMM API Sites Export</a>
+        </h3>
+        <time
+          class="published"
+          datetime="2023-05-29"
+          >May 29, 2023</time
+        >
+        <a href="#" class="author"
+          ><img src="../theme/images/avatar.jpg" alt=""
+        /></a>
+      </header>
+      <a href="../blog/2023/dattormm-api.html" class="image"
+        ><img src="../blog/2023/dattormm.png" alt=""
+      /></a>
+    </article>
+    <!-- Mini Post -->
+    <article class="mini-post">
+      <header>
+        <h3>
+          <a href="../blog/2023/advent-of-code-2022.html">Advent Of Code 2022</a>
+        </h3>
+        <time
+          class="published"
+          datetime="2023-02-11"
+          >Feb 11, 2023</time
+        >
+        <a href="#" class="author"
+          ><img src="../theme/images/avatar.jpg" alt=""
+        /></a>
+      </header>
+      <a href="../blog/2023/advent-of-code-2022.html" class="image"
+        ><img src="../blog/2023/advent-code-2022.jpg" alt=""
+      /></a>
+    </article>
+  </div>
+</section>        <!-- Footer -->
+        <section id="footer">
+          <ul class="icons">
+            <li>
+              <a href="https://twitter.com/jscooksey" class="icon brands fa-twitter">
+                <span class="label">Twitter</span>
+              </a>
+            </li>
+            <li>
+              <a href="https://dev.to/jscooksey" class="icon brands fa-dev">
+                <span class="label">DEV</span>
+              </a>
+            </li>
+            <li>
+              <a href="https://fosstodon.org/@jscooksey" class="icon brands fa-mastodon">
+                <span class="label">Mastodon</span>
+              </a>
+            </li>
+            <li>
+              <a href="https://github.com/jscooksey" class="icon brands fa-github">
+                <span class="label">GitHub</span>
+              </a>
+            </li>
+          </ul>
+          <p class="copyright">
+            &copy; Untitled. Design: <a href="http://html5up.net">HTML5 UP</a>.
+            Images: <a href="http://unsplash.com">Unsplash</a>.
+          </p>
+        </section>
+      </section>
+    </div>
+
+    <!-- Scripts -->
+    <script src="../theme/js/jquery.min.js"></script>
+    <script src="../theme/js/browser.min.js"></script>
+    <script src="../theme/js/breakpoints.min.js"></script>
+    <script src="../theme/js/util.js"></script>
+    <script src="../theme/js/main.js"></script>
+  </body>
+</html>
