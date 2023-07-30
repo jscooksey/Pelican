@@ -101,19 +101,3 @@ With over 28 years of experience in the MSP industry, I have worked with a team 
 <img align="left" alt="Ansible" width="48px" height="48px" src="https://img.icons8.com/color/48/ansible.png" />
 
 <br /><br />
-
----
-
-### 📕 Latest Blog Posts
-
-<!-- BLOG-POST-LIST:START -->
-
-- [Advent of Code 2022](https://justincooksey.com/blog/2022-advent-of-code/)
-- [Windows Server DHCP conversion to Cisco CLI](https://justincooksey.com/blog/2021-03-04-windows-server-dhcp-conversion-to-cisco-cli/)
-
-<!-- BLOG-POST-LIST:END -->
-
-➡️ [more blog posts...](https://justincooksey.com)
-
-<!--START_SECTION:activity-->
-<!--END_SECTION:activity-->
