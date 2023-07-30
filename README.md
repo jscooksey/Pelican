@@ -1,4 +1,6 @@
 # Static Site Produced by Pelican
 
-Try it right here [Site](https://jscooksey.github.io/Pelican)
+My static build web page, previoulsy done with GatsbyJS and now created with Pelican
+
+[Blog Articles on this](https://justincooksey.com/tag/pelican.html)
 
