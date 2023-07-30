@@ -1,8 +1,10 @@
 AUTHOR = "Justin Cooksey"
 SITENAME = "Justin Cooksey Codes"
 SITESUBTITLE = "Thoughts and Code by Justin Cooksey"
-SITEURL = "https://jscooksey.github.io/Pelican"
+SITEURL = "https://justincooksey.com"
 CANONICALURL = SITEURL
+
+GOOGLE_ANALYTICS = "UA-28617236-5"
 
 THEME = "themes/jsctheme"
 

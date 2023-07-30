@@ -1,4 +1,15 @@
 
+# 2023-07-30
+
+## Added
+
+- Google Analytics code in to pelicanconf.py
+
+## Changed
+
+- Modifed the About page to be much the same as the GitHub profile
+- Changed the logo image to the seal/crest
+
 # 2023-07-16
 
 ## Added
