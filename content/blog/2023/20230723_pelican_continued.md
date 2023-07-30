@@ -19,7 +19,10 @@ To trasnfer over my Google Analytics web site code to the Pelican created site w
 
 ## Hosting and Replcaing on Netlify
 
-
+Make sure you have requirements.txt file
+Make sure pelicanconf.py and publishconf.py are up to date (especially URL)
+   pelican content -s publishconf.py
+   output
 Associte repository
 Setting up Netlify
 Pyuthon 3.8 only
