@@ -11,4 +11,19 @@ Image: ansible.png
 Summary: Using Ansible to audit, backup, update and maintain a group of Cisco Small to Medium Business Solutions such as the CBS range of switches.
 ---
 
-[Cisco SMB Products](https://www.cisco.com/c/en_au/solutions/small-business.html#~products)
+Ansible is not just for th ehigh end data centre systems and servers, but it can also be used on large scale systems that are using small to medium business systems such as the [Cisco SMB Product](https://www.cisco.com/c/en_au/solutions/small-business.html#~products) range of switches and routers.
+
+## Auditing
+
+Auditing devices to get serial numbers, firmware versions, models
+
+## Minimum config
+
+Ensuring all devices have
+- NTP
+- SNMP
+- SSH only
+
+## Backup config
+ copying config on all devices
+ 
