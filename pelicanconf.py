@@ -13,6 +13,9 @@ ARTICLE_PATHS = ["blog"]
 ARTICLE_SAVE_AS = "blog/{date:%Y}/{slug}.html"
 ARTICLE_URL = "blog/{date:%Y}/{slug}.html"
 
+PAGE_URL = "{slug}/"
+PAGE_SAVE_AS = "{slug}/index.html"
+
 TIMEZONE = "Australia/Sydney"
 
 DEFAULT_LANG = "en"

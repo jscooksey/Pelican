@@ -29,7 +29,6 @@ With over 28 years of experience in the MSP industry, I have worked with a team 
 
 - Live a healthy life
 - ✅ **Completed** [Cisco Certified DevNet Associate](https://www.credly.com/badges/3f2bc007-5f27-4682-9391-45716713bed0/public_url)
-- Getting Cisco CCNA certifications
 
 #### What else
 
