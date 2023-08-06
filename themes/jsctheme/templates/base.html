@@ -11,17 +11,18 @@
       content="width=device-width, initial-scale=1, user-scalable=no"
     />
     <link rel="stylesheet" href="{{ SITEURL }}/theme/css/main.css" />
-  </head>
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id={{ GOOGLE_GA4_ID }}"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id={{ GOOGLE_GA4_ID }}"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
 
-    gtag('config', '{{ GOOGLE_GA4_ID }}');
-  </script>
-  <!-- Google tag (gtag.js) -->
+      gtag('config', '{{ GOOGLE_GA4_ID }}');
+    </script>
+    <!-- Google tag (gtag.js) -->
+  </head>
+
 
   <body class="is-preload">
     <!-- Wrapper -->
