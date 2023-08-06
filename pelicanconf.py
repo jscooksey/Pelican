@@ -5,6 +5,7 @@ SITEURL = "https://justincooksey.com"
 CANONICALURL = SITEURL
 
 GOOGLE_ANALYTICS = "UA-28617236-5"
+GOOGLE_GA4_ID = "G-M6K7S460VR"
 
 THEME = "themes/jsctheme"
 
