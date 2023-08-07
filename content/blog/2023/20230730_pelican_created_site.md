@@ -17,11 +17,30 @@ This is the second part ([see part 1 here](https://justincooksey.com/blog/2023/p
 
 ## Google Analytics
 
-To transfer over [Google Analytics](https://developers.google.com/analytics/devguides/collection) web site code to the Pelican created site was as simple as adding it in to pelicanconf.py as a varible and done.  This is all well docmented on the [Pelican doumentation](https://docs.getpelican.com/en/latest/settings.html).
+
+
+To transfer over [Google Analytics](https://developers.google.com/analytics/devguides/collection) web site code to the Pelican created site was as simple as adding it in to pelicanconf.py as a varible and done.  
+<sup><sub>Amended 2023-08-07</sub></sup>
+With Googles GA-4 a different approach was taken.  I added a new varible to hold the GA4 code:
 
 **pelicanconf.py**
 ```python
-GOOGLE_ANALYTICS = your_site_code
+GOOGLE_GA4_ID = your_site_code
+```
+Then in the **base.html** template I added the Google supplied HTML code in the **head** section, with the Jinja2 varible pulled from **pelicanconf.py**:
+
+```html
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id={{ GOOGLE_GA4_ID }}"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', '{{ GOOGLE_GA4_ID }}');
+    </script>
+    <!-- Google tag (gtag.js) -->
+  </head>
 ```
 
 ## Hosting and Replacing on Netlify

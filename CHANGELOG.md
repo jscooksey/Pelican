@@ -1,4 +1,12 @@
 
+# 2023-08-07
+
+## Added
+
+- With Google Analytics 4 in use now, added chnages and confirmed and then updated the markdown for the blog post on the same.
+
+-->
+
 # 2023-07-30
 
 ## Added
