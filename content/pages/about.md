@@ -32,6 +32,7 @@ With over 28 years of experience in the MSP industry, I have worked with a team 
 
 #### What else
 
+- Recently found a love of running, which I post every now and again on Instagram [@juzza_runs](https://www.instagram.com/juzza_runs)
 - I love to create images, photography, so please [check out my image portfolio](https://www.logicmonitor.com/).
 
 ---
@@ -44,19 +45,12 @@ With over 28 years of experience in the MSP industry, I have worked with a team 
 <a href="https://dev.to/jscooksey">
   <img align="left" alt="jscooksey | Dev" width="48px" style="padding-right:10px;" src="https://img.icons8.com/windows/32/null/dev.png"/>
 </a>
-<a href="https://twitter.com/jscooksey">
-  <img align="left" alt="jscooksey | Twitter" width="48px" style="padding-right:10px;" src="https://img.icons8.com/color/48/null/twitter--v1.png" />
-</a>
 <a href="https://linkedin.com/in/jscooksey">
   <img align="left" alt="jscooksey| LinkedIn" width="48px" style="padding-right:10px;" src="https://img.icons8.com/fluency/48/null/linkedin.png" />
 </a>
 <a rel="me" href="https://fosstodon.org/@jscooksey">
   <img alt="Mastodon" src="https://img.icons8.com/external-tal-revivo-color-tal-revivo/48/null/external-mastodon-is-an-online-self-hosted-social-media-and-social-networking-service-logo-color-tal-revivo.png"/>
 </a>
-
----
-
-[![Anurag's github stats](https://github-readme-stats.vercel.app/api?username=jscooksey&show_icons=true&theme=dark)](https://github.com/anuraghazra/github-readme-stats)
 
 ---
 
@@ -67,36 +61,23 @@ With over 28 years of experience in the MSP industry, I have worked with a team 
 <img align="left" alt="Flask" width="48px" style="padding-right:10px;" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flask/flask-original.svg" />
 <img align="left" alt="Django" width="48px" style="padding-right:10px;" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/django/django-plain.svg" />
 <img align="left" alt="SQLAlchemy" width="48px" style="padding-right:10px;" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sqlalchemy/sqlalchemy-original.svg" />
-          
-<br /><br />
-
 <img align="left" alt="JavaScript" width="48px" style="padding-right:10px;" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" />
 <img align="left" alt="Node.js" width="48px" style="padding-right:10px;" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" />
 <img align="left" alt="React" width="48px" style="padding-right:10px;" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original-wordmark.svg" />
-<img align="left" alt="Gatsby" width="48px" style="padding-right:10px;" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/gatsby/gatsby-plain.svg" />
-
-<br /><br />
-
 <img align="left" alt="HTML5" width="48px" style="padding-right:10px;" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" />
 <img align="left" alt="CSS3" width="48px" style="padding-right:10px;" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" />
-<img align="left" alt="Tailwind CSS" width="48px" style="padding-right:10px;" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-plain.svg" />
+<img align="left" alt="Tailwind CSS" width="48px" style="padding-right:10px;" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg" />
 <img align="left" alt="Sass" width="48px" style="padding-right:10px;" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sass/sass-original.svg" />
-
-<br /><br />
-
 <img align="left" alt="PostreSQL" width="48px" style="padding-right:10px;" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original-wordmark.svg" />
 <img align="left" alt="MySQL" width="48px" style="padding-right:10px;" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" />
 <img align="left" alt="SQLite" width="48px" style="padding-right:10px;" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sqlite/sqlite-original.svg" />
 <img align="left" alt="Microsft SQL" width="48px" style="padding-right:10px;" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/microsoftsqlserver/microsoftsqlserver-plain.svg" />
 <img align="left" alt="MongoDB" width="48px" style="padding-right:10px;" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original-wordmark.svg" />
 <img align="left" alt="GraphQL" width="48px" style="padding-right:10px;" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/graphql/graphql-plain.svg" />
-
-<br /><br />
-
 <img align="left" alt="Git" width="48px" style="padding-right:10px;" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" />
 <img align="left" alt="GitHub" width="48px" style="padding-right:10px;"src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" />
 <img align="left" alt="Visual Studio Code" width="48px" style="padding-right:10px;" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" />
 <img align="left" alt="Docker" width="48px" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" />
 <img align="left" alt="Ansible" width="48px" height="48px" src="https://img.icons8.com/color/48/ansible.png" />
 
-<br /><br />
+<br /><br /><br />
