@@ -17,8 +17,8 @@ Summary: A Windows Powershell script to ease the transition from Cisco config DH
 Well it was bound to happen! After being asked to migrate DHCP from Windows DHCP server to Cisco devices, and automating that convertion ([Which you can read about here](https://justincooksey.com/blog/2023/pelican-static-site-generator.html))), it's finally going back the other way.
 
 
-The current version of the script can be found on my GitHub repository:
-[Convert-WindowsDHCPToCisco](https://github.com/jscooksey/Convert-WindowsDHCPToCisco)
+
+
 
 Still ha smany DHCP options that it hasn't been setup to hanle at this point but it does follow the basic ones that most of us use.
 
