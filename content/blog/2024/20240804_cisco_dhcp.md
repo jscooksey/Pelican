@@ -1,23 +1,28 @@
 ---
-Title: Windows Server DHCP conversion to Cisco CLI
+Title: Cisco DHCP Pool convertion to Windows Server DHCP
 Date: 2024-08-04 14:00
 Status: draft
 Category: Network DevOps
 Tags: DHCP, Windows, PowerShell, Cisco
 Keywords: DHCP, Windows, PowerShell, Cisco
 Slug: 2021-03-04-cisco-dhcp-conversion-to-windows-server
+Image: ciscodhcp.png
 Author: Justin Cooksey
 Summary: A Windows Powershell script to ease the transition from Cisco config DHCP Pools to a Windows DHCP server.  Convert from an exported Cisco config direct in to DHCP Server
 ---
 
-I recently ran in to an issue where I needed to convert a reasonably large DHCP database from a Windows Server in to a Cisco CLI to allow the Cisco to take over DHCP roles for a subnet. I found nothing that realy automated this task, even using the exported XML file. So knowing that this was the second time I needed the tool, and likely to need it again, even if it was for smaller tasks, I set about coding it in Powershell. It is the scripting system well supported in Windows land.
+
+<img src="{attach}ciscodhcp.png"  width="33%" height="33%">
+
+Well it was bound to happen! After being asked to migrate DHCP from Windows DHCP server to Cisco devices, and automating that convertion ([Which you can read about here](https://justincooksey.com/blog/2023/pelican-static-site-generator.html))), it's finally going back the other way.
+
 
 The current version of the script can be found on my GitHub repository:
 [Convert-WindowsDHCPToCisco](https://github.com/jscooksey/Convert-WindowsDHCPToCisco)
 
 Still ha smany DHCP options that it hasn't been setup to hanle at this point but it does follow the basic ones that most of us use.
 
-#### Currently handles DHCP Options
+#### Need to chnage this
 
 | Code | Option Description      | Cisco Output     |
 | ---- | ----------------------- | ---------------- |
