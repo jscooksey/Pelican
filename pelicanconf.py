@@ -4,6 +4,8 @@ SITESUBTITLE = "Thoughts and Code by Justin Cooksey"
 SITEURL = "https://justincooksey.com"
 CANONICALURL = SITEURL
 
+DELETE_OUTPUT_DIRECTORY = True
+
 GOOGLE_GA4_ID = "G-M6K7S460VR"
 
 THEME = "themes/jsctheme"
