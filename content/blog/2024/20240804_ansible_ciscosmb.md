@@ -1,47 +1,56 @@
 ---
-Title: Netbox and Ansible to Maintain Cisco SMB Products
-Date: 2024-08-04 14:00
-Status: draft
+Title: Netbox and Ansible for for Small to Mid Business Networks
+Date: 2024-08-31 14:00
+Status: published
 Category: Network DevOps
 Tags: Ansible, Network, Netbox, DevOps, Cisco
 Keywords: Ansible, Network, Netbox, DevOps, Cisco
 Slug: netbox-ansible-beginings
 Author: Justin Cooksey
-Image: ansible.png
 Summary: Using Ansible and Netbox to audit, backup, update and maintain a group of Cisco Small to Medium Business Solutions such as the CBS range of switches.
 ---
 
-[Ansible](https://docs.ansible.com/ansible/latest/index.html) and [Netbox](https://netboxlabs.com/docs/netbox/en/stable/) are not just for the high end data centre systems.  They can also be used on large scale systems that are using small to medium business systems such as the [Cisco SMB Product](https://www.cisco.com/c/en_au/solutions/small-business.html#~products) range of switches and routers.
+[Ansible](https://docs.ansible.com/ansible/latest/index.html) and [Netbox](https://netboxlabs.com/docs/netbox/en/stable/) are not just for the high end data centre systems.  They can also be used on networks using small to medium business switches and routers such as the [Cisco SMB Product](https://www.cisco.com/c/en_au/solutions/small-business.html#~products) range.
+
 
 ## Initial Auditing and OnBoarding
 
-Initally I had nothing recorded in [Netbox](https://netboxlabs.com/docs/netbox/en/stable/). I cvreated a base of each of the sites and patch panels at each site, as well as all the device models that were in use.
+Initally I started with brand new empty [Netbox](https://netboxlabs.com/docs/netbox/en/stable/). In which I manually created a base setup adding in each:
 
-Ran an Ansible Playbook that then went through the list of devices pulling base device information to record in [Netbox](https://netboxlabs.com/docs/netbox/en/stable/).  After I had the devices in I could do some management and put them in the right sites, patches and rack locations.
+- Site
+- Patch
+- Device model in use
+- Prefix, to begin with just the management subnets
 
-Auditing devices to get serial numbers, firmware versions, models
-1. [Netbox](https://netboxlabs.com/docs/netbox/en/stable/)
-  - Hostname is device name in netbox
-  - Serial Number
-  - Model
-  - Firmware version to platforms
-2. Exported to CSV
+Then creating a yaml file host listing to beging with, I ran an [Ansible](https://docs.ansible.com/ansible/latest/index.html) Playbook that then went through that list of devices pulling base device information:
+
+- IP Address (Management)
+- Hostname
+- Model
+- Serial number
+- Firmware  (*This was not initally used*)
+
+This was then to record in to [Netbox](https://netboxlabs.com/docs/netbox/en/stable/) as new devices as well as exported to CSV.  After I had the devices in [Netbox](https://netboxlabs.com/docs/netbox/en/stable/) I could do some base housekeeping and put them in the right sites, patches and rack locations.
 
 
 ## [Netbox](https://netboxlabs.com/docs/netbox/en/stable/), the Source of Truth
 
-Once the devices were in and some management had been done to get them in the right locations etc.  [Netbox](https://netboxlabs.com/docs/netbox/en/stable/) then became the [Source of Truth](https://netboxlabs.com/blog/what-is-a-network-source-of-truth/) for both our engineers and technicians but also for Ansible.  Allowing playbooks to be run against site and locations only or across the whole group.
+Once the devices were in and housekeeping done [Netbox](https://netboxlabs.com/docs/netbox/en/stable/) then became the [Source of Truth](https://netboxlabs.com/blog/what-is-a-network-source-of-truth/) for both our engineers and technicians and also for [Ansible](https://docs.ansible.com/ansible/latest/index.html).  I could remove the hosts yaml file an dpointing AQnsible at Netbox for its inventory I could now allow playbooks to be run against a site and other locations or across the whole group.
+
 
 ## Minimum config
 
-One of the frist tasks was to ensure we had all devices, configured to s standard.  We hoped that they have been, but over time, without audits and checks, things can become a little out.  So using Ansible we have been able to ensure some defaults are set, such has:
-  - Disabling of access methods, such as HTTP, Telnet and also HTTPS
-  - NTP time servers and synchronised time
-  - Name Servers
-  - Monitoring service setting (SNMP)
+One of the frist tasks was to ensure I had all devices, configured to a standard.  I hoped that they have been, but over time, without continued audits and checks, things can become a little out.  So using [Ansible](https://docs.ansible.com/ansible/latest/index.html) I was able to ensure some defaults are set, such has:
+
+- Disabling of access methods, such as HTTP, Telnet and also HTTPS
+- NTP time servers and synchronised time
+- Name Servers
+- Monitoring service setting (SNMP)
+
 
 ## Backup config
-Another task for Ansible was to get regular configuration backups for al devices.  Running an Ansible Playbook on a schedule (Cron) to poull the current configuration and store it on the local file system of the Ansible server.  This was then replicated off site over secure protocols.
+
+Another task for [Ansible](https://docs.ansible.com/ansible/latest/index.html) was to get regular configuration backups for all devices.  Running an [Ansible](https://docs.ansible.com/ansible/latest/index.html) Playbook on a daily schedule (Cron) to pull the current configuration and store it on the local file system of the [Ansible](https://docs.ansible.com/ansible/latest/index.html) server.  This was then replicated off site over secure protocols.
  
 ```yaml
 - name: Gather Facts
@@ -67,3 +76,9 @@ Another task for Ansible was to get regular configuration backups for al devices
         content: "{{ ansible_net_config }}"
         dest: "{{ output_path }}{{ inventory_hostname }}-{{ date }}.txt"
 ```
+
+## Finding Trunks and Devices
+
+Another task was find all the trunks between switches & patches and docuemnt them correctly in Netbox.  Running an [Ansible](https://docs.ansible.com/ansible/latest/index.html) Playbook to use LLDP from gather facts to then determine th elinks between device, that could then be documented as Netbox cables.  Once that was done I also used the [Netbox Topology Views](https://github.com/netbox-community/netbox-topology-views) plugin to visualise the network.
+
+Once that was done I could also use MAC address searches to determine what ports IP Phones, DAPs and WAPs were connected to among other devices.  Since a standard brand of those was used throughout it was only a matter of searching for the manufacturer portion of the MAC address.
