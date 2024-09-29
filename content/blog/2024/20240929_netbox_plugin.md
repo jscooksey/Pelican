@@ -7,17 +7,9 @@ Tags: Network, Netbox, Python, Django, DevOps
 Keywords: Network, Netbox, Django, DevOps
 Slug: 2024-09-29-netbox-plugin
 Author: Justin Cooksey
-Summary: Developing a Netbox POlugin to handle defined set of rules used by network and hosting infrastructure to allocate VLANs, VRF and handle Tenants
+Summary: Developing a Netbox Plugin to handle defined set of rules used by network and hosting infrastructure to allocate VLANs, VRF and handle Tenants
 ---
 
-<img src="{attach}ciscodhcp.png"  width="33%" height="33%">
+Working with [Netbox](https://netboxlabs.com/docs/netbox/en/stable/introduction/) as recpord keeping for multi-tenant infrastructure has shown it to be an extremely powerful tool used as a Source Of Truth in the network.  All chnages must be recorded in Netbox before pushed to the actual system.  This meant that a significant amount of work for any change could be automated in Netbox as well.  A new Fibre service, and new SIP service and new hosted server network.  These all involved selection of certain VLANs, VRFs, Subnets to be allocated to a Tenant within the infrastructure.
 
-Well it was bound to happen! After being asked to migrate DHCP from Windows DHCP server to Cisco devices, and automating that convertion, [which you can read about here](https://justincooksey.com/blog/2023/pelican-static-site-generator.html), it's finally going back the other way.
-
-
-
-Making use of the [IPv4Calc Module](https://www.powershellgallery.com/packages/IPv4Calc)
-
-We first pull out the various Pools and create the equivalent Windows Scopes, then porcess the exclusions that need to be added to each scope.  Finally running through the static assignments to different devices.
-
-Still ha smany DHCP options that it hasn't been setup to hanle at this point but it does follow the basic ones that most of us use.
+Initially when [Netbox](https://netboxlabs.com/docs/netbox/en/stable/introduction/) was first implemented I developed a series of [Netbox Custom Scripts](https://netboxlabs.com/docs/netbox/en/stable/customization/custom-scripts/) to run through these choices and build a new service for a Tenant.  This has worked for some time witout issue, but in needing to upgrade [Netbox](https://netboxlabs.com/docs/netbox/en/stable/introduction/) to more recent versions the Script method does not really continue to work well and the collection of Scripts really neeed to be rbought in to its own [Netbox Plugin](https://netboxlabs.com/docs/netbox/en/stable/plugins/).
