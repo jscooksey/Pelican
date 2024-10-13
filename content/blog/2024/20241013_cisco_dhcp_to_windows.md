@@ -6,18 +6,17 @@ Category: Network DevOps
 Tags: DHCP, Windows, PowerShell, Cisco
 Keywords: DHCP, Windows, PowerShell, Cisco
 Slug: 2024-10-13-cisco-dhcp-conversion-to-windows-server
-Image: ciscodhcp.png
 Author: Justin Cooksey
-Summary: A Windows Powershell script to ease the transition from Cisco config DHCP Pools to a Windows DHCP server.  Convert from an exported Cisco config direct in to DHCP Server
+Summary: A Windows Powershell script to ease the transition from Cisco config DHCP Pools to a Windows DHCP server.  Convert from an exported Cisco config direct in to Windows DHCP Server
 ---
 
 
 <img src="{attach}ciscodhcp.png"  width="33%" height="33%">
 
 **Well it was bound to happen!**
-Three years now after being asked to [migrate DHCP from Windows DHCP server to Cisco Routers, and automating that convertion, which you can read about here](https://justincooksey.com/blog/2021/2021-03-04-windows-server-dhcp-conversion-to-cisco-cli), it's finally going back the other way.
+Three years now after being asked to [migrate DHCP from Windows DHCP server to Cisco Routers, and automating that convertion](https://justincooksey.com/blog/2021/2021-03-04-windows-server-dhcp-conversion-to-cisco-cli), it's finally going back the other way.
 
-This time the PowerShell script will read through the file (an exported Cisco Router configuration) and build the Scopes in the Windows DHCP Role.  The script will need to be run on the server becoming the DHCP server fro the new scopes.  All of this could be expanded on to make it more versatile, but at this point it wasnt required.
+This time the PowerShell script will read through the file (an exported Cisco Router configuration) and build the Scopes in the Windows DHCP Role.  The script will need to be run on the server becoming the DHCP server for those new scopes.  The user would need to have administrator privilege to allow the DHCP settings to be made.
 
 The script follows these steps:
 
@@ -26,10 +25,11 @@ The script follows these steps:
 3. Processes the Exclusions in to each Scope
 4. Process all static assignments
 
+Still a little bit in the works at the time of this posting, but testing across multiple configurations has found it working well.
+The [Code Repository can be found on GitHub](https://github.com/jscooksey/Convert-CiscoDHCPToWindows)
 
-Some DHCP Options are being handled as listed below.
 
-#### DHCP Options Handling
+#### Some DHCP Options are being handled as follows.
 
 | Code | Cisco Config     | Option Description         |
 | ---- | ---------------- | -------------------------- |
@@ -43,8 +43,6 @@ Some DHCP Options are being handled as listed below.
 | 66   | option 66 ip     | TFTP Server                |
 | 67   | bootfile         | Boot filename              |
 | 67   | option 67 ascii  | Boot filename              |
-
-[Code Repository can be found on GitHub](https://github.com/jscooksey/cisco-dhcp)
 
 **Example Cisco Config**
 ```text
@@ -78,4 +76,4 @@ ip dhcp pool Device2
 
 ```
 
-Making use of the [IPv4Calc Module](https://www.powershellgallery.com/packages/IPv4Calc)
+_This script makes use of the [IPv4Calc Module](https://www.powershellgallery.com/packages/IPv4Calc)_
