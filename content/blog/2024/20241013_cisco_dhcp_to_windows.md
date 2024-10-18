@@ -1,5 +1,5 @@
 ---
-Title: Cisco DHCP Pool convertion to Windows Server DHCP
+Title: Cisco DHCP Pool conversion to Windows Server DHCP
 Date: 2024-10-13 16:00
 Status: published
 Category: Network DevOps
