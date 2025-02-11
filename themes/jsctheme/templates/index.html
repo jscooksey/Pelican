@@ -1,7 +1,7 @@
 {% extends "base.html" %} {% block content %} {% for article in
 articles_page.object_list %}
 <!-- Post -->
-<article class="post">
+<!-- <article class="post"> -->
   <header>
     <div class="title">
       <h2><a href="{{ SITEURL }}/{{ article.url }}">{{ article.title }}</a></h2>
@@ -36,7 +36,7 @@ articles_page.object_list %}
       {% endfor %}
     </ul>
   </footer>
-</article>
+<!-- </article> -->
 {% endfor %}
 
 <!-- Pagination -->
