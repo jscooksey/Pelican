@@ -6,7 +6,7 @@
 -->
 <html>
 	<head>
-		<title>Future Imperfect by HTML5 UP</title>
+		<title>{{SITENAME}}</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
     <link rel="stylesheet" href="{{ SITEURL }}/theme/css/main.css" />
@@ -27,7 +27,7 @@
 
       <!-- Header -->
         <header id="header">
-          <h1><a href="index.html">Future Imperfect</a></h1>
+          <h1><a href="index.html">{{SITENAME}}</a></h1>
           <nav class="links">
             <ul>
               <li><a href="#">Lorem</a></li>
@@ -124,16 +124,16 @@
         <!-- About -->
         <section class="blurb">
           <h2>About</h2>
-          <p>Mauris neque quam, fermentum ut nisl vitae, convallis maximus nisl. Sed mattis nunc id lorem euismod amet placerat. Vivamus porttitor magna enim, ac accumsan tortor cursus at phasellus sed ultricies.</p>
+          <p>Thoughts and articles on coding and DevOps work that I do either to learn for myself, or as part of my work.</p>
           <ul class="actions">
-            <li><a href="#" class="button">Learn More</a></li>
+            <li><a href="about.html" class="button">Learn More</a></li>
           </ul>
         </section>
     
         <!-- Footer -->
         <section id="footer">
           <ul class="icons">
-            {% for name, icon, link in CONTACTS %}
+            {% for name,icon,link in CONTACTS %}
             <li>
               <a href="{{ link }}" class="icon brands {{ icon }}">
                 <span class="label">{{ name }}</span>
