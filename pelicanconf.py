@@ -8,8 +8,8 @@ DELETE_OUTPUT_DIRECTORY = True
 
 GOOGLE_GA4_ID = "G-M6K7S460VR"
 
-THEME = "themes/jsctheme"
-# THEME = "themes/pelican-alchemy/alchemy"
+# THEME = "themes/jsctheme"
+THEME = "themes/future-imperfect"
 
 PATH = "content"
 ARTICLE_PATHS = ["blog"]

@@ -1,0 +1,52 @@
+{% extends "base.html" %} {% block content %}
+<!-- Post -->
+<!-- <article class="post"> -->
+  <header>
+    <div class="title">
+      <h2><a href="{{ SITEURL }}/{{ article.url }}">{{ article.title }}</a></h2>
+    </div>
+    <div class="meta">
+      <time
+        class="published"
+        datetime="{{ article.date | strftime('%Y-%m-%d') }}"
+        >{{ article.date | strftime('%b %-d, %Y') }}</time
+      >
+      <a href="#" class="author"
+        ><span class="name">{{ article.author }}</span
+        ><img src="{{ SITEURL }}/theme/images/avatar.jpg" alt=""
+      /></a>
+    </div>
+  </header>
+  <!-- <a href="{{ SITEURL }}/{{ article.url }}" class="image featured"
+    ><img src="images/{{ article.image }}" alt=""
+  /></a> -->
+  {{ article.content }}
+  <footer>
+    <ul class="stats">
+      {% for tag in article.tags %}
+      <li><a href="{{ SITEURL }}/{{ tag.url }}">{{ tag.name }}</a></li>
+      {% endfor %}
+    </ul>
+  </footer>
+  {% if article.share_post and article.status != 'draft' %}
+  <section>
+    <p id="post-share-links">
+      Share this on:
+      <a href="{{article.share_post['twitter']}}" title="Share on Twitter" class="icon brands fa-twitter" target="_blank">
+        <span class="label">Twitter</span>
+      </a>
+      <a href="{{article.share_post['facebook']}}" title="Share on Facebook" class="icon brands fa-facebook" target="_blank">
+        <span class="label">Facebook</span>
+      </a>
+      <a href="{{article.share_post['linkedin']}}" title="Share on LinkedIn" class="icon brands fa-linkedin" target="_blank">
+        <span class="label">LinkedIn</span>
+      </a>
+      <a href="{{article.share_post['reddit']}}" title="Share via Reddit" class="icon brands fa-reddit" target="_blank">
+        <span class="label">Reddit</span>
+      </a>
+    </p>
+  </section>
+  {% endif %}
+
+<!-- </article> -->
+{% endblock %}
