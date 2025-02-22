@@ -86,3 +86,5 @@ SITEMAP = {
 
 TAG_URL = "tags/{slug}.html"
 TAG_SAVE_AS = "tags/{slug}.html"
+
+GITHUB_URL = "https://github.com/jscooksey"

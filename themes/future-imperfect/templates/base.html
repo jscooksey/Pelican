@@ -39,12 +39,6 @@
           </nav>
           <nav class="main">
             <ul>
-              <li class="search">
-                <a class="fa-search" href="#search">Search</a>
-                <form id="search" method="get" action="#">
-                  <input type="text" name="query" placeholder="Search" />
-                </form>
-              </li>
               <li class="menu">
                 <a class="fa-bars" href="#menu">Menu</a>
               </li>
@@ -55,93 +49,79 @@
       <!-- Menu -->
 					<section id="menu">
 
-						<!-- Search -->
-							<section>
-								<form class="search" method="get" action="#">
-									<input type="text" name="query" placeholder="Search" />
-								</form>
-							</section>
-
 						<!-- Links -->
 							<section>
 								<ul class="links">
-									<li>
-										<a href="#">
-											<h3>Lorem ipsum</h3>
-											<p>Feugiat tempus veroeros dolor</p>
+                  <li>
+										<a href="/">
+											<h3>Home</h3>
+											<p>Home page</p>
 										</a>
 									</li>
 									<li>
-										<a href="#">
-											<h3>Dolor sit amet</h3>
-											<p>Sed vitae justo condimentum</p>
+										<a href="/categories">
+											<h3>Categories</h3>
+											<p>Post categories</p>
 										</a>
 									</li>
 									<li>
-										<a href="#">
-											<h3>Feugiat veroeros</h3>
-											<p>Phasellus sed ultricies mi congue</p>
+										<a href="/tags">
+											<h3>Tags</h3>
+											<p>Tags used within posts</p>
 										</a>
 									</li>
 									<li>
-										<a href="#">
-											<h3>Etiam sed consequat</h3>
-											<p>Porta lectus amet ultricies</p>
+										<a href="/about">
+											<h3>About Me</h3>
+											<p>About my coding</p>
 										</a>
 									</li>
 								</ul>
 							</section>
 
-						<!-- Actions -->
-							<section>
-								<ul class="actions stacked">
-									<li><a href="#" class="button large fit">Log In</a></li>
-								</ul>
-							</section>
 
 					</section>
 
-
-
       <!-- Main -->
-      <div id="main">
-        {% block content %}{% endblock %}
-      </div>
+        <div id="main">
+          {% block content %}{% endblock %}
+        </div>
       <!-- Sidebar -->
-      <section id="sidebar">
-        <!-- Intro -->
-        <section id="intro">
-          <a href="#" class="logo">
-            <img src="{{ SITEURL}}/theme/images/logo.png" alt=""/>
-          </a>
-          <header>
-            <h2>{{SITENAME}}</h2>
-            <p>{{SITESUBTITLE}}</p>
-          </header>
-        </section>
+        <section id="sidebar">
+          <!-- Intro -->
+          <section id="intro">
+            <a href="#" class="logo">
+              <img src="{{ SITEURL}}/theme/images/logo.png" alt=""/>
+            </a>
+            <header>
+              <h2>{{SITENAME}}</h2>
+              <p>{{SITESUBTITLE}}</p>
+            </header>
+          </section>
 
 
-        <!-- About -->
-        <section class="blurb">
-          <h2>About</h2>
-          <p>Thoughts and articles on coding and DevOps work that I do either to learn for myself, or as part of my work.</p>
-          <ul class="actions">
-            <li><a href="about" class="button">Learn More</a></li>
-          </ul>
-        </section>
-    
-        <!-- Footer -->
-        <section id="footer">
-          <ul class="icons">
-            {% for name,icon,link in CONTACTS %}
-            <li>
-              <a href="{{ link }}" class="icon brands {{ icon }}">
-                <span class="label">{{ name }}</span>
-              </a>
-            </li>
-            {% endfor %}
-          </ul>
-          <p class="copyright">&copy; Based on Future Imperfect: <a href="http://html5up.net">HTML5 UP</a>.</p>
+          <!-- About -->
+          <section class="blurb">
+            <h2>About</h2>
+            <p>Thoughts and articles on coding and DevOps work that I do either to learn for myself, or as part of my work.</p>
+            <ul class="actions">
+              <li><a href="about" class="button">Learn More</a></li>
+            </ul>
+          </section>
+      
+          <!-- Footer -->
+          <section id="footer">
+            <ul class="icons">
+              {% for name,icon,link in CONTACTS %}
+              <li>
+                <a href="{{ link }}" class="icon brands {{ icon }}">
+                  <span class="label">{{ name }}</span>
+                </a>
+              </li>
+              {% endfor %}
+            </ul>
+            <p class="copyright">&copy; Based on Future Imperfect: <a href="http://html5up.net">HTML5 UP</a>.</p>
+          </section>
         </section>
 
       </div>
