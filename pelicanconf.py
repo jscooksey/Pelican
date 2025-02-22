@@ -62,17 +62,28 @@ LINKS = (
     ("Jinja2", "https://palletsprojects.com/p/jinja/"),
 )
 
+# Menu Bar Headlines
+HEADLINES = (
+    ("Code", "/category/code.html"),
+    ("Network DevOps", "/category/network-devops.html"),
+    ("About", "/about"),
+)
+
 # Social widget
 SOCIAL = (
-    ("Twitter", "https://twitter.com/jscooksey"),
+    ("Bluesky", "https://bsky.app/profile/jscooksey.bsky.social"),
+    ("DEV", "https://dev.to/jscooksey"),
+    ("Mastodon", "https://fosstodon.org/@jscooksey"),
     ("GitHub", "https://github.com/jscooksey"),
+    ("LinkedIn", "https://www.linkedin.com/in/jscooksey/"),
 )
 
 CONTACTS = (
-    ("Twitter", "fa-twitter", "https://twitter.com/jscooksey"),
+    ("Bluesky", "fa-html5", "https://bsky.app/profile/jscooksey.bsky.social"),
     ("DEV", "fa-dev", "https://dev.to/jscooksey"),
     ("Mastodon", "fa-mastodon", "https://fosstodon.org/@jscooksey"),
     ("GitHub", "fa-github", "https://github.com/jscooksey"),
+    ("LinkedIn", "fa-linkedin", "https://www.linkedin.com/in/jscooksey/"),
 )
 
 DEFAULT_PAGINATION = 3
