@@ -8,14 +8,15 @@ DELETE_OUTPUT_DIRECTORY = True
 
 GOOGLE_GA4_ID = "G-M6K7S460VR"
 
-THEME = "themes/jsctheme"
-# THEME = "themes/pelican-alchemy/alchemy"
+# THEME = "themes/jsctheme"
+THEME = "themes/future-imperfect"
 
 PATH = "content"
 ARTICLE_PATHS = ["blog"]
 ARTICLE_SAVE_AS = "blog/{date:%Y}/{slug}.html"
 ARTICLE_URL = "blog/{date:%Y}/{slug}.html"
 
+PAGE_PATH = ["pages"]
 PAGE_URL = "{slug}/"
 PAGE_SAVE_AS = "{slug}/index.html"
 
@@ -61,17 +62,28 @@ LINKS = (
     ("Jinja2", "https://palletsprojects.com/p/jinja/"),
 )
 
+# Menu Bar Headlines
+HEADLINES = (
+    ("Code", "/category/code.html"),
+    ("Network DevOps", "/category/network-devops.html"),
+    ("About", "/about"),
+)
+
 # Social widget
 SOCIAL = (
-    ("Twitter", "https://twitter.com/jscooksey"),
+    ("Bluesky", "https://bsky.app/profile/jscooksey.bsky.social"),
+    ("DEV", "https://dev.to/jscooksey"),
+    ("Mastodon", "https://fosstodon.org/@jscooksey"),
     ("GitHub", "https://github.com/jscooksey"),
+    ("LinkedIn", "https://www.linkedin.com/in/jscooksey/"),
 )
 
 CONTACTS = (
-    ("Twitter", "fa-twitter", "https://twitter.com/jscooksey"),
+    ("Bluesky", "fa-html5", "https://bsky.app/profile/jscooksey.bsky.social"),
     ("DEV", "fa-dev", "https://dev.to/jscooksey"),
     ("Mastodon", "fa-mastodon", "https://fosstodon.org/@jscooksey"),
     ("GitHub", "fa-github", "https://github.com/jscooksey"),
+    ("LinkedIn", "fa-linkedin", "https://www.linkedin.com/in/jscooksey/"),
 )
 
 DEFAULT_PAGINATION = 3
@@ -85,3 +97,5 @@ SITEMAP = {
 
 TAG_URL = "tags/{slug}.html"
 TAG_SAVE_AS = "tags/{slug}.html"
+
+GITHUB_URL = "https://github.com/jscooksey"

@@ -1,0 +1,138 @@
+<!DOCTYPE HTML>
+<!--
+	Future Imperfect by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>{{SITENAME}}</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="{{ SITEURL }}/theme/css/main.css" />
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id={{ GOOGLE_GA4_ID }}"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', '{{ GOOGLE_GA4_ID }}');
+    </script>
+    <!-- Google tag (gtag.js) -->
+  </head>
+  <body class="is-preload">
+
+		<!-- Wrapper -->
+    <div id="wrapper">
+
+      <!-- Header -->
+        <header id="header">
+          <h1><a href="/index.html">{{SITENAME}}</a></h1>
+          <nav class="links">
+            <ul>
+              {% for name,link in HEADLINES %}
+              <li>
+                <a href="{{ link }}">{{ name }}</a>
+              </li>
+              {% endfor %}
+            </ul>
+          </nav>
+          <nav class="main">
+            <ul>
+              <li class="menu">
+                <a class="fa-bars" href="#menu">Menu</a>
+              </li>
+            </ul>
+          </nav>
+        </header>
+
+      <!-- Menu -->
+					<section id="menu">
+
+						<!-- Links -->
+							<section>
+								<ul class="links">
+                  <li>
+										<a href="/">
+											<h3>Home</h3>
+											<p>Home page</p>
+										</a>
+									</li>
+									<li>
+										<a href="/categories">
+											<h3>Categories</h3>
+											<p>Post categories</p>
+										</a>
+									</li>
+									<li>
+										<a href="/tags">
+											<h3>Tags</h3>
+											<p>Tags used within posts</p>
+										</a>
+									</li>
+									<li>
+										<a href="/about">
+											<h3>About Me</h3>
+											<p>About my coding</p>
+										</a>
+									</li>
+								</ul>
+							</section>
+
+
+					</section>
+
+      <!-- Main -->
+        <div id="main">
+          {% block content %}{% endblock %}
+        </div>
+      <!-- Sidebar -->
+        <section id="sidebar">
+          <!-- Intro -->
+          <section id="intro">
+            <a href="/" class="logo">
+              <img src="{{ SITEURL}}/theme/images/logo.png" alt=""/>
+            </a>
+            <header>
+              <h2>{{SITENAME}}</h2>
+              <p>{{SITESUBTITLE}}</p>
+            </header>
+          </section>
+
+
+          <!-- About -->
+          <section class="blurb">
+            <h2>About</h2>
+            <p>Thoughts and articles on coding and DevOps work that I do either to learn for myself, or as part of my work.</p>
+            <ul class="actions">
+              <li><a href="about" class="button">Learn More</a></li>
+            </ul>
+          </section>
+      
+          <!-- Footer -->
+          <section id="footer">
+            <ul class="icons">
+              {% for name,icon,link in CONTACTS %}
+              <li>
+                <a href="{{ link }}" class="icon brands {{ icon }}">
+                  <span class="label">{{ name }}</span>
+                </a>
+              </li>
+              {% endfor %}
+            </ul>
+            <p class="copyright">&copy; Based on Future Imperfect: <a href="http://html5up.net">HTML5 UP</a>.</p>
+          </section>
+        </section>
+
+      </div>
+
+
+    </div>
+    <!-- Scripts -->
+    <script src="{{ SITEURL }}/theme/js/jquery.min.js"></script>
+    <script src="{{ SITEURL }}/theme/js/browser.min.js"></script>
+    <script src="{{ SITEURL }}/theme/js/breakpoints.min.js"></script>
+    <script src="{{ SITEURL }}/theme/js/util.js"></script>
+    <script src="{{ SITEURL }}/theme/js/main.js"></script>
+  </body>
+</html>

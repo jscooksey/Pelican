@@ -1,0 +1,26 @@
+{% extends "base.html" %} {% block content %} 
+
+{% for article in articles[:12] %}
+<!-- Mini Post -->
+{% set cutoff = (article.url | length) - (article.slug | length + 6) %}
+{% set imgpath = article.url | truncate(cutoff,True,'', 0) %}
+<article class="mini-post">
+  <header>
+    <h3>
+      <a href="{{ SITEURL }}/{{ article.url }}">{{ article.title }}</a>
+    </h3>
+  </p> {{ article.summary }} </p>
+    <time
+      class="published"
+      datetime="{{ article.date | strftime('%Y-%m-%d') }}"
+      >{{ article.date | strftime('%b %-d, %Y') }}</time
+    >
+    <a href="#" class="author"
+      ><img src="{{ SITEURL }}/theme/images/avatar.jpg" alt=""
+    /></a>
+  </header>
+
+</article>
+{% endfor %}
+
+{% endblock %}
