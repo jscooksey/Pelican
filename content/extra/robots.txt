@@ -58,5 +58,5 @@ Disallow: /
 User-agent: YouBot
 Disallow: /
 
-Sitemap: https://justincooksey.com/sitemap/sitemap-0.xml
+Sitemap: https://justincooksey.com/sitemap.xml
 Host: https://justincooksey.com/
