@@ -15,7 +15,7 @@
       <meta property="og:title" content="{{ article.title }}" />
       <meta property="og:description" content="{{ article.summary }}" />
       <meta property="og:url" content="{{ SITEURL }}/{{ article.url }}" />
-      <meta property="og:image" content="{{ article.url.split('/')[:-1] | join('/') }}/{{ article.image }}" />
+      <meta property="og:image" content="{{SITEURL}}/{{ article.url.split('/')[:-1] | join('/') }}/{{ article.image }}" />
     {% endif %}
     
     <!-- Google tag (gtag.js) -->
