@@ -7,6 +7,7 @@ Tags: Ansible, Network, Netbox, DevOps, Cisco
 Keywords: Ansible, Network, Netbox, DevOps, Cisco
 Slug: ansible-netbox-begining
 Author: Justin Cooksey
+Image: ansible.png
 Description: Using Ansible and Netbox to audit, backup, update and maintain a group of Cisco Small to Medium Business Solutions such as the CBS range of switches.
 ---
 
