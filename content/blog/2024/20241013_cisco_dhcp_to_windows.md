@@ -7,7 +7,7 @@ Tags: DHCP, Windows, PowerShell, Cisco
 Keywords: DHCP, Windows, PowerShell, Cisco
 Slug: 2024-10-13-cisco-dhcp-conversion-to-windows-server
 Author: Justin Cooksey
-Summary: A Windows Powershell script to ease the transition from Cisco config DHCP Pools to a Windows DHCP server.  Convert from an exported Cisco config direct in to Windows DHCP Server
+Description: A Windows Powershell script to ease the transition from Cisco config DHCP Pools to a Windows DHCP server.  Convert from an exported Cisco config direct in to Windows DHCP Server
 ---
 
 

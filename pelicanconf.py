@@ -26,6 +26,9 @@ DEFAULT_LANG = "en"
 
 RELATIVE_URLS = True
 
+SUMMARY_MAX_LENGTH = 50
+SUMMARY_END_SUFFIX = "..."
+
 STATIC_PATHS = [
     "extra",
 ]

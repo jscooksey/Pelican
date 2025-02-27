@@ -8,7 +8,7 @@ Keywords: Hacktoberfest, Open Source
 Slug: hacktoberfest-2020-begins
 Author: Justin Cooksey
 Image: hflogo.jpg
-Summary: Getting back into Hacktoberfest. A second run at getting involved in Open Source by entering Hacktoberfest. It's really only about getting you involved.
+Description: Getting back into Hacktoberfest. A second run at getting involved in Open Source by entering Hacktoberfest. It's really only about getting you involved.
 ---
 
 <a href="https://hacktoberfest.com/"><img src="{attach}hflogo.jpg"  width="33%" height="33%"></a>

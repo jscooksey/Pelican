@@ -7,7 +7,7 @@ Tags: Ansible, Network, Netbox, DevOps, Cisco
 Keywords: Ansible, Network, Netbox, DevOps, Cisco
 Slug: ansible-netbox-begining
 Author: Justin Cooksey
-Summary: Using Ansible and Netbox to audit, backup, update and maintain a group of Cisco Small to Medium Business Solutions such as the CBS range of switches.
+Description: Using Ansible and Netbox to audit, backup, update and maintain a group of Cisco Small to Medium Business Solutions such as the CBS range of switches.
 ---
 
 [Ansible](https://docs.ansible.com/ansible/latest/index.html) and [Netbox](https://netboxlabs.com/docs/netbox/en/stable/) are not just for the high end data centre systems.  They can also be used on networks using small to medium business switches and routers such as the [Cisco SMB Product](https://www.cisco.com/c/en_au/solutions/small-business.html#~products) range.

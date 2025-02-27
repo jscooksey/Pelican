@@ -8,7 +8,7 @@ Keywords: Python, Code, Linux, Fedora, Fedora 41, pyenv
 Slug: 2025-01-20-development-on-fedora-41
 Author: Justin Cooksey
 Image: fedora_ss.png
-Summary: Moving to Fedora (41) for my primary development platform.  The initial migration.
+Description: Moving to Fedora (41) for my primary development platform.  The initial migration.
 ---
 
 

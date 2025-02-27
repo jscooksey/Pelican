@@ -8,7 +8,7 @@ Keywords: Python, Code
 Slug: advent-of-code-2022
 Author: Justin Cooksey
 Image: advent-code-2022.jpg
-Summary: My incomplete attempt at Advent Of Code 2022. A good fun exercise for your coding. That I'll get back to solving, despite it being well after December 2022
+Description: My incomplete attempt at Advent Of Code 2022. A good fun exercise for your coding. That I'll get back to solving, despite it being well after December 2022
 ---
 
 <img src="{attach}advent-code-2022.jpg"  width="33%" height="33%">

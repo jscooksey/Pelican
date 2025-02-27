@@ -9,7 +9,7 @@ Slug: gatsby-beginings
 original_url: blog/gatsby-beginings.html
 Author: Justin Cooksey
 Image: gatsby-logo.jpg
-Summary: Hacktoberfest is a brilliant idea to get people involved in Open Source, with a friendly competition that's really only about being involved.
+Description: Hacktoberfest is a brilliant idea to get people involved in Open Source, with a friendly competition that's really only about being involved.
 ---
 
 <img src="{attach}gatsby-logo.jpg"  width="33%" height="33%">

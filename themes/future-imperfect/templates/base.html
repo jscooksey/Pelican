@@ -1,9 +1,4 @@
 <!DOCTYPE HTML>
-<!--
-	Future Imperfect by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
 <html>
 	<head>
 		<title>{{SITENAME}}</title>
@@ -11,11 +6,18 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
     <link rel="stylesheet" href="{{ SITEURL }}/theme/css/main.css" />
     {% if article %}
+      <!-- HTML Metadata tags -->
+      <meta name="description" content="{{article.description}}" />
+      <meta name="keywords" content="{% for tag in article.tags %}{{tag}}, {% endfor %}" />
       <!-- OG Metadata tags -->
       <meta property="og:title" content="{{ article.title }}" />
-      <meta property="og:description" content="{{ article.summary }}" />
+      <meta property="og:type" content="article" />
+      <meta property="og:description" content="{{ article.description }}" />
       <meta property="og:url" content="{{ SITEURL }}/{{ article.url }}" />
       <meta property="og:image" content="{{SITEURL}}/{{ article.url.split('/')[:-1] | join('/') }}/{{ article.image }}" />
+      {% for tag in article.tags %}
+      <meta property="og:article:tag" content="{{ tag }}" />
+      {% endfor %}
     {% endif %}
     
     <!-- Google tag (gtag.js) -->
@@ -26,7 +28,6 @@
       gtag('js', new Date());
       gtag('config', '{{ GOOGLE_GA4_ID }}');
     </script>
-    <!-- Google tag (gtag.js) -->
   </head>
   <body class="is-preload">
 
@@ -107,7 +108,6 @@
             </header>
           </section>
 
-
           <!-- About -->
           <section class="blurb">
             <h2>About</h2>
@@ -133,8 +133,6 @@
         </section>
 
       </div>
-
-
     </div>
     <!-- Scripts -->
     <script src="{{ SITEURL }}/theme/js/jquery.min.js"></script>

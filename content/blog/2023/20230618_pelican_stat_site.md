@@ -8,7 +8,7 @@ Keywords: Python, Code, Frontend, Web, Pelican
 Slug: pelican-static-site-generator
 Author: Justin Cooksey
 Image: pelican.png
-Summary: Using Pelican for statc site generation to replicate site created in GatsbyJS
+Description: Using Pelican for statc site generation to replicate site created in GatsbyJS
 ---
 
 <a href="https://getpelican.com/"><img src="{attach}pelican.png"  width="33%" height="33%"></a>
