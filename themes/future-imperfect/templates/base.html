@@ -18,6 +18,14 @@
       {% for tag in article.tags %}
       <meta property="og:article:tag" content="{{ tag }}" />
       {% endfor %}
+    {% elif page %}
+      <!-- HTML Metadata tags -->
+      <meta name="description" content="{{page.description}}" />
+      <meta name="keywords" content="{% for tag in page.tags %}{{tag}}, {% endfor %}" />
+    {% else %}
+      <!-- HTML Metadata tags -->
+      <meta name="description" content="Article and thoughts of Justin Cooksey" />
+      <meta name="keywords" content="code, Development, DevOps, Justin Cooksey" />
     {% endif %}
     
     <!-- Google tag (gtag.js) -->

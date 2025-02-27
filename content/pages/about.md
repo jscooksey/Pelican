@@ -3,7 +3,7 @@ Title: About Justin Cooksey
 Status: published
 Keywords: About, Justin Cooksey
 Slug: about
-Summary: About this web site and its authoer Justin Cooksey
+Description: About this web site and its authoer Justin Cooksey
 ---
 
 ## I'm a Father, Developer, and Network DevOps Engineer!
