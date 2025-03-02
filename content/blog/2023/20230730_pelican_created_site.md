@@ -8,7 +8,7 @@ Keywords: Python, Code, Frontend, Web, Pelican, Netlify, publish
 Slug: pelican-created-site
 Author: Justin Cooksey
 Image: pelican.png
-Summary: A continuation of moving a simple static built site to the Pelican Static Site geenrator to get it pulished on Netlify
+Description: A continuation of moving a simple static built site to the Pelican Static Site geenrator to get it pulished on Netlify
 ---
 
 <a href="https://getpelican.com/"><img src="{attach}pelican.png"  width="33%" height="33%"></a>

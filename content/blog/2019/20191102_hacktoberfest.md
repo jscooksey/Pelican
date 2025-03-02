@@ -9,7 +9,7 @@ Slug: hacktoberfest-2019
 original_url: blog/hacktoberfest-2019.html
 Author: Justin Cooksey
 Image: pull_requests.jpg
-Summary: My start on deploying a website using the GatsbyJS Frontend Framework. Using GatsbyJS version 2 to implement a React-based website.
+Description: My start on deploying a website using the GatsbyJS Frontend Framework. Using GatsbyJS version 2 to implement a React-based website.
 ---
 
 <img src="{attach}pull_requests.jpg"  width="33%" height="33%">

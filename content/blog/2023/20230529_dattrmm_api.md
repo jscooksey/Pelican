@@ -8,7 +8,7 @@ Keywords: Python, Code, RMM, DattoRMM, API
 Slug: dattormm-api
 Author: Justin Cooksey
 Image: dattormm.png
-Summary: Using the DattoRMM API to export all Sites to a CSV file.
+Description: Using the DattoRMM API to export all Sites to a CSV file.
 ---
 
 <img src="{attach}dattormm.png"  width="33%" height="33%">

@@ -8,7 +8,7 @@ Keywords: DHCP, Windows, PowerShell, Cisco
 Slug: 2021-03-04-windows-server-dhcp-conversion-to-cisco-cli
 Author: Justin Cooksey
 Image: dhcp.jpg
-Summary: A Windows Powershell script to ease the transition from a Windows DHCP server to a Cisco router DHCP. Convert from a backup to the Cisco command line.
+Description: A Windows Powershell script to ease the transition from a Windows DHCP server to a Cisco router DHCP. Convert from a backup to the Cisco command line.
 ---
 
 <img src="{attach}dhcp.jpg"  width="33%" height="33%">

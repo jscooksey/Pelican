@@ -26,6 +26,9 @@ DEFAULT_LANG = "en"
 
 RELATIVE_URLS = True
 
+SUMMARY_MAX_LENGTH = 50
+SUMMARY_END_SUFFIX = "..."
+
 STATIC_PATHS = [
     "extra",
 ]
@@ -98,4 +101,8 @@ SITEMAP = {
 TAG_URL = "tags/{slug}.html"
 TAG_SAVE_AS = "tags/{slug}.html"
 
-GITHUB_URL = "https://github.com/jscooksey"
+
+SEO_REPORT = True  # SEO report is enabled by default
+SEO_ENHANCER = False  # SEO enhancer is disabled by default
+SEO_ENHANCER_OPEN_GRAPH = False  # Subfeature of SEO enhancer
+SEO_ENHANCER_TWITTER_CARDS = False  # Subfeature of SEO enhancer
