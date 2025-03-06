@@ -37,7 +37,17 @@ Using a docker image with data copied from live for testing
 [Pypi server](https://github.com/pypiserver/pypiserver), common internal serevr that can bve seen from production and development.  Production is limiting it version of the plugin and development moves ahead of that
 
 
+## Mermaid Test
 
+<script type="module"> import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs'; mermaid.initialize({ startOnLoad: true }); </script>
+
+Here is a mermaid diagram:
+<pre class="mermaid">
+ graph TD 
+ A[Client] --> B[Load Balancer] 
+ B --> C[Server01] 
+ B --> D[Server02]
+</pre>
 
 
 
