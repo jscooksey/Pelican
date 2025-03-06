@@ -12,7 +12,7 @@ Description: Moving to Fedora (41) for my primary development platform.  The ini
 ---
 
 
-<img src="{attach}fedora_ss.jpg"  width="33%" height="33%">
+<img src="{attach}fedora_ss.png"  width="33%" height="33%">
 
 ## So, moving to Linux ...
 
