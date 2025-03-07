@@ -24,6 +24,8 @@ Issuing Public IPs from our pool of addresses
 
 Building configs based off Jinja2 templates to confiure the core firewall and LNS
 
+PaloAlto [PA5200 series](https://www.paloaltonetworks.com.au/resources/datasheets/pa-5200-series-specsheetpal) managed by [Panorama]https://www.paloaltonetworks.com.au/network-security/panorama)
+
 Configure the RADIUS server for services requiring authentication
 
 Own procedures in selecting these vlans etc
