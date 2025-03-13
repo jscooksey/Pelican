@@ -16,6 +16,8 @@ ARTICLE_PATHS = ["blog"]
 ARTICLE_SAVE_AS = "blog/{date:%Y}/{slug}.html"
 ARTICLE_URL = "blog/{date:%Y}/{slug}.html"
 
+AUTHOR_SAVE_AS = None
+
 PAGE_PATH = ["pages"]
 PAGE_URL = "{slug}/"
 PAGE_SAVE_AS = "{slug}/index.html"
@@ -89,7 +91,8 @@ CONTACTS = (
     ("LinkedIn", "fa-linkedin", "https://www.linkedin.com/in/jscooksey/"),
 )
 
-DEFAULT_PAGINATION = 3
+DEFAULT_PAGINATION = 6
+DEFAULT_ORPHANS = 0
 
 SITEMAP = {
     "format": "xml",

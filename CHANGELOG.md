@@ -1,4 +1,15 @@
 
+# 2025-03-13
+
+## Added
+
+- Pagination on index page and others.  Looking to expand that later
+
+## Changed
+
+- Authors pages are not created AUTHOR_SAVE_AS = None
+  - Using the ABout page only for this
+
 # 2023-08-07
 
 ## Added
