@@ -1,4 +1,10 @@
 
+# 2025-03-16
+
+## Changed
+
+- Changed to buttons on pagination
+
 # 2025-03-13
 
 ## Added
