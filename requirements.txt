@@ -20,8 +20,7 @@ mdurl==0.1.2
 ordered-set==4.1.0
 pelican==4.10.2
 pelican-redirect==1.0.2
-pelican-seo==1.2.2
-pelican-share-post==1.2.0
+pelican-share-post==1.2.1
 pelican-sitemap==1.1.0
 Pygments==2.19.1
 python-dateutil==2.9.0.post0

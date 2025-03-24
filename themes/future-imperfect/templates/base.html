@@ -5,29 +5,8 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
     <link rel="stylesheet" href="{{ SITEURL }}/theme/css/main.css" />
-    {% if article %}
-      <!-- HTML Metadata tags -->
-      <meta name="description" content="{{article.description}}" />
-      <meta name="keywords" content="{% for tag in article.tags %}{{tag}}, {% endfor %}" />
-      <!-- OG Metadata tags -->
-      <meta property="og:title" content="{{ article.title }}" />
-      <meta property="og:type" content="article" />
-      <meta property="og:description" content="{{ article.description }}" />
-      <meta property="og:url" content="{{ SITEURL }}/{{ article.url }}" />
-      <meta property="og:image" content="{{SITEURL}}/{{ article.url.split('/')[:-1] | join('/') }}/{{ article.image }}" />
-      {% for tag in article.tags %}
-      <meta property="og:article:tag" content="{{ tag }}" />
-      {% endfor %}
-    {% elif page %}
-      <!-- HTML Metadata tags -->
-      <meta name="description" content="{{page.description}}" />
-      <meta name="keywords" content="{% for tag in page.tags %}{{tag}}, {% endfor %}" />
-    {% else %}
-      <!-- HTML Metadata tags -->
-      <meta name="description" content="Article and thoughts of Justin Cooksey" />
-      <meta name="keywords" content="code, Development, DevOps, Justin Cooksey" />
-    {% endif %}
-    
+    {% block head %}
+    {% endblock head %}
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id={{ GOOGLE_GA4_ID }}"></script>
     <script>
@@ -35,8 +14,9 @@
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
       gtag('config', '{{ GOOGLE_GA4_ID }}');
-    </script>
+    </script>   
   </head>
+ 
   <body class="is-preload">
 
 		<!-- Wrapper -->

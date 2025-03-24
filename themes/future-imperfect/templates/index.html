@@ -1,4 +1,10 @@
-{% extends 'base.html' %} {% block content %}
+{% extends 'base.html' %} 
+{%- block head %}
+    <!-- HTML Metadata tags -->
+    <link rel="canonical" href="{{ CANONICALURL }}" /> 
+{{ super() -}}
+{% endblock -%}
+{% block content %}
   {% for article in articles_page.object_list %}
     <!-- Mini Post -->
     {% set cutoff = article.url|length - article.slug|length + 6 %}

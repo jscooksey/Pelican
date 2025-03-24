@@ -1,4 +1,21 @@
-{% extends 'base.html' %} {% block content %}
+{% extends 'base.html' %}
+{%- block head %}
+    <!-- HTML Metadata tags -->
+    <meta name="description" content="{{ article.description }}" />
+    <meta name="keywords" content="{% for tag in article.tags %}{{ tag }},{% endfor %}" />
+    <link rel="canonical" href="{{ CANONICALURL }}/{{ article.url }}" />
+    <!-- OG Metadata tags -->
+    <meta property="og:title" content="{{ article.title }}" />
+    <meta property="og:type" content="article" />
+    <meta property="og:description" content="{{ article.description }}" />
+    <meta property="og:url" content="{{ SITEURL }}/{{ article.url }}" />
+    <meta property="og:image" content="{{ SITEURL }}/{{ article.url.split('/')[:- 1]|join('/') }}/{{ article.image }}" />
+    {% for tag in article.tags %}
+    <meta property="og:article:tag" content="{{ tag }}" />
+    {% endfor %}
+    {{ super() -}}
+{% endblock -%}
+{% block content %}
   <header>
     <div class="title">
       <h1><a href="{{ SITEURL }}/{{ article.url }}">{{ article.title }}</a></h1>
