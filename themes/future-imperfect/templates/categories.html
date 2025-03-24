@@ -1,5 +1,11 @@
 {% extends "base.html" %}
-
+{%- block head %}
+    <!-- HTML Metadata tags -->
+    <link rel="canonical" href="{{ CANONICALURL }}/categories" /> 
+    <meta name="description" content="Categories of article on the Justin Cooksey Codes webiste" />
+    <meta name="keywords" content="code, categories, Justin Cooksey" />
+{{ super() -}}
+{% endblock -%}
 {% block title %}{{ SITENAME }} - Categories{% endblock %}
 
 {% block content %}
