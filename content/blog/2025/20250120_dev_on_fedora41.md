@@ -41,7 +41,8 @@ If you havent used [pyenv](https://github.com/pyenv/pyenv) before the [Real Pyth
 
 ```bash
 sudo dnf install @development-tools
-sudo dnf install python3-tkinter python3-xlib bzip2-devel ncurses-devel libffi-devel readline-devel tk-devel libsqlite3x-devel
+sudo dnf install python3-tkinter python3-xlib bzip2-devel ncurses-devel \
+     libffi-devel readline-devel tk-devel libsqlite3x-devel
 ```
 
 This has now allowed me to install and use other versions of Python on my [Fedora](https://fedoraproject.org/) 41 based laptop.  Which means I can now update this web site with this article ...

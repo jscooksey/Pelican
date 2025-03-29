@@ -1,5 +1,11 @@
-{% extends 'base.html' %} {% block content %}
-  {% for article in articles[:12] %}
+{% extends 'base.html' %} 
+{%- block head %}
+    <!-- HTML Metadata tags -->
+    <link rel="canonical" href="{{ CANONICALURL }}" /> 
+{{ super() -}}
+{% endblock -%}
+{% block content %}
+  {% for article in articles_page.object_list %}
     <!-- Mini Post -->
     {% set cutoff = article.url|length - article.slug|length + 6 %}
     {% set imgpath = article.url|truncate(cutoff, True, '', 0) %}
@@ -12,4 +18,7 @@
       </header>
     </article>
   {% endfor %}
+  {% if articles_page.has_other_pages() %}
+    {% include 'pagination.html' %}
+  {% endif %}
 {% endblock %}

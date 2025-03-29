@@ -1,4 +1,11 @@
 {% extends "base.html" %}
+{%- block head %}
+    <!-- HTML Metadata tags -->
+    <link rel="canonical" href="{{ CANONICALURL }}/{{ page.url }}" /> 
+    <meta name="description" content="{{page.description}}" />
+    <meta name="keywords" content="{% for tag in page.tags %}{{tag}}, {% endfor %}" />
+{{ super() -}}
+{% endblock -%}
 {% block content %}
     <h1>{{ page.title }}</h1>
  
