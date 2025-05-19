@@ -1,4 +1,15 @@
 
+# 2025-05-19
+
+## Changed
+
+- Upgraded to Python 3.13.3 after confirming Netlify support
+  - Updated netlify.toml to use this version
+  - updated .pyth-version to use it locally
+- Upgraded to Pelcian 4.11.0
+  - Upgraded Pelican modules post this
+  - Upgraded allpackages to support new Python and Pelican
+
 # 2025-03-16
 
 ## Changed
