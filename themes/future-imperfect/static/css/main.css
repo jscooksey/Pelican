@@ -2124,6 +2124,7 @@ form.search {
 form.search:before {
 	-moz-osx-font-smoothing: grayscale;
 	-webkit-font-smoothing: antialiased;
+	content: '\f00d';
 	display: inline-block;
 	font-style: normal;
 	font-variant: normal;
@@ -2209,6 +2210,7 @@ textarea:focus {
 .select-wrapper:before {
 	-moz-osx-font-smoothing: grayscale;
 	-webkit-font-smoothing: antialiased;
+	content: '\f00d';
 	display: inline-block;
 	font-style: normal;
 	font-variant: normal;
@@ -2302,6 +2304,7 @@ input[type="checkbox"]+label:before,
 input[type="radio"]+label:before {
 	-moz-osx-font-smoothing: grayscale;
 	-webkit-font-smoothing: antialiased;
+	content: '\f00d';
 	display: inline-block;
 	font-style: normal;
 	font-variant: normal;
@@ -2377,6 +2380,7 @@ input[type="radio"]+label:before {
 .icon:before {
 	-moz-osx-font-smoothing: grayscale;
 	-webkit-font-smoothing: antialiased;
+	content: '\f00d';
 	display: inline-block;
 	font-style: normal;
 	font-variant: normal;
@@ -3359,6 +3363,7 @@ body {
 #header .main ul li>a:before {
 	-moz-osx-font-smoothing: grayscale;
 	-webkit-font-smoothing: antialiased;
+	content: '\f00d';
 	display: inline-block;
 	font-style: normal;
 	font-variant: normal;
