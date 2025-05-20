@@ -1,4 +1,4 @@
-@import url(all.min.css);
+@import url(fontawesome.all.min.css);
 @import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700|Raleway:400,800,900");
 
 /*
@@ -2375,20 +2375,6 @@ input[type="radio"]+label:before {
 	text-decoration: none;
 	border-bottom: none;
 	position: relative;
-}
-
-.icon:before {
-	-moz-osx-font-smoothing: grayscale;
-	-webkit-font-smoothing: antialiased;
-	content: '\f00d';
-	display: inline-block;
-	font-style: normal;
-	font-variant: normal;
-	text-rendering: auto;
-	line-height: 1;
-	text-transform: none !important;
-	font-family: 'Font Awesome 6 Free';
-	font-weight: 400;
 }
 
 .icon>.label {
