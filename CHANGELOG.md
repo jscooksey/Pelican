@@ -1,4 +1,12 @@
 
+# 2025-05-20
+
+## Changed
+
+- Changed to FontAwesome Free 6
+  - Now allows for Bluesky icon in Articles
+  - Fixes Issue #3
+
 # 2025-05-19
 
 ## Changed
