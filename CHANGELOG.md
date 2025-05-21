@@ -1,6 +1,12 @@
 
 # 2025-05-21
 
+## Added
+
+- Added pygment.css to get code block color highlites
+
+# 2025-05-21
+
 ## Changed
 
 - Fixed avatar link to point to /about rather than #

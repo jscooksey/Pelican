@@ -8,7 +8,7 @@ DELETE_OUTPUT_DIRECTORY = True
 
 GOOGLE_GA4_ID = "G-M6K7S460VR"
 
-# THEME = "themes/jsctheme"
+# THEME = "themes/simple"
 THEME = "themes/future-imperfect"
 
 PATH = "content"
@@ -51,7 +51,7 @@ AUTHOR_FEED_RSS = None
 MARKDOWN = {
     "extension_configs": {
         # Needed for code syntax highlighting
-        "markdown.extensions.codehilite": {"css_class": "highlight"},
+        "markdown.extensions.codehilite": {"css_class": "highlight", },
         "markdown.extensions.extra": {},
         "markdown.extensions.meta": {},
         # This is for enabling the TOC generation
