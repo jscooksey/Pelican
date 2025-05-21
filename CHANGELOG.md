@@ -1,4 +1,10 @@
 
+# 2025-05-21
+
+## Changed
+
+- Changed Avatar image
+
 # 2025-05-20
 
 ## Changed
