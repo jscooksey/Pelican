@@ -3,6 +3,12 @@
 
 ## Changed
 
+- Fixed avatar link to point to /about rather than #
+
+# 2025-05-21
+
+## Changed
+
 - Changed Avatar image
 
 # 2025-05-20

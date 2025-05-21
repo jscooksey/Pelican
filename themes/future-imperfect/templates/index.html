@@ -14,7 +14,7 @@
         <h3><a href="{{ SITEURL }}/{{ article.url }}">{{ article.title }}</a></h3>
         <p>{{ article.description }}</p>
         <time class="published" datetime="{{ article.date|strftime('%Y-%m-%d') }}">{{ article.date|strftime('%b %-d, %Y') }}</time>
-        <a href="#" class="author"><img src="{{ SITEURL }}/theme/images/avatar.png" alt="" /></a>
+        <a href="/about" class="author"><img src="{{ SITEURL }}/theme/images/avatar.png" alt="" /></a>
       </header>
     </article>
   {% endfor %}
