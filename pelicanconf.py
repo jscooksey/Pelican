@@ -104,8 +104,13 @@ SITEMAP = {
 TAG_URL = "tags/{slug}.html"
 TAG_SAVE_AS = "tags/{slug}.html"
 
-
-SEO_REPORT = True  # SEO report is enabled by default
-SEO_ENHANCER = False  # SEO enhancer is disabled by default
-SEO_ENHANCER_OPEN_GRAPH = False  # Subfeature of SEO enhancer
-SEO_ENHANCER_TWITTER_CARDS = False  # Subfeature of SEO enhancer
+IMAGE_PROCESS = {
+    "thumb": {
+        "type": "image",
+        "ops": ["crop 0 0 50% 50%", "scale_out 150 150 True", "crop 0 0 150 150"],
+    },
+    "article-image": {
+        "type": "image",
+        "ops": ["scale_in 300 300 True"],
+    },
+}
