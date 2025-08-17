@@ -58,7 +58,7 @@ Another task for [Ansible](https://docs.ansible.com/ansible/latest/index.html) w
   gather_facts: no
   hosts: device_roles_switch
   vars:
-    output_path: "{{ lookup('env', 'HOME') }}/backups/"
+    output_path: "/home/backups/"
 
   tasks:
     ## Create backup folder for today
