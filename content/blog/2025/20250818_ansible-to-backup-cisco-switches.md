@@ -1,11 +1,11 @@
 ---
 title: Using Ansible to backup Cisco SMB switches
-date: 2025-07-21 21:00
+date: 2025-08-18 21:00
 status: published
 category: Network DevOps
 tags: Ansible, Cisco, Network, backup, Netbox
 keywords: Ansible, Cisco, Network, backup, netbox
-slug: 2025-07-21-ansible-to-backup-cisco-switches
+slug: 2025-08-18-ansible-to-backup-cisco-switches
 author: Justin Cooksey
 image: ansible_backup.png
 description: With Netbox as a source of truth (SoT) we use an Ansible playbook to manage the regular backups of Cisco switch configurations.  Then using a bash script to upload those to a DR site in case of failure of our local storage.
