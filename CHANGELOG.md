@@ -1,6 +1,13 @@
 
 # 2026-01-04
 
+## Changed
+
+- Changed tag.html and category.html templates to not use index which was doubling up canonical meta data
+- Will need to pull out the list and use in function as it is in use in 3 different templates, tag, catgeroy & index
+
+# 2026-01-04
+
 ## Added
 
 - Started using UV for package management.  Testing this still

@@ -1,10 +1,10 @@
 {% extends 'base.html' %}
 {%- block head %}
-    <!-- HTML Metadata tags -->
+    <!-- HTML Metadata, article template -->
     <meta name="description" content="{{ article.description }}" />
     <meta name="keywords" content="{% for tag in article.tags %}{{ tag }},{% endfor %}" />
     <link rel="canonical" href="{{ CANONICALURL }}/{{ article.url }}" />
-    <!-- OG Metadata tags -->
+    <!-- OG Metadata, article template-->
     <meta property="og:title" content="{{ article.title }}" />
     <meta property="og:type" content="article" />
     <meta property="og:description" content="{{ article.description }}" />

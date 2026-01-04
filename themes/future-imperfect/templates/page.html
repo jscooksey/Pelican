@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 {%- block head %}
-    <!-- HTML Metadata tags -->
+    <!-- HTML Metadata, page template -->
     <link rel="canonical" href="{{ CANONICALURL }}/{{ page.url }}" /> 
     <meta name="description" content="{{page.description}}" />
     <meta name="keywords" content="{% for tag in page.tags %}{{tag}}, {% endfor %}" />
