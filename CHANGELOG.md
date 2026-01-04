@@ -1,4 +1,13 @@
 
+# 2026-01-04
+
+## Added
+
+- Started using UV for package management.  Testing this still
+- Created requirements.txt output from UV
+- Upgraded all packages to latest
+- Upgraded to using Pelican Image Process module, and updated content files
+
 # 2025-05-21
 
 ## Added
