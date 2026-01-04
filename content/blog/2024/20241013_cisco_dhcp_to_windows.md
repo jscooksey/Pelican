@@ -12,7 +12,7 @@ Description: A Windows Powershell script to ease the transition from Cisco confi
 ---
 
 
-<img src="{attach}ciscodhcp.png"  width="33%" height="33%">
+![Cisco DHCP]({attach}ciscodhcp.png){: .image-process-large-photo}
 
 **Well it was bound to happen!**
 Three years now after being asked to [migrate DHCP from Windows DHCP server to Cisco Routers, and automating that convertion](https://justincooksey.com/blog/2021/2021-03-04-windows-server-dhcp-conversion-to-cisco-cli), it's finally going back the other way.

@@ -12,7 +12,8 @@ Image: gatsby-logo.jpg
 Description: Hacktoberfest is a brilliant idea to get people involved in Open Source, with a friendly competition that's really only about being involved.
 ---
 
-<img src="{attach}gatsby-logo.jpg"  width="33%" height="33%">
+
+![Gatsby]({attach}gatsby-logo.jpg){: .image-process-large-photo}
 
 This is the beginings of this site utilising [GatsbyJS](https://www.gatsbyjs.org/).
 

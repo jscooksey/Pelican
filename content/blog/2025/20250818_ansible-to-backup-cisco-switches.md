@@ -11,7 +11,7 @@ image: ansible_backup.png
 description: With Netbox as a source of truth (SoT) we use an Ansible playbook to manage the regular backups of Cisco switch configurations.  Then using a bash script to upload those to a DR site in case of failure of our local storage.
 ---
 
-<img class="image-process-large-photo"src="{attach}ansible_backup.png">
+![Ansible Backup]({attach}ansible_backup.png){: .image-process-large-photo}
 
 # Using Ansible to Backup Cisco SMB Switches  
 

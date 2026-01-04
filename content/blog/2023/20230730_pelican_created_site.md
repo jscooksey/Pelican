@@ -11,7 +11,7 @@ Image: pelican.png
 Description: A continuation of moving a simple static built site to the Pelican Static Site geenrator to get it pulished on Netlify
 ---
 
-<a href="https://getpelican.com/"><img src="{attach}pelican.png"  width="33%" height="33%"></a>
+<a href="https://getpelican.com/">![Pelican]({attach}pelican.png){: .image-process-large-photo}</a>
 
 This is the second part ([see part 1 here](https://justincooksey.com/blog/2023/pelican-static-site-generator.html)) of my migrating a static web site over to [Pelican Static Site Generator](https://docs.getpelican.com/en/latest/index.html), after my inital posting Pelican Static Site Generator
 

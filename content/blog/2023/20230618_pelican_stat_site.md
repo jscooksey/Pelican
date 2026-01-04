@@ -11,7 +11,7 @@ Image: pelican.png
 Description: Using Pelican for statc site generation to replicate site created in GatsbyJS
 ---
 
-<a href="https://getpelican.com/"><img src="{attach}pelican.png"  width="33%" height="33%"></a>
+<a href="https://getpelican.com/">![Pelican]({attach}pelican.png){: .image-process-large-photo}</a>
 
 I've been investigating [Pelican a static site generator](https://getpelican.com/) to replace my current [GatsbyJS](https://www.gatsbyjs.com/) generated site.  Im far more at home and familiar with [Python](https://www.python.org/) and [Jinja2](https://palletsprojects.com/p/jinja/), so that was part of my reasoning for taking a look in to it.
 
