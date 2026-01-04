@@ -1,6 +1,12 @@
 
 # 2026-01-04
 
+## Removed
+
+- Removed netlify config file, as now hosted on cloudlfare
+
+# 2026-01-04
+
 ## Changed
 
 - Changed main.css for main::before for menu to use f0c9 which is the bars for a menu
