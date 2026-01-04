@@ -3,6 +3,19 @@
 
 ## Changed
 
+- Changed main.css for main::before for menu to use f0c9 which is the bars for a menu
+
+# 2026-01-04
+
+## Changed
+
+- Setup Kinja2 macro file macros.html in templates
+  - Using this macro in index.html, tag.html & category.html
+
+# 2026-01-04
+
+## Changed
+
 - Changed tag.html and category.html templates to not use index which was doubling up canonical meta data
 - Will need to pull out the list and use in function as it is in use in 3 different templates, tag, catgeroy & index
 

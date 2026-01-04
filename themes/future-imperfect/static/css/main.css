@@ -3350,7 +3350,7 @@ body {
 #header .main ul li>a:before {
 	-moz-osx-font-smoothing: grayscale;
 	-webkit-font-smoothing: antialiased;
-	content: '\f00d';
+	content: '\f0c9';
 	display: inline-block;
 	font-style: normal;
 	font-variant: normal;
