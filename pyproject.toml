@@ -1,6 +1,6 @@
 [project]
 name = "web-site"
-version = "0.1.0"
+version = "2026.01.04"
 description = "justincooksey.com Web Site using Pelican"
 readme = "README.md"
 requires-python = ">=3.13.3"
