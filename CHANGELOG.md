@@ -1,4 +1,11 @@
 
+# 2026-01-31
+
+## Changed
+
+- Upgraded packages
+- Changed font to be mixed case and removed character spacing. Now need to adjust some sizes, but better
+
 # 2026-01-04
 
 ## Removed
@@ -15,7 +22,7 @@
 
 ## Changed
 
-- Setup Kinja2 macro file macros.html in templates
+- Setup Jinja2 macro file macros.html in templates
   - Using this macro in index.html, tag.html & category.html
 
 # 2026-01-04
