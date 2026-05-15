@@ -8,11 +8,12 @@ Description: About this web site and its authoer Justin Cooksey
 
 ## I'm a Father, Developer, and Network DevOps Engineer!
 
-With over 28 years of experience in the MSP industry, I have worked with a team to design, build, and maintain a VMware system that holds over 400 servers. As a DevOps engineer, I develop code to help manage and maintain our systems, leveraging tools such as [Netbox](https://github.com/netbox-community/netbox), [Ansible](https://github.com/ansible/ansible), and [LogicMonitor](https://github.com/logicmonitor). My coding interests lie in the areas of data analytics and collection, as well as home automation and IoT, where I have a particular focus on using [Home Assistant](https://github.com/home-assistant) as a platform.
+With 30 years of experience in the MSP industry, I have worked with a team to design, build, and maintain a VMware system that holds over 400 servers. As a DevOps engineer, I develop code to help manage and maintain our systems, leveraging tools such as [Netbox](https://github.com/netbox-community/netbox), [Ansible](https://github.com/ansible/ansible), and [LogicMonitor](https://github.com/logicmonitor). My coding interests are in the areas of data analytics and collection, as well as home automation and IoT.
 
 #### Currently working on
 
 - **Virtual Machine Hosting (VMH)** reporting web portal. Keeping daily records of virtual machines in hypervisor clusters allowing for reporting and auditing.
+- [Netbox](https://github.com/netbox-community/netbox)
 - [Ansible](https://www.ansible.com/)
 - [LogicMonitor](https://www.logicmonitor.com/)
 - [N-Central RMM](https://www.n-able.com/products/n-central-rmm)
@@ -22,18 +23,19 @@ With over 28 years of experience in the MSP industry, I have worked with a team 
 #### Continued Learning ... everything 🤣
 
 - Data Analytics
+- Microsof Fabric
 - Python
 - Ansible
+- PowerShell
 
 #### Goals
 
 - Live a healthy life
-- ✅ **Completed** [Cisco Certified DevNet Associate](https://www.credly.com/badges/3f2bc007-5f27-4682-9391-45716713bed0/public_url)
+- ✅ **Need to Renew** [Cisco Certified DevNet Associate](https://www.credly.com/badges/3f2bc007-5f27-4682-9391-45716713bed0/public_url)
 
 #### What else
 
 - Recently found a love of running, which I post every now and again on Instagram [@juzza_runs](https://www.instagram.com/juzza_runs)
-- I love to create images, photography, so please [check out my image portfolio](https://www.logicmonitor.com/).
 
 ---
 
