@@ -13,7 +13,7 @@ Description: Hacktoberfest is a brilliant idea to get people involved in Open So
 ---
 
 
-![Gatsby]({attach}gatsby-logo.jpg){: .image-process-large-photo}
+![Gatsby]({attach}gatsby-logo.jpg){: .image-process-large-photo loading="lazy" decoding="async"}
 
 This is the beginings of this site utilising [GatsbyJS](https://www.gatsbyjs.org/).
 

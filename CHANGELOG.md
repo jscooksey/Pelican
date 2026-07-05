@@ -1,4 +1,13 @@
 
+<a id='changelog-2026.07.05'></a>
+# 2026.07.05 — 2026-07-05
+
+## Changed
+
+- Upgrading all packages to latest
+- Work on imrpving image processing throughout
+
+
 # 2026-01-31
 
 ## Changed

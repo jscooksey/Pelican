@@ -12,7 +12,7 @@ Description: Using the DattoRMM API to export all Sites to a CSV file.
 ---
 
 
-![DattoRMM]({attach}dattormm.png){: .image-process-large-photo}
+![DattoRMM]({attach}dattormm.png){: .image-process-large-photo loading="lazy" decoding="async"}
 
 What began as a task just to [export all Sites from a DatoRMM instance to a CSV file](https://github.com/jscooksey/DattoRMM-Site-Export), has started me down the path of building a module to deal with many of the DattoRMM API end points. 
 

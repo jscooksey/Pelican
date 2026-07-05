@@ -1,9 +1,11 @@
 [project]
 name = "web-site"
-version = "2026.01.31"
+version = "2026.07.05"
 description = "justincooksey.com Web Site using Pelican"
+authors = [{ name = "jscooksey", email = "justin@cooksey.com.au" }]
 readme = "README.md"
 requires-python = ">=3.13.3"
+
 dependencies = [
     "anyio>=4.9.0",
     "attrs>=25.3.0",
@@ -46,4 +48,11 @@ dependencies = [
 [dependency-groups]
 dev = [
     "scriv>=1.7.0",
+      "pylint>=3.2.6",
 ]
+
+[tool.uv]
+
+[tool.scriv]
+version = "literal: pyproject.toml: project.version"
+format = "md"

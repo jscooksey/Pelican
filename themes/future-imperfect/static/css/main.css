@@ -2394,6 +2394,14 @@ input[type="radio"]+label:before {
 
 /* Image */
 
+article img,
+.post img,
+.image img {
+	display: block;
+	max-width: 100%;
+	height: auto;
+}
+
 .image {
 	border: 0;
 	display: inline-block;

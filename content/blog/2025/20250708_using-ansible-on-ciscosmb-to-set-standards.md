@@ -11,7 +11,7 @@ image: ansible_netbox_cisco_600.jpg
 description: Using Ansible to set switch configuration standards across a fleet of Cisco Small Medium Business switches (SG300, SG500, SG350, SG550, CBS350, C1300). Maintaining a default setup for DNS, Time and Date and allowed access methods.
 ---
  
-![Netbox & Cisco]({attach}ansible_netbox_cisco_600.jpg){: .image-process-large-photo}
+![Netbox & Cisco]({attach}ansible_netbox_cisco_600.jpg){: .image-process-large-photo loading="lazy" decoding="async"}
 
 I covered some of the base configuration in a [previous article](https://justincooksey.com/blog/2024/ansible-netbox-begining) on how Netbox and Ansible work together.  This time I'm covering working with the [Ansible Community Cisco SMB collection](https://docs.ansible.com/ansible/latest/collections/community/ciscosmb/index.html) to manage Cisco Small and Medium Business switches in the ranges SG300, SG500, SG350, SG550, CBS350 and C1300. 
 

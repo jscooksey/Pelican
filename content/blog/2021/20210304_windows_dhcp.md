@@ -12,7 +12,7 @@ Description: A Windows Powershell script to ease the transition from a Windows D
 ---
 
 
-![DHCP]({attach}dhcp.jpg){: .image-process-large-photo}
+![DHCP]({attach}dhcp.jpg){: .image-process-large-photo loading="lazy" decoding="async"}
 
 I recently ran in to an issue where I needed to convert a reasonably large DHCP database from a Windows Server in to a Cisco CLI to allow the Cisco to take over DHCP roles for a subnet. I found nothing that realy automated this task, even using the exported XML file. So knowing that this was the second time I needed the tool, and likely to need it again, even if it was for smaller tasks, I set about coding it in Powershell. It is the scripting system well supported in Windows land.
 

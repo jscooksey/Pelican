@@ -13,7 +13,7 @@ Description: My start on deploying a website using the GatsbyJS Frontend Framewo
 ---
 
 
-![HacktoberFest]({attach}pull_requests.jpg){: .image-process-large-photo}
+![HacktoberFest]({attach}pull_requests.jpg){: .image-process-large-photo loading="lazy" decoding="async"}
 
 While I enjoyed my first involvement with [Hacktoberfest](https://hacktoberfest.digitalocean.com/) this year, I didn't end up completing enough pull request for the month. Partly this was due to a busy workload for the 9-5 job, but also I found that I wanted to find projects I could stay involved with.
 

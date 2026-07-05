@@ -12,7 +12,7 @@ Description: Getting back into Hacktoberfest. A second run at getting involved i
 ---
 
 
-<a href="https://hacktoberfest.com/">![HacktoberFest]({attach}hflogo.jpg){: .image-process-large-photo}</a>
+<a href="https://hacktoberfest.com/">![HacktoberFest]({attach}hflogo.jpg){: .image-process-large-photo loading="lazy" decoding="async"}</a>
 
 It's back around to October again and [Hacktoberfest](https://hacktoberfest.digitalocean.com/) is of course up and running. I enjoyed [my first involvement with Hacktoberfest](https://justincooksey.com/blog/hacktoberfest-2019/) in 2019 but I didn't complete enough pull request for the month. Will I make it this year?
 
